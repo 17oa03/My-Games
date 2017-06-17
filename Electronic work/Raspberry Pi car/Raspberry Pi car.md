@@ -1,6 +1,8 @@
 # Raspberry Pi car
-![Pi car_1](img/Pi car_1.jpg)
-![Pi car_2](img/Pi car_2.jpg)
+|前面|後面|
+|---|---|
+|![Pi car_1](https://github.com/17oa03/Works/blob/master/Electronic%20work/Raspberry%20Pi%20car/img/Pi%20car_1.jpg)|![Pi car_2](https://github.com/17oa03/Works/blob/master/Electronic%20work/Raspberry%20Pi%20car/img/Pi%20car_2.jpg)
+
 #### ■ Raspberry Pi car
 「Raspberry Pi」を搭載した模型をPCやスマートフォンからラジコンのように操作できます、
 「Raspberry Piで学ぶ電子工作」という本を参考にして製作しました。

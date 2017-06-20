@@ -16,6 +16,6 @@ int main(void)
 }
 
 /*
-Åyé¿çsó·Åz
+Åyé¿çsåãâ Åz
 Hello, work!
 */

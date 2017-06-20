@@ -26,7 +26,7 @@ int main(void)
 }
 
 /*
-yŽÀs—áz
+yŽÀsŒ‹‰Êz
 ”¼Œa ==> 5
 ”¼Œa5‚Ì‰~‚Ì–ÊÏ‚Í78.5‚Å‚·B
 ”¼Œa5‚Ì‹…‚Ì–ÊÏ‚Í523.3‚Å‚·B

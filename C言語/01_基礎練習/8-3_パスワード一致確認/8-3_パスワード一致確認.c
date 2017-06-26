@@ -17,21 +17,24 @@ int main(void)
 	/* 文字配列の定義 */
 	char password[] = "Tokyo";
 	char input[256];
-	int match_flag = 0; /* 0 = 不一致, 1 = 一致 */
 
-	/* カウンタ変数 */
+	/* パスワード一致フラグ( 0 : OFF(不一致), 1 : ON(一致) */
+	int match_flag = 0;
+
+	/* カウンタ変数の定義 */
 	int i;
 
 	/* 入力処理 */
 	printf("パスワードを入力してください ==> ");
 	scanf("%s", input);
 
-	/* 2つの文字列のデータが等しいあいだ繰り返す。 */
-	for (i = 0; password[i] == input[i]; i++) {
+	/* 2つの文字列が等しい間、かつ、フラグがOFFで繰り返す。 */
+	for (i = 0; password[i] == input[i] && match_flag == 0; i++) {
 
 		/* 一致する文字でかつNULL文字'\0'が見付かった。 */
 		if (input[i] == '\0') {
 
+			/* パスワード一致フラグをONにする。 */
 			match_flag++;
 		}
 	}
@@ -70,6 +73,10 @@ int main(void)
 
 【実行結果5】
 パスワードを入力してください ==> Tokyo2017
+パスワード不一致
+
+【実行結果6】
+パスワードを入力してください ==> To
 パスワード不一致
 */
 

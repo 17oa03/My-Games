@@ -15,19 +15,19 @@
 int main(void)
 {
 	/* 文字配列の定義 */
-	char input1[256];
-	char input2[256];
+	char input[256];
+	char copy_to[256];
 
 	/* 入力 */
 	printf("コピー元文字列 ==> ");
-	scanf("%s", input1);
+	scanf("%s", input);
 
 	/* 文字列のコピー */
-	strcpy(input2, input1);
+	strcpy(copy_to, input);
 
 	/* 出力 */
-	printf("コピー元文字列  :  %s\n", input1);
-	printf("コピー先文字列  :  %s\n", input2);
+	printf("コピー元文字列  :  %s\n", input);
+	printf("コピー先文字列  :  %s\n", copy_to);
 
 	return 0;
 }

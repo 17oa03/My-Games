@@ -29,7 +29,7 @@ int main(void)
 	printf("2‚Â–Ú‚Ì•¶š—ñ ==> ");
 	scanf("%s", input2);
 
-	/* •¶š—ñ‚Ì”‚ğ”‚¦‚é */
+	/* •¶š—ñ‚ğ”äŠr */
 	i = str_comp(input1, input2);
 
 	/* o—Í */

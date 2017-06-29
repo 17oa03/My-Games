@@ -41,7 +41,7 @@ int main(void)
 /* •¶š—ñ‚ğ”äŠr‚·‚éŠÖ” */
 int str_comp(char *p_input1, char *p_input2)
 {
-	while (*p_input1++ == *p_input2++ && (*p_input1 != '\0' && *p_input2 != '\0'));
+	while (*p_input1++ == *p_input2++ && (*p_input1 != '\0' || *p_input2 != '\0'));
 
 	*p_input1--;
 	*p_input2--;

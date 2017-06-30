@@ -1,0 +1,31 @@
+#【実行結果】
+
+>>> a = "hello"
+>>> b = 'work'
+>>> a
+'hello'
+>>> b
+'work'
+>>> a = 'Go Go "hello" work!'
+>>> a
+'Go Go "hello" work!'
+>>> a = "Go Go "hello" work!"
+SyntaxError: invalid syntax
+>>> b = "I'm hello worker!"
+>>> b
+"I'm hello worker!"
+>>> 'I'm hello worker!'
+SyntaxError: invalid syntax
+
+"""
+【考察】
+文字列の作成には「""」と「''」で囲む、
+「"」は、ダブルクォーテーション、
+「'」は、シングルクォーテーション。
+
+2種類存在する理由は、
+作成したい文字列内に、
+「"」や「'」があった場合でも、
+文字列を作成できるように、
+2種類の記法が存在している。
+"""

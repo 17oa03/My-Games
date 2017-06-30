@@ -1,0 +1,25 @@
+#【実行結果】
+
+>>> float(3)
+3.0
+>>> float("-2.58")
+-2.58
+>>> float(True)
+1.0
+>>> float(False)
+0.0
+>>> float("hello")
+Traceback (most recent call last):
+  File "<pyshell#4>", line 1, in <module>
+    float("hello")
+ValueError: could not convert string to float: 'hello'
+
+"""
+【考察】
+整数やブール値、
+文字列を浮動小数点数へ変換する場合は、
+float()関数を使用する。
+
+文字列は浮動小数点数に変換できず、
+エラーが発生している。
+"""

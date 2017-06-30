@@ -1,0 +1,27 @@
+#【実行結果】
+
+>>> int(2.6)
+2
+>>> int("-5")
+-5
+>>> int(True)
+1
+>>> int(False)
+0
+>>> int("hello work")
+Traceback (most recent call last):
+  File "<pyshell#4>", line 1, in <module>
+    int("hello work")
+ValueError: invalid literal for int() with base 10: 'hello work'
+
+"""
+【考察】
+浮動小数点数の値とブール値、
+文字列をint()関数を用いて整数に変換する。
+
+小数は小数点以下切り捨て、
+ブール値は、True = 1、False = 0、
+文字列は整数に変換できずに、
+エラーが発生した。
+
+"""

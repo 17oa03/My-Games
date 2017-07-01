@@ -1,0 +1,32 @@
+#【実行結果】
+
+>>> animal = ("Horse", "Lion", "Elephant")
+>>> score = (35, 87, 63)
+>>> data = (animal, score)
+>>> data
+(('Horse', 'Lion', 'Elephant'), (35, 87, 63))
+>>> data[0][0]
+'Horse'
+>>> data[0][1]
+'Lion'
+>>> data[0][2]
+'Elephant'
+>>> data[1][0]
+35
+>>> data[1][1]
+87
+>>> data[1][2]
+63
+
+>>> data = (("Horse", "Lion", "Elephant"), (35, 87, 63))
+>>> data
+(('Horse', 'Lion', 'Elephant'), (35, 87, 63))
+
+"""
+【考察】
+タプルの中にタプルをデータとして格納できる、
+タプルのタプルを直接記述することもできる。
+
+アクセスには、
+二次元配列のようなイメージがあります。
+"""

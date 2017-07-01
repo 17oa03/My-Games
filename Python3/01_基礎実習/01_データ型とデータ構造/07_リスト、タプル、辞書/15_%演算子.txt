@@ -1,0 +1,38 @@
+#【実行結果】
+
+>>> "1 = %s 2 = %s" % ("Hello", "work")
+'1 = Hello 2 = work'
+>>> "value = (%d, %d)" % (2, 5)
+'value = (2, 5)'
+>>> "score = %f" % (2.345)
+'score = 2.345000'
+>>> "age = %d" % ("hello")
+Traceback (most recent call last):
+  File "<pyshell#3>", line 1, in <module>
+    "age = %d" % ("hello")
+TypeError: %d format: a number is required, not str
+
+>>> val, name = 4, "Python"
+>>> print("val = %d, name = %s" % (val, name))
+val = 4, name = Python
+
+"""
+【考察】
+%演算子を使用、
+元の文字列内に、
+「%s」や「%d」などの書式を埋め込み、
+この部分を実データで置換できる。
+
+文字列の後ろに%演算子を配置し、
+その後ろにタプル形式で実データを配置する。
+
+%s ==> 文字列
+%d ==> 10進数
+%x ==> 16進数
+%f ==> 10進数 float
+
+書式の型と実際のデータは、
+一致させる必要がある、
+一致しない場合はエラーになる。
+
+"""

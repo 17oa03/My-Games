@@ -1,0 +1,42 @@
+#【実行結果】
+
+>>> a = 78
+>>> b = 95
+>>> c = 68
+>>> d = 62
+>>> total = a + b + c + d
+>>> total
+303
+>>> average = total / 4
+>>> average
+75.75
+
+>>> subject = (78, 95, 68, 62)
+>>> total = subject[0] + subject[1] + subject[2] + subject[3]
+>>> average = total / 4
+>>> average
+75.75
+
+>>> subject =(78, 95, 68, 62)
+>>> subject[0] = 82
+Traceback (most recent call last):
+  File "<pyshell#17>", line 1, in <module>
+    subject[0] = 82
+TypeError: 'tuple' object does not support item assignment
+
+"""
+タプルは、
+0個以上の要素を持つシーケンス(並び)、
+要素を()で囲むことで作成でき、
+一旦作成したら変更ができない。
+
+一般的なプログラミング言語の
+「配列」というデータ構造に似ている。
+
+変更できることをミュータブル(mutable)、
+変更できないことをイミュータブル(immutable)という。
+
+要素の値を変更しようとすると、
+エラーが発生する。
+
+"""

@@ -1,0 +1,40 @@
+#【実行結果】
+
+>>> week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", ]
+>>> week
+['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+>>> score = [98, 68, 72, 59, 89, 48, 39, 85, ]
+>>> score
+[98, 68, 72, 59, 89, 48, 39, 85]
+>>> animal = ["horse", "rabbit", "lion", "elephant", "mouse", ]
+>>> animal
+['horse', 'rabbit', 'lion', 'elephant', 'mouse']
+>>> score[1]
+68
+>>> score[1] = 77
+>>> score
+[98, 77, 72, 59, 89, 48, 39, 85]
+>>> week.append("Saturday")
+>>> week
+['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+>>> animal.insert(3, "Rhino")
+>>> animal
+['horse', 'rabbit', 'lion', 'Rhino', 'elephant', 'mouse']
+>>> del animal[2]
+>>> animal
+['horse', 'rabbit', 'Rhino', 'elephant', 'mouse']
+>>> animal.pop(2)
+'Rhino'
+>>> animal
+['horse', 'rabbit', 'elephant', 'mouse']
+
+"""
+【考察】
+操作対象と関連付けられている関数を「メソッド」、
+appendメソッドは、リストの末尾に要素が追加される、
+insertメソッドは、指定した場所に要素を追加できる、
+popメソッドは、指定した場所の要素を削除できる、
+また、「del」は、
+Pythonが元々用意してある命令になる。
+
+"""

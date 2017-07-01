@@ -1,0 +1,44 @@
+#【実行結果】
+
+>>> week = ("Monday", "Tuesday", "Wednesday")
+>>> week[2]
+'Wednesday'
+>>> week.append("Thursday")
+Traceback (most recent call last):
+  File "<pyshell#5>", line 1, in <module>
+    week.append("Thursday")
+AttributeError: 'tuple' object has no attribute 'append'
+
+>>> pos = (56, 74)
+>>> pos
+(56, 74)
+>>> pos[0]
+56
+>>> pos[1]
+74
+>>> pos_x,pos_y = pos
+>>> pos_x
+56
+>>> pos_y
+74
+>>> x = 3
+>>> y = 6
+>>> (x, y) = (y, x)
+>>> x
+6
+>>> y
+3
+
+"""
+【考察】
+位置情報(x座標の値, y座標の値)には、
+タプルが適している。
+
+1つのタプルを複数の変数に代入することも可能、
+このような処理を「アンパック」と呼ぶことがある。
+
+x, yを入れ替えて新しいタプルを作成し、
+それをアンパックして変数x, yに代入することもできる、
+タプルの値は変化させていない。
+
+"""

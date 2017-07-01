@@ -1,0 +1,28 @@
+#【実行結果】
+
+>>> subject = [78, 95, 68, 62]
+>>> total = subject[0] + subject[1] + subject[2] + subject[3]
+>>> total
+303
+>>> average = total / 4
+>>> average
+75.75
+
+>>> subject[0] = 82
+>>> subject
+[82, 95, 68, 62]
+>>> total = subject[0] + subject[1] + subject[2] + subject[3]
+>>> total
+307
+>>> average = total / 4
+>>> average
+76.75
+
+"""
+【考察】
+リストは、
+0個以上の要素を持つシーケンス(並び)、
+要素を[]で囲むことで作成でき、
+要素の追加削除、書き換えが可能です。
+
+"""

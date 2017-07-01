@@ -1,0 +1,20 @@
+#【実行結果】
+
+>>> greets = ("morning", "afternoon", "evening")
+>>> "noon" in greets
+False
+>>> "afternoon" in greets
+True
+>>> score = [10, 20, 30, 40, 50]
+>>> 30 in score
+True
+>>> 60 in score
+False
+
+"""
+【考察】
+in演算子を使用すれば、
+指定した値が、
+リストやタプル内に含まれているか確認できる。
+
+"""

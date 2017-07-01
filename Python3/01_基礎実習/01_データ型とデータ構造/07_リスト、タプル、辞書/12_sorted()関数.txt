@@ -1,0 +1,16 @@
+#【実行結果】
+
+>>> fruits = ["banana", "apple", "peach", "orange"]
+>>> sorted(fruits)
+['apple', 'banana', 'orange', 'peach']
+>>> fruits
+['banana', 'apple', 'peach', 'orange']
+
+"""
+【考察】
+soeted()関数は、
+引数で与えられたリストやタプルを
+並び替えてそのコピーを返す、
+元のリストの並び順は変わらない。
+
+"""

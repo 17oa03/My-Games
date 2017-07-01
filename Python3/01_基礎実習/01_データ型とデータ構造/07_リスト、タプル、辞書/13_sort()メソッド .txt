@@ -1,0 +1,14 @@
+#【実行結果】
+
+>>> fruits = ["banana", "apple", "peach", "orange"]
+>>> fruits.sort()
+>>> fruits
+['apple', 'banana', 'orange', 'peach']
+
+"""
+【考察】
+sort()メソッドは、
+元のリストをその場で並び替える、
+戻り値は返さない。
+
+"""

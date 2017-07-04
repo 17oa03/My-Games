@@ -9,29 +9,22 @@
 
 #define ELEMENT 5 /* 人数 */
 
+/* 構造体の型枠の宣言 */
+struct ymd {
+	int y; /* 年 */
+	int m; /* 月 */
+	int d; /* 日 */
+};
+
+struct employee {
+	int    no;           /* 社員番号 */
+	char   name[11];     /* 氏名 */
+	struct ymd entrance; /* 入社年月日 */
+	struct ymd birth;    /* 生年月日 */
+};
+
 int main(void)
 {
-	/* 構造体の型枠の宣言 */
-	struct ymd {
-		int y; /* 年 */
-		int m; /* 月 */
-		int d; /* 日 */
-	};
-
-	struct employee {
-		int    no;           /* 社員番号 */
-		char   name[11];     /* 氏名 */
-		struct ymd entrance; /* 入社年月日 */
-		struct ymd birth;    /* 生年月日 */
-	};
-
-	/* カウンタ変数 */
-	int i, j;
-
-	/* 生年月日を8桁の整数で比較する為の配列と変数 */
-	int comparison[ELEMENT];
-	int temp_1;
-
 	/* 構造体変数の定義と初期化 */
 	struct employee data[ELEMENT] = {
 		{ 1212, "sato",      { 2002,  4,  1 },{ 1982,  6, 23 } }, /* 1人目 */
@@ -42,6 +35,13 @@ int main(void)
 	};
 
 	struct employee temp_2;
+
+	/* カウンタ変数 */
+	int i, j;
+
+	/* 生年月日を8桁の整数で比較する為の配列と変数 */
+	int comparison[ELEMENT];
+	int temp_1;
 
 	/* 生年月日を8桁の整数に変換して配列に代入 */
 	for (i = 0; i < ELEMENT; i++) {
@@ -74,8 +74,8 @@ int main(void)
 	for (i = 0; i < ELEMENT; i++) {
 		printf("%8d ", data[i].no);
 		printf("%-11s", data[i].name);
-		printf("%4d/%2d/%2d ", data[i].entrance);
-		printf("%4d/%2d/%2d\n", data[i].birth);
+		printf("%4d/%2d/%2d ", data[i].entrance.y, data[i].entrance.m, data[i].entrance.d);
+		printf("%4d/%2d/%2d\n", data[i].birth.y, data[i].birth.m, data[i].birth.d);
 	}
 
 	return 0;

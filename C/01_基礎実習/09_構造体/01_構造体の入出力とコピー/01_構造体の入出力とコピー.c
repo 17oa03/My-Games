@@ -9,16 +9,16 @@
 /*【プログラム】*/
 #include <stdio.h>
 
+/* 構造体の型枠の宣言 */
+struct student {
+	int    no;       /* 番号 */
+	char   name[11]; /* 氏名 */
+	double height;   /* 身長 */
+	double weight;   /* 体重 */
+};
+
 int main(void)
 {
-	/* 構造体の型枠の宣言 */
-	struct student {
-		int    no;       /* 番号 */
-		char   name[11]; /* 氏名 */
-		double height;   /* 身長 */
-		double weight;   /* 体重 */
-	};
-
 	/* 構造体変数の定義 */
 	struct student data1, data2;
 
@@ -79,9 +79,13 @@ int main(void)
 
 /*
 【考察】
-構造体の宣言と構造体変数の定義は
-一緒にできるが、
-可読性を考慮して記述を分けた。
+基本的に構造体の宣言は、
+他のプログラマと共有できるように、
+外部で宣言する。
+
+構造体変数の定義は、
+会社のルールによって変わる、
+今回は内部で宣言している。
 
 入出力時の演算子の指定にて、
 文字配列への入力は、
@@ -90,4 +94,9 @@ int main(void)
 構造体変数のコピーは、
 構造体タグとメモリ領域が
 同じでなければならない。
+
+char   = 1byte
+int    = 4byte
+float  = 4byte
+double = 8byte
 */

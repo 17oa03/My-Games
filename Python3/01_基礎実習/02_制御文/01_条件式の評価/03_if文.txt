@@ -1,0 +1,41 @@
+#【実行結果】
+
+>>> a = 3
+>>> if a % 2 == 0:
+	print("even")
+else:
+	print("odd")
+
+	
+odd
+
+>>> if "a" in ("a", "b"):
+	print("a is in the list!")
+
+	
+a is in the list!
+
+>>> fruit = "banana"
+>>> if fruit == "apple":
+	print("red")
+elif fruit == "banana":
+	print("yellow")
+else:
+	print("unknow")
+
+	
+yellow
+
+"""
+【考察】
+if文は条件式の後にある「:(コロン)」から
+ブロックが始まり、
+if文から見てインデントされている範囲が
+ブロックになっている。
+
+「if: else」、
+「if:」
+「if: elif:」など
+バリエーションがある。
+
+"""

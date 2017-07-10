@@ -1,0 +1,147 @@
+#include <stdio.h>
+
+#define STUDENT 5 /* 人数 */
+#define KIND 3    /* 教科の種類 */
+
+/* 構造体の宣言 */
+typedef struct record {
+	int  no;            /* 番号 */
+	char name[11];      /* 氏名 */
+	char subject[KIND]; /* 教科 */
+	int  english;       /* 英語の点数 */
+	int  math;          /* 数学の点数 */
+	int  language;      /* 国語の点数 */
+
+	struct rank {
+		int r_english;  /* 英語の順位 */
+		int r_math;     /* 数学の順位 */
+		int r_language; /* 国語の順位 */
+	}Rank;
+
+}Recode; /* 構造体の定義 */
+
+void   in_data(Recode *p_data);
+void sort_data(Recode *, Recode *, int);
+void  out_data(Recode *, Recode *, int);
+
+int main(void)
+{
+	Recode data[STUDENT];
+
+	/* 教科の種類を代入 */
+	char *subject[11] = {
+		"国語",
+		"数学",
+		"英語"
+	};
+
+	int i = 5;
+	
+	/* 入力 */
+	void in_data(data);
+
+	/* ソート */
+	void sort_data(data, english, i);
+
+	/* 出力 */
+	void out_data(data, i);
+
+	return 0;
+}
+
+void in_data(Recode *p_data)
+{
+	/* カウンタ変数 */
+	int i;
+	
+	/* scanf関数の戻り値を代入する変数 */
+	int end_flag;
+
+	/* リダイレクション */
+	for (i = 0;
+		(end_flag =
+			scanf("%d %s %d %d %d",
+				&(p_data + i)->no,
+				 (p_data + i)->name,
+				&(p_data + i)->english,
+				&(p_data + i)->math,
+				&(p_data + i)->language))
+			!= EOF;
+		i++) {
+
+		(p_data + i)->Rank.r_english = 1;
+		(p_data + i)->Rank.r_math = 1;
+		(p_data + i)->Rank.r_language = 1;
+	}
+
+	return;
+}
+	
+/* データを入力する関数 */
+void sort_data(Recode *p_data, Recode *p_subject, int n)
+{
+	/* カウンタ変数 */
+	int i, j;
+
+	/* 入れ換えの際にデータを一時的に保存する変数 */
+	Recode temp;
+
+	/*英語の点数を比較*/
+	for (i = 0; i < n - 1; i++) {
+		for (j = i + 1; j < n; j++) {
+
+			if ((p_subject + i) < (p_subject + j)) {
+
+				/* 入れ換え */
+				temp = *(p_subject + j);
+				*(p_subject + j) = *(p_subject + i);
+				*(p_subject + i) = temp;
+			}
+			else if ((p_subject + i) == (p_subject + j) &&
+				(p_data + i)->no > (p_data + j)->no) {
+
+				/* 入れ換え */
+				temp = *(p_subject + j);
+				*(p_subject + j) = *(p_subject + i);
+				*(p_subject + i) = temp;
+			}
+		}
+	}
+
+	/* 順位付け */
+	for (i = 0; i < n; i++) {
+		for (j = 0; j < n; j++) {
+
+			if ((p_subject + i) < (p_subject + j)) {
+
+				(p_data + i)->Rank.r_english++;
+			}
+		}
+	}
+
+	return;
+}
+
+
+void out_data(Recode *p_data, Recode *p_subject, int n)
+{
+	int i;
+
+	/* 成績一覧表の出力 */
+	printf("*** 成績一覧表 (%4s) ***\n", p_data->subject);
+	printf(" No 氏    名   %4s 順位\n", p_data->subject);
+	printf("--- ---------- ---- ----\n");
+
+	for (i = 0; i < n; i++) {
+
+		printf("%3d %-10s %4d %4d\n",
+			(p_data + i)->no,
+			(p_data + i)->name,
+			p_subject + i,
+			(p_data + i)->Rank.r_english);
+	}
+
+	*p_data->subject += 1;
+
+	return;
+}

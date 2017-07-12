@@ -1,0 +1,46 @@
+#【実行結果】
+
+>>> def add(a, b):
+	return a + b
+
+>>> add(3, 4)
+7
+>>> add(10, 20)
+30
+
+>>> def spam():
+	print("Hello")
+
+>>> spam()
+Hello
+
+>>> def ham(a, b):
+	return (a * 100) + b
+
+>>> ham(1, 1)
+101
+
+>>> def eggs(name):
+	return "Hello " + name
+
+>>> eggs("python")
+'Hello python'
+
+
+"""
+【考察】
+関数の定義は、
+
+def 関数名(引数1, 引数2):
+    命令1
+    命令2
+    return 戻り値
+
+引数がない場合は省略ができる、
+また、戻り値が必要ない場合は、
+return を省略できる。
+
+さらに、
+引数と戻り値にはどんな値も使用できる。
+
+"""

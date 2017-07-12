@@ -1,0 +1,42 @@
+#【実行結果】
+
+>>> a = 0
+>>> while a < 3:
+	print(a)
+	a += 1
+
+	
+0
+1
+2
+
+>>> total = 0
+>>> index = 0
+>>> subject = (78, 95, 68, 62)
+
+>>> while index < len(subject):
+	total += subject[index]
+	index += 1
+
+	
+>>> average = total / len(subject)
+>>> average
+75.75
+
+"""
+【考察】
+while文は繰り返し処理を行う為の命令、
+
+while 条件式:
+    命令1
+命令2
+
+条件式がTrueの間、
+命令1を繰り返す実行する、
+条件式がFalseになると、
+ループを抜けて命令2を実行する。
+
+無限ループした場合は、
+python shell を Restart させる。
+
+"""

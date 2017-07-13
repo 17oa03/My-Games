@@ -1,0 +1,34 @@
+#【実行結果】
+
+>>> sorted([7, 4, 1, 5])
+[1, 4, 5, 7]
+>>> sorted([7, 4, 1, 5], reverse = True)
+[7, 5, 4, 1]
+>>> sorted(["spam", "ham", "eggs"])
+['eggs', 'ham', 'spam']
+>>> sorted(["spam", "ham", "eggs"], reverse = True)
+['spam', 'ham', 'eggs']
+>>> sorted(["spam", "ham", "eggs"], foo = lambda a: len(a))
+
+>>> sorted(["spam", "ham", "eggs"], key = lambda a: len(a))
+['ham', 'spam', 'eggs']
+>>> sorted(["spam", "ham", "eggs"], key = lambda a: len(a), reverse = True)
+['spam', 'eggs', 'ham']
+
+>>> sorted([(0, 1), (5, 3), (2, 4)])
+[(0, 1), (2, 4), (5, 3)]
+>>> sorted([(0, 1), (5, 3), (2, 4)], key = lambda a: a[1])
+[(0, 1), (5, 3), (2, 4)]
+
+
+"""
+【考察】
+sorted関数にて、
+「reverse = True」を指定すると
+逆順に並び替えられる。
+
+lambda関数と併用すれば、
+何を基準に並び替えるかの指定もできる、
+タプル、リストでもできる。
+
+"""

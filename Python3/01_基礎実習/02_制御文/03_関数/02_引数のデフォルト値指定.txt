@@ -1,0 +1,18 @@
+#【実行結果】
+
+>>> def Hello(name = "Python"):
+	print("Hello, " + name)
+
+	
+>>> Hello()
+Hello, Python
+>>> Hello("work")
+Hello, work
+
+"""
+【考察】
+関数を定義する際に、
+「引数 = デフォルト値」と書くことで、
+デフォルト値の設定ができる。
+
+"""

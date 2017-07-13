@@ -1,0 +1,29 @@
+#【実行結果】
+
+>>> lambda a: a % 2 == 0
+<function <lambda> at 0x0000021B12C7C488>
+
+>>> lambda name: print("Hello! " + name)
+<function <lambda> at 0x0000021B12C7C510>
+
+>>> even = lambda a: a % 2 == 0
+>>> even(2)
+True
+>>> even(3)
+False
+
+>>> hello = lambda name: print("Hello! " + name)
+>>> hello("work")
+Hello! work
+
+
+"""
+【考察】
+ラムダ関数は、
+ちょっとした作業に関数を使いたい時に
+定義して使えるが、
+基本的に使い捨てるもの。
+
+lambda 引数: 命令
+
+"""

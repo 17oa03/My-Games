@@ -1,9 +1,10 @@
 """
-【プログラム概要】
+【Summary】
+画面を表示させる。
 
 """
 
-#【プログラム】
+#【program】
 
 import sys
 import pygame
@@ -27,11 +28,6 @@ def main():
 if __name__ == '__main__':
     main()
     
-"""
-【実行結果】
-
-"""
-
 """
 【考察】
 ウィンドウが画面上に表示された、

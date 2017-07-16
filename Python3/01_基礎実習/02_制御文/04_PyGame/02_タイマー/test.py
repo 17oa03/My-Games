@@ -1,9 +1,10 @@
 """
-【プログラム概要】
+【Summary】
+カウント変数をインクリメントして画面表示させる。
 
 """
 
-#【プログラム】
+#【program】
 
 import sys
 import pygame
@@ -18,15 +19,18 @@ def main():
     counter = 0 # カウンタ変数
 
     while True:
-        for event in pygame.event.get(QUIT):
+        
+        for event in pygame.event.get():
             if event.type == QUIT:
                 pygame.quit()
                 sys.exit()
 
         counter += 1 # カウンタ変数をインクリメント
         SURFACE.fill((0, 0, 0))
+        
         count_image = sysfont.render
         ("count is {}".format(counter), True, (225, 225, 225))
+        
         SURFACE.blit(count_image, (50, 50))
         pygame.display.update()
         FPSCLOCK.tick(10) # 1秒間に10フレーム描画
@@ -34,11 +38,6 @@ def main():
 if __name__ == '__main__':
     main()
 
-    
-"""
-【実行結果】
-
-"""
 
 """
 【考察】

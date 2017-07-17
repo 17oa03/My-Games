@@ -20,7 +20,7 @@ int main(void)
 	/* Prodact型変数の定義 */
 	Prodact data;
 
-	/* ストリームポインタ */
+	/* ストリームポインタ宣言 */
 	FILE *fp_i;
 
 	/* ファイル名 */
@@ -46,7 +46,7 @@ int main(void)
 			&data.unit_price))
 			!= EOF){
 
-		/* ファイル出力 */
+		/* 出力 */
 		printf("%6d %-10s %4d\n",
 			data.no,
 			data.name,

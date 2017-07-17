@@ -56,7 +56,7 @@ int main(void)
 
 		printf("出力ファイル(%s)は、作成できません。\n", fname_out);
 
-		/* メモリの解放 */
+		/* 入力ファイルをクローズ */
 		fclose(fp_in);
 
 		/* 5000ms(5秒)待機 */
@@ -87,8 +87,10 @@ int main(void)
 	printf("%d レコードをコピーしました。\n", count);
 	printf("***ファイルコピー終了***\n");
 
-	/* メモリの解放 */
+	/* 入力ファイルをクローズ */
 	fclose(fp_in);
+
+	/* 出力ファイルをクローズ */
 	fclose(fp_out);
 
 	/* 5000ms(5秒)待機 */

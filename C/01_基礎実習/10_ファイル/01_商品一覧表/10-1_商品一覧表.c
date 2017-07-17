@@ -13,19 +13,22 @@ typedef struct prodact {
 	int  no;
 	char name[11];
 	int  unit_price;
-}Prodact;
+}Prodact; /* 構造体の定義 */
 
 int main(void)
 {
+	/* Prodact型変数の定義 */
 	Prodact data;
 
-	/* ファイルポインタ */
+	/* ストリームポインタ */
 	FILE *fp_i;
 
 	/* ファイル名 */
 	char *fname = "syohin.mst";
 
+	/* 読込みモードでファイルオープン */
 	if ((fp_i = fopen("syohin.mst", "r")) == NULL){
+
 		printf("商品マスタ(%s)が、みつかりません。\n", fname);
 
 		/* プログラム異常終了(EXIT_FAILURE = 1) */
@@ -36,12 +39,14 @@ int main(void)
 	printf("コード 商  品  名 単価\n");
 	printf("------ ---------- ----\n");
 
+	/* ファイル読込み */
 	while ((fscanf(fp_i, "%d %s %d",
 			&data.no,
 			data.name,
 			&data.unit_price))
 			!= EOF){
 
+		/* ファイル出力 */
 		printf("%6d %-10s %4d\n",
 			data.no,
 			data.name,

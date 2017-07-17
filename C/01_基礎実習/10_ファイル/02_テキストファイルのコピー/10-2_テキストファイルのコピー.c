@@ -26,7 +26,7 @@ int main(void)
 	/* ストリームポインタ宣言 */
 	FILE *fp_in, *fp_out;
 
-	/* 入出力ファイル名 */
+	/* ファイル名 */
 	char fname_in[FILENAME_MAX];
 	char fname_out[FILENAME_MAX];
 	
@@ -75,7 +75,7 @@ int main(void)
 			&data.unit_price))
 			!= EOF){
 
-		/* ファイル出力 */
+		/* ファイル書込み */
 		fprintf(fp_out, "%d %-10s %4d\n",
 			data.no,
 			data.name,

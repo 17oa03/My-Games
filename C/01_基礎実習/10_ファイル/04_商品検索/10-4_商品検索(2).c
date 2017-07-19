@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>  /* exit関数, EXIT_FAILURE, EXIT_SUCCESS */
 #include <windows.h> /* Sleep関数 */
+#include <stdbool.h> /* bool値 */
 
 /* 構造体の宣言 */
 typedef struct prodact {
@@ -34,9 +35,9 @@ int main(void)
 	int code = 0;
 
 	/* 商品コード一致フラグ */
-	int match_flag = FALSE; /* FALSE = OFF, TRUE = ON */
+	int match_flag = false; /* FALSE = OFF, TRUE = ON */
 
-	/* 読込みモードでファイルオープン */
+							/* 読込みモードでファイルオープン */
 	if ((fp = fopen("syohin.mst", "r")) == NULL) {
 
 		printf("商品マスタ(%s)が、みつかりません。\n", fname);
@@ -56,16 +57,16 @@ int main(void)
 
 		if (code != 99) {
 
-			/* 読込みモードでファイルオープン */
-			fp = fopen("syohin.mst", "r");
+			/* ファイルポインタの位置を先頭に戻す */
+			rewind(fp);
 
 			/* ファイル読込み */
 			while ((fscanf(fp, "%d %s %d",
-						&data.no,
-						data.name,
-						&data.unit_price))
-					!= EOF && 
-					match_flag == FALSE){
+				&data.no,
+				data.name,
+				&data.unit_price))
+				!= EOF &&
+				match_flag == false) {
 
 				/* 商品コード一致判定 */
 				if (code == data.no) {
@@ -75,23 +76,23 @@ int main(void)
 					printf("単  価 : %d\n", data.unit_price);
 
 					/* フラグ ON */
-					match_flag = TRUE;
+					match_flag = true;
 				}
 			}
 
 			/* 商品コード不一致判定 */
-			if (match_flag == FALSE) {
+			if (match_flag == false) {
 
 				/* 出力 */
 				printf("該当する商品はありません。\n");
 
 				/* フラグ OFF */
-				match_flag = FALSE;
+				match_flag = false;
 			}
 		}
 
 		/* フラグ OFF */
-		match_flag = FALSE;
+		match_flag = false;
 	}
 
 	/* 入力ファイルをクローズ */
@@ -118,11 +119,6 @@ int main(void)
 
 /*
 【考察】
-58行目を削除すると、
-fscanf関数でファイル読込み後、
-同じ商品コードを入力すると、
-該当する商品がないという結果が出た。
-
-つまり、ファイルオープンをせずに
-再度ファイル読込みを行うと、
-データが正しく読込まれないようです。
+「stdbool.h」をインクルードすれば、
+ブール値を扱うことができる。
+*/

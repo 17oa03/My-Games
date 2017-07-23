@@ -12,6 +12,14 @@
 /* 売上データの件数 */
 #define ITEMS 12
 
+#ifndef TRUE   /* TRUE が定義されていなかったら */
+#define TRUE 1 /* TRUE を 1 と定義する */
+#endif         /* 疑似命令の終了 */
+
+#ifndef FALSE   /* FALSE が定義されていなかったら */
+#define FALSE 0 /* FALSE を 0 と定義する */
+#endif          /* 疑似命令の終了 */
+
 /* 構造体の宣言 */
 typedef struct prodact {
 	int  check;       /* 伝票 */
@@ -60,7 +68,7 @@ int main(void)
 		(fscanf(fp, "%d %d %s %d %d",
 			&data[i].check,
 			&data[i].code,
-			 data[i].name,
+			data[i].name,
 			&data[i].unit_price,
 			&data[i].quantity))
 		!= EOF;
@@ -86,12 +94,12 @@ int main(void)
 
 		/* 出力 */
 		printf("%4d %6d %-10s %4d %4d %6d\n",
-				data[j].check,
-				data[j].code,
-				data[j].name,
-				data[j].unit_price,
-				data[j].quantity,
-				data[j].price);
+			data[j].check,
+			data[j].code,
+			data[j].name,
+			data[j].unit_price,
+			data[j].quantity,
+			data[j].price);
 
 		/* 商品計の計算 */
 		sub_price += data[j].price;
@@ -132,15 +140,15 @@ int main(void)
 1001     16 鉛筆         30   50   1500
 1002     16 鉛筆         30  120   3600
 1003     16 鉛筆         30    6    180
-                  *** 商品計 ***   5280
+*** 商品計 ***   5280
 1004     21 ノート      100   15   1500
 1005     21 ノート      100   66   6600
 1006     21 ノート      100  108  10800
 1007     21 ノート      100    3    300
-                  *** 商品計 ***  19200
+*** 商品計 ***  19200
 1008     37 定規        150   20   3000
 1009     37 定規        150  200  30000
-                  *** 商品計 ***  33000
+*** 商品計 ***  33000
 1010     40 消しゴム     50   30   1500
 1011     40 消しゴム     50  150   7500
 1012     40 消しゴム     50    8    400

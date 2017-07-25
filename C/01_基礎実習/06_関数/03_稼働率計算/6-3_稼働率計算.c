@@ -9,9 +9,10 @@
 */
 #include <stdio.h>
 
-/* 稼働率を計算する関数 */
-float Operation(int mtbf, int mttr);
+/* プロトタイプ宣言 */
+float Utilization(int, int);
 
+/* メインルーチン */
 int main(void)
 {
 	int mtbf, mttr;
@@ -25,7 +26,7 @@ int main(void)
 	printf("MTTR ==> ");
 	scanf("%d", &mttr);
 
-	answer = Operation(mtbf, mttr);
+	answer = Utilization(mtbf, mttr);  /* 実引数は「mtbf, mttr」、戻り値は「answer」 */
 
 	printf("             MTBF\n");
 	printf("稼働率 = ------------- = %.1f %%\n", answer);
@@ -34,15 +35,15 @@ int main(void)
 	return 0;
 }
 
-/* 仮引数 : mtbf, mttr */
-float Operation(int mtbf, int mttr)
+/* サブルーチン */
+float Utilization(int mtbf, int mttr) /* 仮引数は「mtbf, mttr」 */
 {
 	float answer;
 
-	/* 稼働率を求める計算 */
+	/* 稼働率 = 平均故障間隔 ÷ (平均故障間隔 + 平均修理時間) × 100 */
 	answer = (float)mtbf / (mtbf + mttr) * 100;
 
-	/* 戻り値 : answer */
+	/* 戻り値は「answer」 */
 	return answer;
 }
 
@@ -64,11 +65,9 @@ MTBF + MTTR
 */
 
 /*
-【不具合履歴】
-関数の定義にて、
-float Operation(int mtbf, int mttr);
-と記述しており、
-「；」が余計に記述されていたため、
-関数が宣言がされていない状態となっていた、
-「；」を削除して修正した。
+【考察】
+メインルーチンからサブルーチンを呼び出す際に、
+実引数が2つ渡されている、
+プロトタイプ宣言の引数の型の記述と、
+サブルーチンの仮引数の記述も変わるので注意する。
 */

@@ -9,51 +9,49 @@
 */
 #include <stdio.h>
 
-/* 入力の処理をする関数 */
+/* プロトタイプ宣言 */
 int Input_Function(void);
+void Odd_or_Even(int);
 
-/* 奇数・偶数を判定する関数 */
-void Odd_Even_Judgment(int);
-
+/* メインルーチン */
 int main(void)
 {
 	int input;
-	
-	/* 実引数 : なし | 戻り値 : input */
-	input = Input_Function();
 
-	/* 実引数 : input | 戻り値 : なし */
-	Odd_Even_Judgment(input);
+	input = Input_Function(); /* 実引数は「無し」、戻り値は「input」 */
+
+	Odd_or_Even(input);	/* 実引数は「input」、戻り値は「無し」 */
 
 	return 0;
 }
 
-/* 仮引数 : なし */
-int Input_Function(void) {
+/* サブルーチン */
+int Input_Function(void) { /* 仮引数は「無し」 */
 
 	int input;
 
 	printf("整数 ==> ");
 	scanf("%d", &input);
 
-	/* 戻り値 : input */
-	return input;
+	return input; /* 戻り値は「input」 */
 }
 
-/* 仮引数 : input */
-void Odd_Even_Judgment(int input) {
+/* サブルーチン */
+void Odd_or_Even(int input) { /* 仮引数は「input」 */
 
+							  /* 2で割り切れた場合 */
 	if (input % 2 == 0) {
-	
+
 		printf("%d は、偶数です。\n", input);
 	}
+	/* それ以外の場合 */
 	else
 	{
 
 		printf("%d は、奇数です。\n", input);
 	}
 
-	/* 戻り値 : なし */
+	/* 戻り値は「無し」 */
 	return;
 }
 
@@ -65,4 +63,21 @@ void Odd_Even_Judgment(int input) {
 【実行結果2】
 整数 ==> 6
 6 は、偶数です。
+*/
+
+/*
+【考察】
+メインプログラムで
+サブルーチンを2つ呼び出して使用している。
+
+上記の場合、
+プロトタイプ宣言と、
+サブルーチンのプログラムも2つ記述する必要がある。
+
+サブルーチンに引数、
+戻り値が無い場合は、
+データ型をvoid型にして記述する。
+
+Void(ボイド)は、
+「何もない」という意味になる。
 */

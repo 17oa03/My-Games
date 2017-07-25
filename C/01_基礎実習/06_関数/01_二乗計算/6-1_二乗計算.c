@@ -10,7 +10,7 @@
 #include <stdio.h>
 
 /* 関数(サブルーチン)のプロトタイプ宣言 */
-int square(int);
+int Square(int);
 
 /* メイン関数(メインルーチン) */
 int main(void)
@@ -20,21 +20,21 @@ int main(void)
 	printf("整数 ==> ");
 	scanf("%d", &input);
 
-	answer = square(input); /* 実引数は「input」、戻り値は「answer」 */
+	answer = Square(input); /* 実引数は「input」、戻り値は「answer」 */
 
 	printf("%d の二乗は、%d です。\n", input, answer);
 
 	return 0;
 }
 
-int square(int input)/* 仮引数は「input」 */
+/* 関数(サブルーチン) */
+int Square(int input)/* 仮引数は「input」 */
 {
 	int answer;
 
 	answer = input * input;
 
-	/* 戻り値は「answer」 */
-	return answer;
+	return answer; /* 戻り値は「answer」 */
 }
 
 /*

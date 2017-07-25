@@ -11,9 +11,10 @@
 */
 #include <stdio.h>
 
-/* 大文字 ⇔ 小文字変換の処理をする関数 */
+/* プロトタイプ宣言 */
 char Conversion(char);
 
+/* メインルーチン */
 int main(void)
 {
 	char input, answer;
@@ -21,30 +22,33 @@ int main(void)
 	printf("文字 ==> ");
 	scanf("%c", &input);
 
-	/* 実引数 : input | 戻り値 : answer */
-	answer = Conversion(input);
+	answer = Conversion(input); /* 実引数は「input」、戻り値は「answer」 */
 
 	printf("%c の変換後は、%c です。\n", input, answer);
 
 	return 0;
 }
 
-/* 仮引数 = input */
-char Conversion(char input)
+/* サブルーチン */
+char Conversion(char input) /* 仮引数は「input」 */
 {
 	char answer;
 
-	if (input >= 65 && input <= 90) {
+	/* もし"A"(0x41)から"Z"(0x5A)の間にある値の場合 */
+	if (input >= 0x41 && input <= 0x5A) {
 
-		answer = input + 32;
+		/* 0x20を加算して小文字変換 */
+		answer = input + 0x20;
 	}
-	else if (input >= 97 && input <= 122) {
+	/* もし"a"(0x61)から"z"(0x7A)の間にある値の場合 */
+	else if (input >= 0x61 && input <= 0x7A) {
 
-		answer = input - 32;
+		/* 0x20を減算して大文字変換 */
+		answer = input - 0x20;
 	}
 	else
 	{
-
+		/* それ以外の場合は無変換 */
 		answer = input;
 	}
 	/* 戻り値 = answer */
@@ -71,11 +75,24 @@ Z の変換後は、z です。
 */
 
 /*
-【不具合履歴】
-関数のプロトタイプ宣言にて、
-名前の頭文字を大文字で記述していたが、
-関数本体の名前を小文字で記述していた為、
-ビルドエラーが発生した、
-関数本体の名前の頭文字を大文字に記述し、
-不具合を修正しました。
+【考察】
+"A"は、ASCIIコード表より16進数(HEX)で「0x41」、
+"Z"は、ASCIIコード表より16進数(HEX)で「0x5A」、
+"a"は、ASCIIコード表より16進数(HEX)で「0x61」、
+"z"は、ASCIIコード表より16進数(HEX)で「0x7A」になる。
+
+"A"と"a"の差は +0x20、
+"z"と"Z"の差は -0x20。
+
+つまり、
+0x20 を加算すれば小文字変換、
+0x20 を減算すれば大文字変換ができる。
+
+因みに、
+HEX(ヘキサ)は、
+Hexadecimal(ヘキサデシマル)の略称、
+Hexa(ヘキサ)は、
+ギリシャ語で「6」という意味で、
+Decimal(デシマル)は、
+「十進法」という意味になる。
 */

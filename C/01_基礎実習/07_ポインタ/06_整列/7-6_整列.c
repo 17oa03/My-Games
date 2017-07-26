@@ -10,12 +10,12 @@
 #include <stdio.h>
 
 /* マクロ定数の定義 */
-#define YOUSO 5
+#define ELEMENT 5
 
 int main(void)
 {
 	/* ローカル変数と配列の定義 */
-	double data[YOUSO] = { 160.7, 162.8, 155.5, 168.3, 160.1 };
+	double data[ELEMENT] = { 160.7, 162.8, 155.5, 168.3, 160.1 };
 	double temp;
 	int i, j;
 
@@ -25,7 +25,7 @@ int main(void)
 	printf("*** ソート前 ***\n");
 
 	/* ソート前の配列の出力 */
-	for (p_data = data; p_data < data + YOUSO; p_data++) {
+	for (p_data = data; p_data < data + ELEMENT; p_data++) {
 
 		printf(" %3.1f", *p_data);
 	}
@@ -33,8 +33,8 @@ int main(void)
 	printf("\n");
 
 	/* 配列の要素を比較する為のfor文 */
-	for (i = 0, p_data = p_data - YOUSO; i < YOUSO - 1; i++) {
-		for (j = i + 1; j < YOUSO; j++) {
+	for (i = 0, p_data = p_data - ELEMENT; i < ELEMENT - 1; i++) {
+		for (j = i + 1; j < ELEMENT; j++) {
 
 			/* 2つの要素の比較 */
 			if (*(p_data + j) > *(p_data + i)) {
@@ -51,7 +51,7 @@ int main(void)
 	printf("*** ソート後 ***\n");
 
 	/* ソート後の配列の出力 */
-	for (p_data = data; p_data < data + YOUSO; p_data++) {
+	for (p_data = data; p_data < data + ELEMENT; p_data++) {
 
 		printf(" %3.1f", *p_data);
 	}

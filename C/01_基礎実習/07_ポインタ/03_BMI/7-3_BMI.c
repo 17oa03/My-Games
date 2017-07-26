@@ -12,7 +12,7 @@ int main(void)
 {
 	double height, body_weight, bmi; /* 変数の定義 */
 
-	double *p_height, *p_body_weight, *p_bmi; /* ポインタ変数の定義 */
+	double *p_height, *p_body_weight, *p_bmi; /* ポインタ変数の宣言 */
 
 	p_height = &height; /* アドレスセット */
 	p_body_weight = &body_weight;

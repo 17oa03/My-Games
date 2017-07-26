@@ -4,17 +4,13 @@
 奇数か偶数かを判定し結果を出力する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
-/* プロトタイプ宣言 */
-int Input_Function(void);
+int Input_Function(void); /* プロトタイプ宣言 */
 void Odd_or_Even(int);
 
-/* メインルーチン */
-int main(void)
+int main(void) /* メインルーチンの定義 */
 {
 	int input;
 
@@ -25,8 +21,7 @@ int main(void)
 	return 0;
 }
 
-/* サブルーチン */
-int Input_Function(void) { /* 仮引数は「無し」 */
+int Input_Function(void) { /* サブルーチンの定義、仮引数は「無し」 */
 
 	int input;
 
@@ -36,23 +31,20 @@ int Input_Function(void) { /* 仮引数は「無し」 */
 	return input; /* 戻り値は「input」 */
 }
 
-/* サブルーチン */
-void Odd_or_Even(int input) { /* 仮引数は「input」 */
+void Odd_or_Even(int input) /* サブルーチンの定義、仮引数は「input」 */
+{
 
-							  /* 2で割り切れた場合 */
-	if (input % 2 == 0) {
+	if (input % 2 == 0) { /* 2で割り切れた場合 */
 
 		printf("%d は、偶数です。\n", input);
 	}
-	/* それ以外の場合 */
-	else
+	else /* それ以外の場合 */
 	{
 
 		printf("%d は、奇数です。\n", input);
 	}
 
-	/* 戻り値は「無し」 */
-	return;
+	return; /* 戻り値は「無し」 */
 }
 
 /*
@@ -69,8 +61,7 @@ void Odd_or_Even(int input) { /* 仮引数は「input」 */
 【考察】
 メインプログラムにて、
 サブルーチンを2つ呼び出して使用しているので、
-プロトタイプ宣言と、
-サブルーチンのプログラムも2つ記述する必要があった。
+サブルーチンのプロトタイプ宣言と定義も2つ記述する必要がある。
 
 サブルーチンに引数、
 戻り値が無い場合は、

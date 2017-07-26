@@ -6,16 +6,12 @@
 記号、数字の場合は変換せずに出力する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
-/* プロトタイプ宣言 */
-char Conversion(char);
+char Conversion(char); /* プロトタイプ宣言 */
 
-/* メインルーチン */
-int main(void)
+int main(void) /* メインルーチンの定義 */
 {
 	char input, answer;
 
@@ -29,30 +25,25 @@ int main(void)
 	return 0;
 }
 
-/* サブルーチン */
-char Conversion(char input) /* 仮引数は「input」 */
+char Conversion(char input) /* サブルーチンの定義、仮引数は「input」 */
 {
 	char answer;
 
-	/* もし"A"(0x41)から"Z"(0x5A)の間にある値の場合 */
-	if (input >= 0x41 && input <= 0x5A) {
+	if (input >= 0x41 && input <= 0x5A) { /* もし"A"(0x41)から"Z"(0x5A)の間にある値の場合 */
 
-		/* 0x20を加算して小文字変換 */
-		answer = input + 0x20;
+		answer = input + 0x20; /* 0x20を加算して小文字変換 */
 	}
-	/* もし"a"(0x61)から"z"(0x7A)の間にある値の場合 */
-	else if (input >= 0x61 && input <= 0x7A) {
+	else if (input >= 0x61 && input <= 0x7A) { /* もし"a"(0x61)から"z"(0x7A)の間にある値の場合 */
 
-		/* 0x20を減算して大文字変換 */
-		answer = input - 0x20;
+		answer = input - 0x20; /* 0x20を減算して大文字変換 */
 	}
 	else
 	{
-		/* それ以外の場合は無変換 */
-		answer = input;
+
+		answer = input; /* それ以外の場合は無変換 */
 	}
-	/* 戻り値 = answer */
-	return answer;
+
+	return answer; /* 戻り値 = answer */
 }
 
 

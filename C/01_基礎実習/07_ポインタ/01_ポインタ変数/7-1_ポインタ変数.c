@@ -14,7 +14,7 @@ int main(void)
 	float  c;
 	double d;
 
-	char   *p_a; /* ポインタ変数の定義 */
+	char   *p_a; /* ポインタ変数の宣言 */
 	int    *p_b;
 	float  *p_c;
 	double *p_d;
@@ -24,17 +24,17 @@ int main(void)
 	p_c = &c;
 	p_d = &d;
 
-	printf("Please input a ==> "); /* ポインタ変数の参照先に入力 */
-	scanf("%c", p_a);
+	printf("Please input a ==> ");
+	scanf("%c", p_a); /* ポインタ変数の参照先に入力 */
 
 	printf("Please input b ==> ");
-	scanf("%d", p_b);
+	scanf("%d", p_b); /* ポインタ変数の参照先に入力 */
 
 	printf("Please input c ==> ");
-	scanf("%f", p_c);
+	scanf("%f", p_c); /* ポインタ変数の参照先に入力 */
 
 	printf("Please input d ==> ");
-	scanf("%lf", p_d);
+	scanf("%lf", p_d); /* ポインタ変数の参照先に入力 */
 
 	printf("\n変数 アドレス サイズ       値\n"); /* タイトル */
 	printf("---- -------- ------ --------\n");

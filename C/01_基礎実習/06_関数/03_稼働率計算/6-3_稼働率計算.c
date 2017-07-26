@@ -4,29 +4,23 @@
 稼働率(%)を小数点以下第1位まで出力する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
-/* プロトタイプ宣言 */
-float Utilization(int, int);
+float Utilization(int, int); /* プロトタイプ宣言 */
 
-/* メインルーチン */
-int main(void)
+int main(void) /* メインルーチンの定義 */
 {
 	int mtbf, mttr;
 	float answer;
 
-	/* 平均故障間隔(MTBF)の入力 */
 	printf("MTBF ==> ");
-	scanf("%d", &mtbf);
+	scanf("%d", &mtbf); /* 平均故障間隔(MTBF)の入力 */
 
-	/* 平均修理時間(MTTR)の入力 */
 	printf("MTTR ==> ");
-	scanf("%d", &mttr);
+	scanf("%d", &mttr); /* 平均修理時間(MTTR)の入力 */
 
-	answer = Utilization(mtbf, mttr);  /* 実引数は「mtbf, mttr」、戻り値は「answer」 */
+	answer = Utilization(mtbf, mttr); /* 実引数は「mtbf, mttr」、戻り値は「answer」 */
 
 	printf("             MTBF\n");
 	printf("稼働率 = ------------- = %.1f %%\n", answer);
@@ -35,16 +29,13 @@ int main(void)
 	return 0;
 }
 
-/* サブルーチン */
-float Utilization(int mtbf, int mttr) /* 仮引数は「mtbf, mttr」 */
+float Utilization(int mtbf, int mttr) /* サブルーチンの定義、仮引数は「mtbf, mttr」 */
 {
 	float answer;
 
-	/* 稼働率 = 平均故障間隔 ÷ (平均故障間隔 + 平均修理時間) × 100 */
-	answer = (float)mtbf / (mtbf + mttr) * 100;
+	answer = (float)mtbf / (mtbf + mttr) * 100; /* 稼働率 = 平均故障間隔 ÷ (平均故障間隔 + 平均修理時間) × 100 */
 
-	/* 戻り値は「answer」 */
-	return answer;
+	return answer; /* 戻り値は「answer」 */
 }
 
 

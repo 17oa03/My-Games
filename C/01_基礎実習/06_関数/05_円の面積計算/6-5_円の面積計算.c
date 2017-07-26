@@ -4,23 +4,18 @@
 面の面積を小数点以下第2位まで出力する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
-/* プロトタイプ宣言 */
 int    Input(void);         /* 半径入力 */
 double Calculate(int);      /* 面積計算 */
 void   Output(int, double); /* 半径と面積の出力 */
 
 int main(void)
 {
-	/* 半径 */
-	int radius;
+	int radius; /* 半径 */
 
-	/* 面積 */
-	double area;
+	double area; /* 面積 */
 
 	radius = Input(); /* 実引数は「無し」、戻り値は「radius」 */
 
@@ -31,32 +26,26 @@ int main(void)
 	return 0;
 }
 
-/* サブルーチン */
-int Input(void) /* 仮引数は「無し」 */
+int Input(void) /* サブルーチン 、仮引数は「無し」 */
 {
-	/* 半径 */
-	int radius;
+	int radius; /* 半径 */
 
 	printf("半径 ==> ");
-	scanf("%d", &radius);
+	scanf("%d", &radius); /* 半径入力 */
 
 	return radius; /* 戻り値は「radius」 */
 }
 
-/* サブルーチン */
-double Calculate(int radius) /* 仮引数は「radius」 */
+double Calculate(int radius) /* サブルーチンの定義、仮引数は「radius」 */
 {
-	/* 面積 */
-	double area;
+	double area; /* 面積 */
 
-	/* 面積の計算 */
-	area = (double)radius * radius * 3.14;
+	area = (double)radius * radius * 3.14; /* 面積の計算 */
 
 	return area; /* 戻り値は「area」 */
 }
 
-/* サブルーチン */
-void Output(int radius, double area) /* 仮引数は「area」 */
+void Output(int radius, double area) /* サブルーチンの定義、仮引数は「area」 */
 {
 	printf("半径 %d の円の面積は %.2f です。\n", radius, area);
 
@@ -75,20 +64,17 @@ void Output(int radius, double area) /* 仮引数は「area」 */
 
 /*
 【考察】
-今回は、
 引数と戻り値のデータ型に注意しながら
-プログラムを記述する必要があった。
+プログラムを記述する必要がある。
 
-戻り値が無い
-関数のプログラムに関して、
-「return;」の記述が無くても
+戻り値が無い関数のプログラムに関して、
+「return;(プログラムの終了コード)」の記述が無くても
 プログラムは動作するが、
 「制御を戻す」という意味で
 文法的には記述が必要になる。
 
 また、
-「return;」の記述が無い場合は、
-サブルーチンが動作したままに
-なってしまうという理由で、
+「return;(プログラムの終了コード)」の記述が無い場合は、
+サブルーチンが動作したままになってしまうという理由で、
 記述は必要になる。
 */

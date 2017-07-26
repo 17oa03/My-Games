@@ -12,17 +12,17 @@ int main(void)
 {
 	int input1, input2, answer;/* 変数の定義 */
 
-	int *p_input1, *p_input2, *p_answer; /* ポインタ変数の定義 */
+	int *p_input1, *p_input2, *p_answer; /* ポインタ変数の宣言 */
 
 	p_input1 = &input1; /* アドレスセット */
 	p_input2 = &input2;
 	p_answer = &answer;
 
-	printf("1つ目の整数を入力してください ==> "); /* ポインタ変数の参照先に入力 */
-	scanf("%d", p_input1);
+	printf("1つ目の整数を入力してください ==> ");
+	scanf("%d", p_input1); /* ポインタ変数の参照先に入力 */
 
 	printf("2つ目の整数を入力してください ==> ");
-	scanf("%d", p_input2);
+	scanf("%d", p_input2); /* ポインタ変数の参照先に入力 */
 
 	*p_answer = *p_input1 + *p_input2; /* 間接演算子でアクセス先の値を参照し、演算結果を代入 */
 
@@ -41,5 +41,5 @@ int main(void)
 /*
 【考察】
 ポインタ変数と間接演算子を使って演算し、
-結果を他のポインタ変数に代入することができる。
+結果を別のポインタ変数に代入することができる。
 */

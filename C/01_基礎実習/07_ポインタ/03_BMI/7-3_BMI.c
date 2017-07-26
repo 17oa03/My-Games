@@ -5,37 +5,28 @@
 BMIを小数点以下2桁まで出力する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
 int main(void)
 {
-	/* ローカル変数の定義 */
-	double height, body_weight, bmi;
+	double height, body_weight, bmi; /* 変数の定義 */
 
-	/* ポインタ変数の定義 */
-	double *p_height, *p_body_weight, *p_bmi;
+	double *p_height, *p_body_weight, *p_bmi; /* ポインタ変数の定義 */
 
-	/* アドレスセット */
-	p_height = &height;
+	p_height = &height; /* アドレスセット */
 	p_body_weight = &body_weight;
 	p_bmi = &bmi;
 
-	/* 身長の入力 */
-	printf("身長(m) ==> ");
+	printf("身長(m) ==> "); /* 身長の入力 */
 	scanf("%lf", p_height);
 
-	/* 体重の入力 */
-	printf("体重(kg) ==> ");
+	printf("体重(kg) ==> "); /* 体重の入力 */
 	scanf("%lf", p_body_weight);
 	
-	/* 間接演算子でアクセス先の値を参照して計算する */
-	*p_bmi = *p_body_weight / (*p_height * *p_height);
+	*p_bmi = *p_body_weight / (*p_height * *p_height); /* 間接演算子でアクセス先の値を参照して計算する */
 
-	/* BMIの出力 */
-	printf("BMIは %.2f です。\n", *p_bmi);
+	printf("BMIは %.2f です。\n", *p_bmi); /* BMIの出力 */
 
 	return 0;
 }
@@ -50,4 +41,9 @@ BMIは 22.24 です。
 身長(m) ==> 1.8
 体重(kg) ==> 55.5
 BMIは 17.13 です。
+*/
+
+/*
+【考察】
+「7-2_ポインタを使った演算」の応用になる。
 */

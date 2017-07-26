@@ -4,71 +4,62 @@
 ポインタ変数を使用して交換する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
-/* マクロ定数の定義 */
-#define YOUSO 10
+#define ELEMENT 10 /* マクロ定数の定義 */
 
 int main(void)
 {
-	/* ローカル変数と配列の定義 */
-	int array1[YOUSO] = { 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 };
-	int array2[YOUSO] = { 3, 6, 9, 12, 15, 18, 21, 24, 27, 30 };
-	int temp[YOUSO];
-	int i;
+	int array1[ELEMENT] = { 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 }; /* 配列変数の定義と初期化 */
+	int array2[ELEMENT] = { 3, 6, 9, 12, 15, 18, 21, 24, 27, 30 };
+	int tmp[ELEMENT];
 
-	/* ポインタ変数の定義 */
-	int *p_array1;
+	int i; /* カウンタ変数の定義 */
+
+	int *p_array1; /* ポインタ変数の宣言 */
 	int *p_array2;
-	int *p_temp;
+	int *p_tmp;
 
-	/* アドレスセット */
-	p_array1 = array1; /* 配列の先頭アドレスをセットしています。 */
+	p_array1 = array1; /* 配列変数の先頭アドレスをセット */
 	p_array2 = array2;
-	p_temp = temp;
+	p_tmp = tmp;
 
 	printf("*** 交換前 ***\n");
 	printf("array1 = ");
 
-	/* 交換前の配列array1の出力と、配列tempへの代入 */
-	for (i = 0; i < YOUSO; i++) {
+	for (i = 0; i < ELEMENT; i++) {
 
-		printf("%3d", *(p_array1 + i));
-		*(p_temp + i) = *(p_array1 + i);
+		printf("%3d", *(p_array1 + i)); /* 交換前の「p_array1」の参照する値を出力 */
+		*(p_tmp + i) = *(p_array1 + i); /* 「p_array1」の参照する値を「p_tmp」の参照先に代入 */
 	}
 
 	printf("\n");
 	printf("array2 = ");
 
-	/* 交換前の配列array2の出力と、配列array1への代入 */
-	for (i = 0; i < YOUSO; i++) {
+	for (i = 0; i < ELEMENT; i++) {
 
-		printf("%3d", *(p_array2 + i));
-		*(p_array1 + i) = *(p_array2 + i);
+		printf("%3d", *(p_array2 + i)); /* 交換前の「p_array2」の参照する値を出力 */
+		*(p_array1 + i) = *(p_array2 + i); /* 「p_array2」の参照する値を「p_array1」の参照先に代入 */
 	}
-	
+
 	printf("\n*** 交換後 ***\n");
 	printf("array1 = ");
 
-	/* 交換後の配列array1の出力 */
-	for (i = 0; i < YOUSO; i++) {
+	for (i = 0; i < ELEMENT; i++) {
 
-		printf("%3d", *(p_array1 + i));
+		printf("%3d", *(p_array1 + i)); /* 交換後の「p_array1」の参照する値を出力 */
 	}
 
 	printf("\n");
 	printf("array2 = ");
 
-	/* 交換後に配列array2の出力 */
-	for (i = 0; i < YOUSO; i++) {
+	for (i = 0; i < ELEMENT; i++) {
 
-		*(p_array2 + i) = *(p_temp + i);
-		printf("%3d", *(p_array2 + i));
+		*(p_array2 + i) = *(p_tmp + i); /* 「p_tmp」の参照する値を「p_array2」の参照先に代入 */
+		printf("%3d", *(p_array2 + i)); /* 交換後の「p_array2」の参照する値を出力 */
 	}
-	
+
 	printf("\n");
 
 	return 0;
@@ -85,6 +76,9 @@ array2 =   2  4  6  8 10 12 14 16 18 20
 */
 
 /*
-【メモ】
-「i」と「1」を間違えやすいので注意！
+【考察】
+ポインタ変数を使ったデータ交換になる、
+for文の処理で、
+「間接演算子(ポインタ変数 + カウンタ変数)」を記述し、
+参照先である配列変数の値を交換しながらループをさせる。
 */

@@ -4,28 +4,22 @@
 データを交換し出力する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
-/* データ交換する関数 */
-void swap(int *, int *);
+void swap(int *, int *); /* データ交換する関数 */
 
 int main(void)
 {
-	/* ローカル変数と配列の定義 */
 	int input1, input2;
 
-	/* 入力処理 */
 	printf("整数1 ==> ");
 	scanf("%d", &input1);
 
 	printf("整数2 ==> ");
 	scanf("%d", &input2);
 
-	/* 実引数 : &input1, &input2 | 戻り値 : なし*/
-	swap(&input1, &input2);
+	swap(&input1, &input2); /* 実引数は「&input1, &input2」、戻り値は「無し」*/
 
 	printf("\n交換後\n");
 	printf("整数 = %d\n", input1);
@@ -34,18 +28,15 @@ int main(void)
 	return 0;
 }
 
-/* 仮引数 : int *p_input1, int *p_input2 */
-void swap(int *p_input1, int *p_input2) 
+void swap(int *p_input1, int *p_input2) /* 仮引数は「int *p_input1, int *p_input2」 */
 {
 	int temp;
 
-	/* データ交換の処理 */
-	temp = *p_input1;
+	temp = *p_input1; /* データ交換の処理 */
 	*p_input1 = *p_input2;
 	*p_input2 = temp;
 
-	/* 戻り値 : なし */
-	return;
+	return; /* 戻り値は「なし」 */
 }
 
 /*
@@ -59,7 +50,12 @@ void swap(int *p_input1, int *p_input2)
 */
 
 /*
-【メモ】
-実引数ではアドレス演算子、
-仮引数では間接演算子を使用している。
+【考察】
+サブルーチンにアドレスを渡し、
+ポインタ変数と間接演算子を使って、
+データ交換を行っている。
+
+これにより、
+戻り値が無くても、
+データ交換の処理が可能となっている。
 */

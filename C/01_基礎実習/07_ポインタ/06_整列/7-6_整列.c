@@ -4,54 +4,45 @@
 ポインタ変数を使用して降順に並べ替える。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
-/* マクロ定数の定義 */
-#define ELEMENT 5
+#define ELEMENT 5 /* マクロ定数の定義 */
 
 int main(void)
 {
-	/* ローカル変数と配列の定義 */
-	double data[ELEMENT] = { 160.7, 162.8, 155.5, 168.3, 160.1 };
-	double temp;
-	int i, j;
+	double data[ELEMENT] = { 160.7, 162.8, 155.5, 168.3, 160.1 }; /* 配列の定義と初期化 */
 
-	/* ポインタ変数の定義 */
-	double *p_data;
+	double temp; /* 一時的にデータを保存する変数 */
+
+	int i, j; /* カウンタ変数 */
+
+	double *p_data; /* ポインタ変数の定義 */
 
 	printf("*** ソート前 ***\n");
 
-	/* ソート前の配列の出力 */
-	for (p_data = data; p_data < data + ELEMENT; p_data++) {
+	for (p_data = data; p_data < data + ELEMENT; p_data++) { /* ソート前の出力 */
 
 		printf(" %3.1f", *p_data);
 	}
-	
+
 	printf("\n");
 
-	/* 配列の要素を比較する為のfor文 */
-	for (i = 0, p_data = p_data - ELEMENT; i < ELEMENT - 1; i++) {
+	for (i = 0, p_data = p_data - ELEMENT; i < ELEMENT - 1; i++) { /* ソート処理 */
 		for (j = i + 1; j < ELEMENT; j++) {
 
-			/* 2つの要素の比較 */
-			if (*(p_data + j) > *(p_data + i)) {
+			if (*(p_data + j) > *(p_data + i)) { /* 要素の比較 */
 
-				/* ソート処理 */
-				temp = *(p_data + j);
+				temp = *(p_data + j); /* データ交換 */
 				*(p_data + j) = *(p_data + i);
 				*(p_data + i) = temp;
-
 			}
 		}
 	}
 
 	printf("*** ソート後 ***\n");
 
-	/* ソート後の配列の出力 */
-	for (p_data = data; p_data < data + ELEMENT; p_data++) {
+	for (p_data = data; p_data < data + ELEMENT; p_data++) { /* ソート後の出力 */
 
 		printf(" %3.1f", *p_data);
 	}
@@ -70,9 +61,6 @@ int main(void)
 */
 
 /*
-【メモ】
-ループが思い通りに処理されない時は、
-printf関数を使用したデバッグライトが有効的、
-気になるループ処理の前後にprintf関数の出力を挟むと、
-どのような処理がされているか把握しやすい。
+【考察】
+「7-5_配列要素の交換」の応用になる。
 */

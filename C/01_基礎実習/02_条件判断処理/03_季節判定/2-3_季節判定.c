@@ -3,9 +3,7 @@
 月(1月～12月)を入力し、季節(春、夏、秋、冬)を出力する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
 int main(void)
@@ -13,9 +11,9 @@ int main(void)
 	int month;
 
 	printf("月 ==> ");
-	scanf("%d", &month);
+	scanf("%d", &month); /* 月の入力 */
 
-	switch (month) {
+	switch (month) { /* switch文で月別に分岐処理ができる */
 
 	case 3: case 4: case 5:
 		printf("%d月は、春です。\n", month);

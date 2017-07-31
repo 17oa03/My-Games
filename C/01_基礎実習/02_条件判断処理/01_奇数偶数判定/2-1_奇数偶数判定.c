@@ -3,26 +3,25 @@
 整数を入力し、if文を使って奇数か偶数かを判定し結果を出力する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
 int main(void)
 {
-	int seisu;
-	int amari;
+	int seisu, amari;
 
 	printf("整数 ==> ");
 	scanf("%d", &seisu);
 
 	amari = seisu % 2;
 
-	if (amari == 1) { /* 条件式の「=」と「==」を間違えやすい。 */
+	if (amari == 1) { /* 「amari」が「1」だった場合 */
+
 		printf("%dは、奇数です。\n", seisu);
 	}
-	else
+	else /* それ以外の場合 */
 	{
+
 		printf("%dは、偶数です。\n", seisu);
 	}
 

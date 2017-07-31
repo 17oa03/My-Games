@@ -4,9 +4,7 @@
 ただし論理演算子(&&,||)を使用し、1つのif文で記述すること。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
 int main(void)
@@ -14,13 +12,15 @@ int main(void)
 	int seireki;
 
 	printf("西暦4桁 ==> ");
-	scanf("%d", &seireki);
+	scanf("%d", &seireki); /* 西暦入力 */
 
 	if (seireki % 400 == 0 || (seireki % 4 == 0 && !(seireki % 100 == 0))) {
+
 		printf("%d年は、閏年です。\n", seireki);
 	}
 	else
 	{
+
 		printf("%d年は、閏年ではありません。\n", seireki);
 	}
 

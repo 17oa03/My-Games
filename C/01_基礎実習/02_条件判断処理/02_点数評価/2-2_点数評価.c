@@ -3,9 +3,7 @@
 試験の点数を整数で入力し、評価(A,B,C,D)を出力する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
 int main(void)
@@ -13,21 +11,21 @@ int main(void)
 	int tensu;
 
 	printf("点数 ==> ");
-	scanf("%d", &tensu);
+	scanf("%d", &tensu); /* 点数の入力 */
 
-	if (tensu > 100 || tensu < 0) {
+	if (tensu > 100 || tensu < 0) { /* もし「tensu」が「100」より大きい、または「0」未満の場合 */
 		printf("正しい値を入力して下さい。\n");
 	}
-	else if (tensu >= 80) {
+	else if (tensu >= 80) { /* もし「tensu」が「80」以上の場合 */
 		printf("%d点、評価は「A」です。\n", tensu);
 	}
-	else if (tensu >= 70) {
+	else if (tensu >= 70) { /* もし「tensu」が「70」以上の場合 */
 		printf("%d点、評価は「B」です。\n", tensu);
 	}
-	else if (tensu >= 60) {
+	else if (tensu >= 60) { /* もし「tensu」が「60」以上の場合 */
 		printf("%d点、評価は「C」です。\n", tensu);
 	}
-	else if (tensu >= 0) {
+	else if (tensu >= 0) { /* もし「tensu」が「0」以上の場合 */
 		printf("%d点、評価は「D」です。\n", tensu);
 	}
 
@@ -62,5 +60,4 @@ int main(void)
 【実行結果7】
 点数 ==> 101
 正しい値を入力して下さい。
-
 */

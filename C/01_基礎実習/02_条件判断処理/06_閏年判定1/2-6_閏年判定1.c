@@ -1,12 +1,11 @@
 /*
 【プログラム概要】
 西暦を入力し、閏年か否かを出力する。
-ただし複数のif文を使用し、論理演算子(&&,||)は使用不可とする。
+ただし複数のif文を使用し、
+論理演算子(&&,||)は使用不可とする。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
 int main(void)
@@ -14,30 +13,35 @@ int main(void)
 	int seireki1, seireki2;
 
 	printf("西暦4桁 ==> ");
-	scanf("%d", &seireki1);
+	scanf("%d", &seireki1); /* 西暦入力 */
 
 	seireki2 = seireki1 % 400;
 
-	if (seireki2 == 0) {
+	if (seireki2 == 0) { /* もし「seireki2」が「0」の場合 */
+
 		printf("%d年は、閏年です。\n", seireki1);
 	}
-	else
+	else /* それ以外の場合 */
 	{
+
 		seireki2 = seireki1 % 4;
-		if (seireki2 == 0) {
+
+		if (seireki2 == 0) { /* もし「seireki2」が「0」の場合 */
 
 			seireki2 = seireki1 % 100;
 
-			if (seireki2 == 0) {
+			if (seireki2 == 0) { /* もし「seireki2」が「0」の場合 */
 				printf("%d年は、閏年ではありません。\n", seireki1);
 			}
-			else
+			else /* それ以外の場合 */
 			{
+
 				printf("%d年は、閏年です。\n", seireki1);
 			}
 		}
-		else
+		else /* それ以外の場合 */
 		{
+
 			printf("%d年は、閏年ではありません。\n", seireki1);
 		}
 	}

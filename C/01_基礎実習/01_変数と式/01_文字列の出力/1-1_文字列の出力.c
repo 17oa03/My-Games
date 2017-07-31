@@ -3,14 +3,12 @@
 printf関数で文字列を出力する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
 int main(void)
 {
-	printf("Hello, work!\n"); /* printf関数 */
+	printf("Hello, work!\n"); /* printf()関数の「"」で囲んだ部分が表示される、「\n」は改行 */
 
 	return 0;
 }

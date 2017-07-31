@@ -3,14 +3,12 @@
 scamf関数で2つの整数を入力し、和、差、積、商、余りを計算し、計算結果を出力する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
 int main(void)
 {
-	int seisu1, seisu2, kotae1, kotae2, kotae3, kotae4, kotae5;
+	int seisu1, seisu2, kotae1, kotae2, kotae3, kotae4, kotae5; /* 変数の定義 */
 
 	printf("1つ目の整数を入力して下さい ==> ");
 	scanf("%d", &seisu1); /* scanf関数による整数入力 */

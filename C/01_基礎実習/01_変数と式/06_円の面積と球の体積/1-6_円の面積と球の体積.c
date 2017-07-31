@@ -3,21 +3,20 @@
 ”¼Œa‚ğ“ü—Í‚µA‰~‚Ì–ÊÏ‚Æ‹…‚Ì‘ÌÏ‚ğ¬”“_ˆÈ‰º1Œ…‚Ü‚Åo—Í‚·‚éB
 */
 
-/*
-yƒvƒƒOƒ‰ƒ€z
-*/
+/*yƒvƒƒOƒ‰ƒ€z*/
 #include <stdio.h>
 
 int main(void)
 {
-	int radius;
-	double area, volume;
+	int radius; /* ”¼Œa */
+
+	double area, volume; /* ‰~‚Æ‹…‚Ì–ÊÏ */
 
 	printf("”¼Œa ==> ");
-	scanf("%d", &radius);
+	scanf("%d", &radius); /* ”¼Œa‚Ì“ü—Í */
 
-	area = radius * radius * 3.14;
-	volume = (4.0 / 3) * radius * radius * radius * 3.14;
+	area   = radius * radius * 3.14; /* ‰~‚Ì–ÊÏ‚ÌŒvZ */
+	volume = (4.0 / 3) * radius * radius * radius * 3.14; /* ‹…‚Ì–ÊÏ‚ÌŒvZ */
 
 	printf("”¼Œa%d‚Ì‰~‚Ì–ÊÏ‚Í%3.1f‚Å‚·B\n", radius, area);
 	printf("”¼Œa%d‚Ì‹…‚Ì–ÊÏ‚Í%4.1f‚Å‚·B\n", radius, volume);

@@ -4,29 +4,28 @@
 「*」を使って長方形を出力する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
 int main(void)
 {
-	int i, j;
+	int i, j; /* カウンタ変数 */
+
 	int input1, input2;
 
 	printf("たて ==> ");
-	scanf("%d", &input1);
+	scanf("%d", &input1); /* 入力 */
 
 	printf("よこ ==> ");
-	scanf("%d", &input2);
+	scanf("%d", &input2); /* 入力 */
 
-	for (i = 0; i < input1; i++){
-		for (j = 0; j < input2; j++){
+	for (i = 0; i < input1; i++){ /* たて */
+		for (j = 0; j < input2; j++){ /* よこ */
 
 			printf("*");
 		}
 
-		printf("\n");
+		printf("\n"); /* 改行 */
 	}
 
 	return 0;

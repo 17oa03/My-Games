@@ -4,32 +4,33 @@
 配列は使用不可です。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
 int main(void)
 {
 	int input, max, min;
-	int i;
+
+	int i; /* カウンタ変数 */
 
 	printf("整数 ==> ");
-	scanf("%d", &input);
+	scanf("%d", &input); /* 入力 */
 
 	max = input;
 	min = input;
 
-	for (i = 0; i < 4; i++) {
+	for (i = 0; i < 4; i++) { /* 入力数 */
 
 		printf("整数 ==> ");
 		scanf("%d", &input);
 
-		if (max < input) {
+		if (max < input) { /* 最大値より入力値が大きい場合 */
+
 			max = input;
 		}
 
-		if (min > input) {
+		if (min > input) { /* 最小値より入力値が小さい場合 */
+
 			min = input;
 		}
 	}

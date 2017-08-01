@@ -3,23 +3,23 @@
 整数を入力し、その階乗を出力する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
 int main(void)
 {
 	int input;
-	int total = 1;
-	int i;
+
+	int total = 1; /* 「0」で初期化すると階乗が計算できない */
+
+	int i; /* カウンタ変数 */
 
 	printf("整数 ==> ");
-	scanf("%d", &input);
+	scanf("%d", &input); /* 入力 */
 
 	for(i = input; i >= 1; i--) {
 	
-		total *= i;
+		total *= i; /* 「total = total * i;」と同じ */
 	}
 
 	printf("%d の階乗は %d です。\n", input, total);

@@ -3,17 +3,16 @@
 掛け算の九九表を出力する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
 int main(void)
 {
-	int i, j;
+	int i, j; /* カウンタ変数 */
+
 	int kotae;
 
-	for (i = 1; i <= 9; i++){
+	for (i = 1; i <= 9; i++){ /* 「i」の段 */
 		for (j = 1; j <= 9; j++){
 
 			kotae = i * j;
@@ -21,7 +20,7 @@ int main(void)
 			printf("%4d", kotae);
 		}
 
-		printf("\n");
+		printf("\n"); /* 改行 */
 	}
 
 	return 0;

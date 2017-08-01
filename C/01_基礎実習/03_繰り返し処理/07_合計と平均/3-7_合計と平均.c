@@ -5,34 +5,38 @@
 合計と平均(小数点以下第2位まで)を出力する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
 int main(void)
 {
-	int input = 0;
-	int total = 0;
-	int count = 0;
-	double average;
+	int input = 0; /* 入力値 */
 
-	while (input >= 0) {
+	int total = 0; /* 合計値 */
+
+	int count = 0; /* 入力数 */
+
+	double average; /* 平均値 */
+
+	while (input >= 0) { /* 入力値が「0」以上でループ */
 
 		printf("整数 ==> ");
-		scanf("%d", &input);
+		scanf("%d", &input); /* 入力 */
 
-		if (input >= 0) {
+		if (input >= 0) { /* 入力値が「0」以上の場合 */
 
-			total += input;
-			count++;
+			total += input; /* 「total = total + input;」と同じ */
+
+			count++; /* 入力数にインクリメント */
 		}
 	}
 
 	printf("合計 = %d\n", total);
 
-	if (count != 0) {
-		average = (double)total / count;
+	if (count != 0) { /* 入力数が「0」でない場合 */
+
+		average = (double)total / count; /* 「double」でキャストして平均値の計算 */
+
 		printf("平均 = %.2f\n", average);
 	}
 

@@ -4,9 +4,7 @@
 while文を用いて合計を出力する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
 int main(void)
@@ -15,13 +13,15 @@ int main(void)
 	int gokei = 0;
 
 	printf("整数 ==> ");
-	scanf("%d", &seisu1);
+	scanf("%d", &seisu1); /* 入力 */
 
-	seisu2 = seisu1;
+	seisu2 = seisu1; /* 代入 */
 
-	while (seisu2 != 0) {
-		gokei += seisu2;
-		seisu2 -= 1;
+	while (seisu2 != 0) { /* seisu2 が 0 になるまでループ */
+
+		gokei += seisu2; /* 「gokei = gokei + seisu2;」と同じ */
+
+		seisu2--; /* seisu2 をデクリメント(-1) */
 	}
 
 	printf("1 から %d までの合計は %d です。\n", seisu1, gokei);

@@ -4,19 +4,18 @@
 合計を出力する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
 int main(void)
 {
 	int gokei = 0;
+
 	int i; /* カウンタ変数 */
 
-	for (i = 0; i <= 10; ++i) /* 初期化; 継続条件; カウンタ変数の更新(今回は、前置インクリメント演算子を使用) */
+	for (i = 0; i <= 10; ++i) /* for (初期化式; 条件式; 再初期化式){ 処理 } */
 	{
-		gokei += i; /* gokei = gokei + iと同じ処理になります。 */
+		gokei += i; /* 「gokei = gokei + i」と同じ */
 	}
 
 	printf("1から10までの合計は%dです。\n", gokei);

@@ -7,44 +7,34 @@ char型配列に初期化したパスワード(文字列)と比較し、
 標準出力に出力する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
 int main(void)
 {
-	/* 文字配列の定義 */
-	char password[] = "Tokyo";
+	char password[] = "Tokyo"; /* 文字配列の初期化 */
 	char input[256];
 
-	/* パスワード一致フラグ( 0 : OFF(不一致), 1 : ON(一致) */
-	int match_flag = 0;
+	int match_flag = 0;	/* パスワード一致フラグ(OFF(不一致) = 0, ON(一致) = 1) */
 
-	/* カウンタ変数の定義 */
-	int i;
+	int i; /* カウンタ変数の定義 */
 
-	/* 入力処理 */
 	printf("パスワードを入力してください ==> ");
-	scanf("%s", input);
+	scanf("%s", input); /* 入力 */
 
-	/* 2つの文字列が等しい間、かつ、フラグがOFFで繰り返す。 */
-	for (i = 0; password[i] == input[i] && match_flag == 0; i++) {
+	for (i = 0; password[i] == input[i] && match_flag == 0; i++) { /* 文字列の一致確認 */
 
-		/* 一致する文字でかつNULL文字'\0'が見付かった。 */
-		if (input[i] == '\0') {
+		if (input[i] == '\0') {/* 文字数の一致確認 */
 
-			/* パスワード一致フラグをONにする。 */
-			match_flag++;
+			match_flag = 1; /* パスワード一致フラグON */
 		}
 	}
 
-	/* パスワードの一致確認 */
-	if (match_flag != 0) {
+	if (match_flag != 0) { /* パスワードが一致している場合 */
 
 		printf("パスワード一致\n");
 	}
-	else
+	else /* それ以外の場合 */
 	{
 
 		printf("パスワード不一致\n");
@@ -52,7 +42,6 @@ int main(void)
 
 	return 0;
 }
-
 
 /*
 【実行結果1】
@@ -78,12 +67,4 @@ int main(void)
 【実行結果6】
 パスワードを入力してください ==> To
 パスワード不一致
-*/
-
-/*
-【メモ】
-同じ文字だが、
-文字数が違った場合の対策として、
-for文で文字を比較した後に、
-入力した文字配列にNULL文字があるか判定している。
 */

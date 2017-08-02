@@ -8,25 +8,23 @@
 「実行ファイル名 < data1.txt > data2.txt」を入力する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
 int main(void)
 {
 	int seisu;
+
 	int gokei = 0;
-	int end_flag;
+
+	int end_flag; /* ファイル終端フラグ */
 
 	end_flag = scanf("%d", &seisu);
 
 	while (end_flag != EOF) {
-		/* EOF(End Of File)は、
-		   ファイルの終わりを示す制御コードのことで、
-		   EOFは標準ヘッダファイル(stdio.h)内で「-1」としてマクロ置換されています。 */
 		
 		gokei += seisu;
+
 		end_flag = scanf("%d", &seisu);
 	}
 
@@ -46,4 +44,12 @@ int main(void)
 ^Z
 ^Z
 256
+*/
+
+/*
+【考察】
+EOF(End Of File)は、
+ファイルの終わりを示す制御コードのことで、
+EOFは標準ヘッダファイル(stdio.h)で
+「-1」としてマクロ定義されている。
 */

@@ -5,25 +5,26 @@
 
 ※コマンドプロンプトにて、
 　「実行ファイル名 < bmi1.dat > bmi2.dat」を入力する。
-*/
+ */
 
-/*
-【プログラム】
-*/
+ /*【プログラム】*/
 #include <stdio.h>
 
 int main(void)
 {
 	int num;
+
 	double sintyo, taiju;
-	int end_flag;
 
-	end_flag = scanf("%d %lf %lf", &num, &sintyo, &taiju);
+	int end_flag; /* ファイル終端フラグ */
 
-	while (end_flag != EOF) {
+	end_flag = scanf("%d %lf %lf", &num, &sintyo, &taiju); /* 入力 */
 
-		printf("%d %.2f %.1lf \n", num, sintyo, taiju);
-		end_flag = scanf("%d %lf %lf", &num, &sintyo, &taiju);
+	while (end_flag != EOF) { /* ファイル終端までループ */
+
+		printf("%d %.2f %.1f \n", num, sintyo, taiju);
+
+		end_flag = scanf("%d %lf %lf", &num, &sintyo, &taiju); /* 入力 */
 	}
 
 	return 0;

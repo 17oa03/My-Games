@@ -6,32 +6,32 @@
 ※変換前と変換後の要素を出力する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
-#define ROW 3 /* 変換前の行(縦,y)の要素数です。 */
-#define COLUMN 5 /* 変換前の列(横,x)の要素数です。 */
+#define ROW 3    /* 行の要素数 */
+#define COLUMN 5 /* 列の要素数 */
 
 int main(void)
 {
-	int array1[ROW][COLUMN] = {
+	int array1[ROW][COLUMN] = { /* 2次元配列の初期化 */
 		{  1,  2,  3,  4,  5 },
 		{  6,  7,  8,  9, 10 },
 		{ 11, 12, 13, 14, 15 },
 	};
 
-	int array2[COLUMN][ROW];
-	int i, j;
+	int array2[COLUMN][ROW]; /* 配列「array1」と逆の要素数をもつ2次元配列 */
 
-	printf("*** 変換前 array1[%d][%d] ***\n", ROW, COLUMN); /* マクロ定数もprintf関数で出力できる。 */
+	int i, j; /* カウンタ変数 */
+
+	printf("*** 変換前 array1[%d][%d] ***\n", ROW, COLUMN); /* マクロ定数をprintf関数で出力 */
 
 	for (i = 0; i < ROW; i++) {
-		for (j = 0; j < COLUMN; j++) { /*[0][0]→[0][1]→[0][2]と繰り返し、2次元配列の要素を全て参照できる。 */
+		for (j = 0; j < COLUMN; j++) { /* [0][0]→[0][1]→[0][2]とループ、2次元配列の要素を全て参照できる */
 
-			printf("%3d", array1[i][j]);
-			array2[j][i] = array1[i][j]; /* 2次元配列の添字を指定しているカウンタ変数を入れ換える。 */
+			printf("%3d", array1[i][j]); /* 行列変換前の出力 */
+
+			array2[j][i] = array1[i][j]; /* 行列変換処理 */
 		}
 
 		printf("\n");
@@ -43,7 +43,7 @@ int main(void)
 	for (i = 0; i < COLUMN; i++) {
 		for (j = 0; j < ROW; j++) {
 
-			printf("%3d", array2[i][j]);
+			printf("%3d", array2[i][j]); /* 行列変換後の出力 */
 		}
 
 		printf("\n");
@@ -65,16 +65,4 @@ int main(void)
 3  8 13
 4  9 14
 5 10 15
-*/
-
-/*
-【不具合履歴】
-int array2[ROW][COLUMN]と書いていた為、
-配列の許される添字範囲を超えて代入していた、
-上記の場合、下記のデバッグエラーが発生した。
-
-Run-Time Check Failure #2 - Stack around the variable 'array1' was corrupted.
-
-int array2[COLUMN][ROW]と書き直し、
-不具合を修正した。
 */

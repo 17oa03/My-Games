@@ -4,54 +4,54 @@
 確認のため交換前と交換後の配列の要素を出力する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
-#define YOUSO 10 /* 文字列「YOUSO」を文字列「10」に置き換えます。 */
+#define ELEMENT 10 /* 文字列「ELEMENT」を文字列「10」にマクロ置換 */
 
 int main(void)
 {
-	int array1[YOUSO] = { 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 };
-	int array2[YOUSO] = { 3, 6, 9, 12, 15, 18, 21, 24, 27, 30 };
-	int temp[YOUSO];
-	int i;
+	int array1[ELEMENT] = { 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 }; /* 配列の初期化 */
+	int array2[ELEMENT] = { 3, 6, 9, 12, 15, 18, 21, 24, 27, 30 };
+
+	int tmp[ELEMENT]; /* 一時的にデータを保存する配列 */
+
+	int i; /* カウンタ変数 */
 
 	printf("*** 交換前 ***\n");
 	printf("array1 = ");
 
-	for (i = 0; i < YOUSO; i++) {
+	for (i = 0; i < ELEMENT; i++) {
 
-		printf("%3d", array1[i]); /* 配列ary1の交換前の出力 */
-		temp[i] = array1[i]; /* 配列ary1のデータを別の配列tmpに一時的に保存する。 */
+		printf("%3d", array1[i]); /* 配列「array1」の交換前の出力 */
+		tmp[i] = array1[i]; /* 配列「array1」のデータを別の配列「tmp」に代入 */
 	}
 
 	printf("\n");
 	printf("array2 = ");
 
-	for (i = 0; i < YOUSO; i++) {
+	for (i = 0; i < ELEMENT; i++) {
 
-		printf("%3d", array2[i]); /* 配列ary2の交換前の出力 */
-		array1[i] = array2[i]; /* 配列ary2のデータを配列ary1に代入する。*/
+		printf("%3d", array2[i]); /* 配列「array2」の交換前の出力 */
+		array1[i] = array2[i]; /* 配列「array2」のデータを配列「array1」に代入 */
 	}
 
 	printf("\n");
 	printf("*** 交換後 ***\n");
 	printf("array1 = ");
 
-	for (i = 0; i < YOUSO; i++) {
+	for (i = 0; i < ELEMENT; i++) {
 
-		printf("%3d", array1[i]); /* 配列ary1の交換後の出力 */
+		printf("%3d", array1[i]); /* 配列「array1」の交換後の出力 */
 	}
 
 	printf("\n");
 	printf("array2 = ");
 
-	for (i = 0; i < YOUSO; i++) {
+	for (i = 0; i < ELEMENT; i++) {
 
-		array2[i] = temp[i]; /* 一時的に保存していた配列ary1のデータを代入した配列tempを配列ary2に代入する。 */
-		printf("%3d", array2[i]); /* 配列ary2の交換後の出力 */
+		array2[i] = tmp[i]; /* 配列「tmp」のデータを配列「array2」に代入 */
+		printf("%3d", array2[i]); /* 配列「array2」の交換後の出力 */
 	}
 
 	printf("\n");

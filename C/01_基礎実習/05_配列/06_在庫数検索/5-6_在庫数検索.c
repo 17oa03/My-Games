@@ -5,35 +5,34 @@
 商品コードに99が入力されたら終了する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
-#define YOUSO 5
+#define ELEMENT 5 /* 文字列「ELEMENT」を文字列「5」にマクロ置換 */
 
 int main(void)
 {
-	int code[YOUSO] = { 21, 68, 37, 40, 85 };
-	int stock[YOUSO] = { 123, 430, 333, 650, 200 };
-	int input = 0;
-	int i;
+	int code[ELEMENT] = { 21, 68, 37, 40, 85 }; /* 商品コード */
+	int stock[ELEMENT] = { 123, 430, 333, 650, 200 }; /* 在庫数 */
 
-	while (input != 99) { /* 終了コードが入力されるまで処理を繰り返す。 */
+	int input = 0; /* 入力値 */
+
+	int i; /* カウンタ変数 */
+
+	while (input != 99) { /* 終了コードが入力されるまでループ */
 
 		printf("商品コード ==> ");
-		scanf("%d", &input);
+		scanf("%d", &input); /* 入力 */
 
-		if (input != 99) {
+		if (input != 99) { /* 入力値が終了コードでない場合 */
 
-			/* 該当する商品があれば、カウンタ変数の加算を止める。*/
-			for (i = 0; i < YOUSO && input != code[i]; i++);
+			for (i = 0; i < ELEMENT && input != code[i]; i++); /* 該当する商品コードの検索 */
 
-			if (i < YOUSO) {
+			if (i < ELEMENT) { /* 該当している場合 */
 
 				printf("在庫数は、%dです。\n", stock[i]);
 			}
-			else
+			else /* 該当していない場合 */
 			{
 
 				printf("該当する商品はありません。\n");
@@ -59,13 +58,4 @@ int main(void)
 商品コード ==> 68
 在庫数は、430です。
 商品コード ==> 99
-*/
-
-/*
-【不具合履歴】
-配列の初期化をdouble型で行っていた、
-printf関数で出力変換指定子が「%d」だったので、
-該当する商品があっても在庫数が全て「0」になっていた、
-配列をint型に修正したところ、
-問題は無かった。
 */

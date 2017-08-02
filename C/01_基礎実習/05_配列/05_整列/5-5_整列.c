@@ -5,34 +5,34 @@
 ※並び替える前と後を出力する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
-#define YOUSO 5
+#define ELEMENT 5 /* 文字列「ELEMENT」を文字列「5」にマクロ置換 */
 
 int main(void)
 {
-	double date[YOUSO] = { 160.7, 162.7, 155.5, 168.3, 160.1 };
-	double temp;
-	int i, j;
+	double date[ELEMENT] = { 160.7, 162.7, 155.5, 168.3, 160.1 }; /* 配列の初期化 */
+
+	double temp; /* 一時的にデータを保存する変数 */
+
+	int i, j; /* カウンタ変数 */
 
 	printf("*** ソート前 ***\n");
 
-	for (i = 0; i < YOUSO; i++) {
+	for (i = 0; i < ELEMENT; i++) {
 
-		printf("  %.1f", date[i]);
+		printf("  %.1f", date[i]); /* 整列前の出力 */
 	}
 
 	printf("\n");
 
-	for (i = 0; i < YOUSO - 1; i++) { /* 並び替えには「交換法」を用います。*/
-		for (j = i + 1; j < YOUSO; j++) { /* 配列の要素を先頭から2個ずつ指定します。 */
+	for (i = 0; i < ELEMENT - 1; i++) { /* 降順ソート処理 */
+		for (j = i + 1; j < ELEMENT; j++) {
 
-			if (date[i] < date[j]) { /* あとは、比較して配列のデータを入れ替えるだけです。 */
+			if (date[i] < date[j]) {
 
-				temp = date[j];
+				temp    = date[j]; /* データ交換 */
 				date[j] = date[i];
 				date[i] = temp;
 			}
@@ -40,10 +40,10 @@ int main(void)
 	}
 
 	printf("*** ソート後 ***\n");
-	
-	for (i = 0; i < YOUSO; i++) {
 
-		printf("  %.1f", date[i]);
+	for (i = 0; i < ELEMENT; i++) {
+
+		printf("  %.1f", date[i]); /* 整列後の出力 */
 	}
 
 	printf("\n");

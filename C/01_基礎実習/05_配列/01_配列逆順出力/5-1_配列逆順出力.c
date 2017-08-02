@@ -4,27 +4,26 @@
 入力順とは逆に標準出力に出力する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
-#define YOUSO 5 /* 文字列「YOUSO」を文字列「5」に置き換えます。 */
+#define YOUSO 5 /* 文字列「YOUSO」を文字列「5」にマクロ置換 */
 
 int main(void)
 {
-	int ary[YOUSO];
-	int i;
+	int ary[YOUSO]; /* 要素数「5」の配列を宣言 */
 
-	for (i = 0; i < YOUSO; i++) { /* 0→1→2→3→4と5回ループし、i = 5になっています。 */
+	int i; /* カウンタ変数 */
+
+	for (i = 0; i < YOUSO; i++) { /* 「i」は、0→1→2→3→4→5でループを抜ける */
 
 		printf("整数 ==> ");
-		scanf("%d", &ary[i]);
+		scanf("%d", &ary[i]); /* 入力 */
 	}
 
 	printf("---逆順出力---\n");
 
-	for (i--; i >= 0; i--) { /* カウンタ変数の値を配列の添字に合わせて初期化する。 */
+	for (i--; i >= 0; i--) { /* 初期化式で「i」をデクリメントして添字に合わせる */
 
 		printf("%9d\n", ary[i]);
 	}

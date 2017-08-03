@@ -9,8 +9,7 @@
 /*【プログラム】*/
 #include <stdio.h>
 
-/* 構造体の型枠の宣言 */
-struct student {
+struct student { /* 構造体の宣言 */
 	int    no;       /* 番号 */
 	char   name[11]; /* 氏名 */
 	double height;   /* 身長 */
@@ -19,37 +18,33 @@ struct student {
 
 int main(void)
 {
-	/* 構造体変数の定義 */
-	struct student data1, data2;
+	struct student data1, data2; /* 構造体変数の定義 */
 
-	/* 入力 */
 	printf("コピー元の入力\n");
 
 	printf("番号 ==> ");
-	scanf("%d", &data1.no);
+	scanf("%d",  &data1.no); /* 入力 */
 
 	printf("氏名 ==> ");
-	scanf("%s", data1.name);
+	scanf("%s",   data1.name); /* 入力 */
 
 	printf("身長 ==> ");
-	scanf("%lf", &data1.height);
+	scanf("%lf", &data1.height); /* 入力 */
 
 	printf("体重 ==> ");
-	scanf("%lf", &data1.weight);
+	scanf("%lf", &data1.weight); /* 入力 */
 
-	/* 構造体のコピー */
-	data2 = data1;
+	data2 = data1; /* 構造体のコピー */
 
-	/* 出力 */
 	printf("\nコピー元の生徒\n");
-	printf("番号  :  %d\n", data1.no);
-	printf("氏名  :  %s\n", data1.name);
+	printf("番号  :  %d\n",   data1.no); /* 出力 */
+	printf("氏名  :  %s\n",   data1.name);
 	printf("身長  :  %.1f\n", data1.height);
 	printf("体重  :  %.1f\n", data1.weight);
 
 	printf("\nコピー先の生徒\n");
-	printf("番号  :  %d\n", data2.no);
-	printf("氏名  :  %s\n", data2.name);
+	printf("番号  :  %d\n",   data2.no); /* 出力 */
+	printf("氏名  :  %s\n",   data2.name);
 	printf("身長  :  %.1f\n", data2.height);
 	printf("体重  :  %.1f\n", data2.weight);
 
@@ -79,24 +74,25 @@ int main(void)
 
 /*
 【考察】
-基本的に構造体の宣言は、
-他のプログラマと共有できるように、
-外部で宣言する。
-
-構造体変数の定義は、
-会社のルールによって変わる、
-今回は内部で宣言している。
-
-入出力時の演算子の指定にて、
-文字配列への入力は、
-アドレス演算子が必要無いことに注意する。
-
 構造体変数のコピーは、
-構造体タグとメモリ領域が
-同じでなければならない。
+代入文で簡単にできる。
+
+構造体変数1 = 構造体変数2 ;
+
+注意点として、
+「構造体タグ」が異なる変数同士では、
+型が異なるので代入はできない。
+
+また、
+各データ型の占有するメモリ領域は
+以下のように割り当てられる。
 
 char   = 1byte
 int    = 4byte
 float  = 4byte
 double = 8byte
+
+基本的に構造体の宣言は、
+他プログラマと共有ができるように、
+外部で宣言する。
 */

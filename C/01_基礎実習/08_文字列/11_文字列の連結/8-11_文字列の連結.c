@@ -9,38 +9,31 @@
 ※strlen, strcat関数を自作する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
-int str_length(char *);
-void str_cat(char *, char *);
+int str_length(char *); /* 文字数を数える関数 */
+void str_cat(char *, char *); /* 文字列を連結する関数 */
 
 int main(void)
 {
-	/* 文字配列と変数の定義 */
-	char input1[256];
+	char input1[256]; /* 文字配列の宣言 */
 	char input2[256];
-	int i, j;
 
-	/* 入力 */
+	int i, j; /* カウンタ変数 */
+
 	printf("1つ目の文字列 ==> ");
-	scanf("%s", input1);
+	scanf("%s", input1); /* 入力 */
 
 	printf("2つ目の文字列 ==> ");
-	scanf("%s", input2);
+	scanf("%s", input2); /* 入力 */
 
-	/* 文字列の数を数える */
-	i = str_length(input1);
+	i = str_length(input1); /* 文字数を数える */
 	j = str_length(input2);
 
-
-	/* 連結有無の判定 */
 	if (i + j <= 20) {
 
-		/* 文字数を連結する */
-		str_cat(input1, input2);
+		str_cat(input1, input2); /* 文字列の連結 */
 		printf("連結後の1つ目の文字列  :  %s\n", input1);
 	}
 	else
@@ -51,27 +44,25 @@ int main(void)
 	return 0;
 }
 
-/* 文字列の数を数える関数　*/
 int str_length(char *p_input)
 {
-	int count = 0;
+	int count = 0; /* 文字数のカウンタ変数 */
 
-	while (*p_input++ != '\0') { count++; }
+	while (*p_input++ != '\0') { count++; } /* 文字数のカウント */
 
-	return count;
+	return count; /* 文字数のカウント数を返す */
 }
 
-/* 文字列を連結する関数 */
 void str_cat(char *p_input1, char *p_input2)
 {
-	while (*p_input1++ != '\0');
-	*p_input1--;
+	while (*p_input1++ != '\0'); /* ヌル文字までアドレスをインクリメント */
 
-	while ((*p_input1++ = *p_input2++) != '\0');
+	*p_input1--; /* 連結させる為にアドレスをデクリメント */
+
+	while ((*p_input1++ = *p_input2++) != '\0'); /* 文字列の連結 */
 	
 	return;
 }
-
 
 /*
 【実行結果1】
@@ -96,8 +87,8 @@ void str_cat(char *p_input1, char *p_input2)
 */
 
 /*
-【Memo】
-今回はwhile文とポインタ変数を用いて書いた、
-継続条件の中でポインタ変数にインクリメントして
-アドレスを進める方法はとても便利です。
+【考察】
+while文の継続条件で、
+ポインタ変数をインクリメントしながら
+ヌル文字までアドレスを進める方法はとても便利です。
 */

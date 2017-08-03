@@ -7,35 +7,30 @@
 ※strcmp関数は使用禁止。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 
 int main(void)
 {
-	/* 文字配列と変数定義 */
-	char input1[256];
+	char input1[256]; /* 文字配列の宣言 */
 	char input2[256];
-	char inequality = '='; /* 藤岡式 */
-	int i;
 
-	/* 入力 */
+	char inequality = '='; /* 「=」は、+1で「>」、-1で「<」 */
+
+	int i; /* カウンタ変数 */
+
 	printf("1つ目の文字列 ==> ");
-	scanf("%s", input1);
+	scanf("%s", input1); /* 入力 */
 
 	printf("2つ目の文字列 ==> ");
-	scanf("%s", input2);
+	scanf("%s", input2); /* 入力 */
 
-	/* 比較する2つの文字配列の要素を探索する処理 */
-	for (i = 0; input1[i] == input2[i] && !(input1[i] == '\0' || input2[i] == '\0'); i++);
+	for (i = 0; input1[i] == input2[i] && !(input1[i] == '\0' || input2[i] == '\0'); i++); /* 文字列の比較 */
 
-	/* 判定('='は、+1で'>'、-1で'<'になる。) */
-	if (input1[i] > input2[i]) {inequality += 1;}
+	if (input1[i] > input2[i]) {inequality += 1;} /* 文字列の終端を比較 */
 	if (input1[i] < input2[i]) {inequality -= 1;}
 
-	/* 出力 */
-	printf("%s %c %s\n", input1, inequality, input2);
+	printf("%s %c %s\n", input1, inequality, input2); /* 出力 */
 
 	return 0;
 }
@@ -75,11 +70,10 @@ a = a
 
 /*
 【考察】
-「藤岡式」を用いて不等号を出力しました。
-「藤岡式」とは、
-藤岡さんが閃いたアイデアで、
-あるchar型の変数に'='を代入し、
-'='に対して「1」、「-1」を加算することにより、
-if文の分岐した不等号(>,=,<)の出力を
-たった一行で出力できるようにする書き方です。
+とある「藤岡さん」が考えた記述方法で、
+char型の変数に'='を代入し、
+その変数に対して「1」を加算(>)・減算(<)することにより、
+不等号を簡単に出力できる方法です。
+
+上記内容を「藤岡式」と勝手に呼んでいます。
 */

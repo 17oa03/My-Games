@@ -9,37 +9,32 @@
 ※strlen, strcat関数を必ず使用する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 #include <string.h>
 
 int main(void)
 {
-	/* 文字配列とカウンタ変数の定義 */
-	char input1[256];
+	char input1[256]; /* 文字配列の宣言 */
 	char input2[256];
-	int i, j;
 
-	/* 入力 */
-	printf("コピー元文字列 ==> ");
-	scanf("%s", input1);
+	int i, j; /* カウンタ変数 */
 
 	printf("コピー元文字列 ==> ");
-	scanf("%s", input2);
+	scanf("%s", input1); /* 入力 */
 
-	/* 文字数を数える */
-	i = strlen(input1);
+	printf("コピー元文字列 ==> ");
+	scanf("%s", input2); /* 入力 */
+
+	i = strlen(input1); /* 文字数を数える */
 	j = strlen(input2);
 
-	/* 連結の有無と出力 */
-	if (i + j <= 20) {
+	if (i + j <= 20) { /* 合計文字数が20文字以下の場合 */
 
-		strcat(input1, input2);
+		strcat(input1, input2);/* 文字列の連結 */
 		printf("連結後の1つ目の文字列  :  %s\n", input1);
 	}
-	else
+	else /* それ以外の場合 */
 	{
 		printf("合計で20文字を超えたので連結しません。\n");
 	}
@@ -62,8 +57,4 @@ int main(void)
 コピー元文字列 ==> abcdefghijklm
 コピー元文字列 ==> opqrstuvwxyz
 合計で20文字を超えたので連結しません。
-*/
-
-/*
-【Memo】
 */

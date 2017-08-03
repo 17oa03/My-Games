@@ -7,31 +7,26 @@
 ※strcmp関数を必ず使用する。
 */
 
-/*
-【プログラム】
-*/
+/*【プログラム】*/
 #include <stdio.h>
 #include <string.h>
 
 int main(void)
 {
-	/* 文字配列と変数の定義 */
-	char input1[256];
+	char input1[256]; /* 文字配列の宣言 */
 	char input2[256];
-	char inequality = '=';
 
-	/* 入力 */
+	char inequality = '='; /* 「8-4_文字列の比較」より「藤岡式」 */
+
 	printf("1つ目の文字列 ==> ");
-	scanf("%s", input1);
+	scanf("%s", input1); /* 入力 */
 
 	printf("2つ目の文字列 ==> ");
-	scanf("%s", input2);
+	scanf("%s", input2); /* 入力 */
 
-	/* 文字数を比較 */
-	inequality += strcmp(input1, input2);
+	inequality += strcmp(input1, input2); /* 文字数を比較 */
 	
-	/* 出力 */
-	printf("%s %c %s\n", input1, inequality, input2);
+	printf("%s %c %s\n", input1, inequality, input2); /* 出力 */
 
 	return 0;
 }
@@ -65,16 +60,12 @@ abc = abc
 
 /*
 【考察】
-今回も「藤岡式」を用いたトリッキーなソースコードだが、
-欠点があった。
 strcmp関数の戻り値は、
 
 input1 = input2ならば0、
 input1 > input2ならば正の値、
 input1 < input2ならば負の値を返す。
 
-つまり、
 「正の値」と「負の値」は、
-コンパイラによって変わるということ、
-不等号でない文字が出力される可能性があるということです。
+コンパイラによって変動する可能性があるので注意。
 */

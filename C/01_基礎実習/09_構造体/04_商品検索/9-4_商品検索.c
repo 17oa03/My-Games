@@ -10,20 +10,17 @@
 /*【プログラム】*/
 #include <stdio.h>
 
-/* 商品の数 */
-#define ITEM 5
+#define ITEMS 5 /* 商品数 */
 
-/* 構造体の宣言 */
-struct product {
-	int  no;
-	char name[11];
-	int  price;
+struct product { /* 構造体の宣言 */
+	int  no;       /* 商品コード */
+	char name[11]; /* 商品名 */
+	int  price;    /* 金額 */
 };
 
 int main(void)
 {
-	/* 構造体配列の定義 */
-	struct product data[] = {
+	struct product data[] = { /* 構造体配列の定義と初期化 */
 		{ 21, "鉛筆",      30 },
 		{ 68, "ノート",   100 },
 		{ 37, "定規",     150 },
@@ -31,34 +28,27 @@ int main(void)
 		{ 85, "コンパス", 230 },
 	};
 
-	/* 構造体のポインタ変数の宣言 */
-	struct product *p_data;
+	struct product *p_data; /* 構造体のポインタ変数の宣言 */
 
-	/* 商品コードの入力値を格納する変数 */
-	int code = 0;
+	int code = 0; /* 商品コードの入力値 */
 
-	/* 終了コードが入力されるまで処理を繰り返す */
-	while (code != 99) {
+	while (code != 99) { /* 終了コードが入力されるまで処理を繰り返す */
 
-		/* 入力 */
 		printf("商品コード ==> ");
-		scanf("%d", &code);
+		scanf("%d", &code); /* 入力 */
 
 		if (code != 99) {
 
-			/* 該当する商品があれば、ポインタ変数のインクリメントを止める */
-			for (p_data = data; p_data < data + ITEM && code != p_data->no; p_data++);
+			for (p_data = data; p_data < data + ITEMS && code != p_data->no; p_data++); /* 一致探索 */
 
-			if (p_data < data + ITEM) {
+			if (p_data < data + ITEMS) { /* 該当する商品がある場合 */
 
-				/* 出力 */
 				printf("商品名  :  %s\n", p_data->name);
 				printf("単  価  :  %d\n", p_data->price);
 			}
-			else
+			else /* それ以外の場合 */
 			{
 
-				/* 出力 */
 				printf("該当する商品はありません。\n");
 			}
 		}
@@ -103,7 +93,14 @@ int main(void)
 
 /*
 【考察】
-「01_商品検索(1)」のカウント変数を
-ポインタ操作で繰り返し処理することにより、
-ソースコードがシンプルになった。
+構造体のポインタ変数を宣言、
+for文でアドレスをセット、
+条件文に「p_data < data + ITEMS(商品の数)」で
+「ITEMS」先のアドレスを指定しているので、
+ポインタ変数のアドレスがインクリメントされて
+比較しているアドレスに到達するまでループされる。
+
+構造体のポインタ変数から
+メンバ変数の参照をするには、
+「->(アロー)」演算子を使う。
 */

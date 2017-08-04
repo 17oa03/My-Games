@@ -8,11 +8,9 @@
 /*【プログラム】*/
 #include <stdio.h>
 
-/* 生徒の人数 */
-#define STUDENT 5
+#define STUDENT 5 /* 生徒の人数 */
 
-/* 構造体の宣言 */
-struct record {
+struct record { /* 構造体の宣言 */
 	int    no;	     /* 番号 */
 	char   name[11]; /* 名前 */
 	int    english;  /* 英語の点数 */
@@ -25,59 +23,46 @@ struct record {
 
 int main(void)
 {
-	/* 構造体配列の定義 */
-	struct record data[STUDENT];
+	struct record data[STUDENT]; /* 構造体配列の定義 */
 
-	/* カウンタ変数 */
-	int i, j;
+	int i, j; /* カウンタ変数 */
 
-	/* データの読み込み終了フラグ */
-	int end_flag = 0;
+	int end_flag = 0; /* 終了フラグ */
 
-	/* リダイレクトのカウンタ変数*/
-	int count;
+	int count;/* リダイレクト回数 */
 
-	/* リダイレクション入力 */
 	for (i = 0;
-		(end_flag = scanf("%d %s %d %d %d",
-			&data[i].no, data[i].name,
-			&data[i].english, &data[i].math,
+		(end_flag = scanf("%d %s %d %d %d", /* リダイレクション入力 */
+			&data[i].no, 
+			 data[i].name,
+			&data[i].english, 
+			&data[i].math,
 			&data[i].language) != EOF);
 		i++) {
 
-		/* 合計の計算 */
-		data[i].total =
-			data[i].english + data[i].math + data[i].language;
+		data[i].total = data[i].english + data[i].math + data[i].language; /* 合計の計算 */
 
-		/* 平均の計算 */
-		data[i].average =
-			(double)data[i].total / 3;
+		data[i].average = (double)data[i].total / 3; /* 平均の計算 */
 
-		/* 順位に「1」を代入 */
-		data[i].rank = 1;
+		data[i].rank = 1; /* 順位に「1」を代入 */
 	}
 
-	/* リダイレクト回数を代入 */
-	count = i;
+	count = i; /* リダイレクト回数を代入 */
 
-	/* 順位付け */
-	for (i = 0; i < count - 1; i++) {
+	for (i = 0; i < count - 1; i++) { /* 順位付け */
 		for (j = 0; j < count; j++) {
 
-			/* 自分よりも相手が大きい場合 */
-			if (data[i].total < data[j].total) {
+			if (data[i].total < data[j].total) { /* 自分より相手の合計点が大きい場合 */
 
-				/* 順位を下げる(順位に +1) */
-				data[i].rank++;
+				data[i].rank++; /* 順位を下げる(順位に +1) */
 			}
 		}
 	}
 
-	/* 出力 */
 	printf(" NO 氏    名   英語 数学 国語 合計  平均 順位\n");
 	printf("--- ---------- ---- ---- ---- ---- ----- ----\n");
 
-	for (i = 0; i < count; i++) {
+	for (i = 0; i < count; i++) { /* 出力ループ */
 
 		printf("%3d ",    data[i].no);
 		printf("%-11s",   data[i].name);

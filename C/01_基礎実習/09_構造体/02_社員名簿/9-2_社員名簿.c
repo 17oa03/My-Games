@@ -7,18 +7,15 @@
 /*【プログラム】*/
 #include <stdio.h>
 
-/* 記号定数の定義 */
 #define EMPLOYEE 5 /* 社員の人数 */
 
-/* 構造体の宣言 */
-struct date {
+struct date { /* 構造体の宣言 */
 	int y; /* 年 */
 	int m; /* 月 */
 	int d; /* 日 */
 };
 
-/* 構造体の宣言 */
-struct employee {
+struct employee { /* 構造体の宣言 */
 	int    no;          /* 社員番号 */
 	char   name[11];    /* 氏名 */
 	struct date enploy; /* 入社年月日 */
@@ -27,8 +24,7 @@ struct employee {
 
 int main(void)
 {
-	/* 構造体配列の定義と初期化 */
-	struct employee data[EMPLOYEE] = {
+	struct employee data[EMPLOYEE] = { /* 構造体配列の定義と初期化 */
 		{ 1212, "sato",      { 2002,  4,  1 }, { 1982,  6, 23 } }, /* 1人目 */
 		{ 2353, "suzuki",    { 2001,  4,  1 }, { 1984,  9, 30 } }, /* 2人目 */
 		{ 3147, "takahashi", { 2001, 10,  1 }, { 1986, 10, 11 } }, /* 3人目 */
@@ -36,45 +32,37 @@ int main(void)
 		{ 6447, "watanabe",  { 1988,  3, 25 }, { 1985,  4, 20 } }, /* 5人目 */
 	};
 
-	/* データ交換の際に必要な構造体変数 */
-	struct employee tmp_data;
+	struct employee tmp_data; /* データ交換の際に必要な構造体変数 */
 
-	/* カウンタ変数 */
-	int i, j;
+	int i, j; /* カウンタ変数 */
 
-	/* 生年月日を8桁の整数で比較する為の配列と変数 */
-	int ymd[EMPLOYEE];
-	int tmp;
+	int ymd[EMPLOYEE]; /* 生年月日を8桁の整数で比較する為の配列と変数 */
 
-	/* 生年月日を8桁の整数に変換してint型配列に代入 */
-	for (i = 0; i < EMPLOYEE; i++) {
+	int tmp; /* データ交換の際に必要な変数 */
+
+	for (i = 0; i < EMPLOYEE; i++) { /* 生年月日を8桁の整数に変換して代入 */
 		ymd[i] = ymd[i] + (data[i].birth.y * 10000);
 		ymd[i] = ymd[i] + (data[i].birth.m * 100);
 		ymd[i] = ymd[i] + (data[i].birth.d);
 	}
 
-	/* 年齢の降順にソートする */
-	for (i = 0; i < EMPLOYEE - 1; i++) {
+	for (i = 0; i < EMPLOYEE - 1; i++) { /* 降順ソート */
 		for (j = i + 1; j < EMPLOYEE; j++) {
 
-			/* 8桁の生年月日を比較 */
-			if (ymd[i] > ymd[j]) {
+			if (ymd[i] > ymd[j]) { /* 8桁の生年月日を比較 */
 
-				/* 構造体配列のデータ交換 */
-				tmp_data = data[i];
+				tmp_data = data[i]; /* 構造体配列のデータ交換 */
 				data[i]  = data[j];
 				data[j]  = tmp_data;
 
-				/* 8桁の生年月日のデータ交換 */
-				tmp    = ymd[i];
+				tmp    = ymd[i]; /* 8桁の生年月日のデータ交換 */
 				ymd[i] = ymd[j];
 				ymd[j] = tmp;
 			}
 		}
 	}
 
-	/* 出力 */
-	printf("社員番号 氏    名   入社年月日  生年月日 \n");
+	printf("社員番号 氏    名   入社年月日  生年月日 \n"); /* 出力 */
 	printf("-------- ---------- ---------- ----------\n");
 
 	for (i = 0; i < EMPLOYEE; i++) {
@@ -111,7 +99,7 @@ int main(void)
 【考察】
 構造体はネストすることができる、
 構造体のメンバとして、
-別の構造体を宣言できるということ。
+別の構造体を宣言できる。
 
 構造体配列の初期化は、
 
@@ -133,7 +121,7 @@ int main(void)
 	{ 値, { 値, "文字列", 値 }, 値, },
 };
 
-ソートに関しては、
+降順ソートに関しては、
 for文の2重ループで、
 添字[0]から他の要素を比較しながら
 データ交換を行っている。
@@ -156,7 +144,7 @@ for文の2重ループで、
 データ交換をする。
 ------------------------------
 
-以上がソートの動きになる、
+以上が降順ソートの動きになる、
 外側ループの継続条件に注意、
 ループの回数を「-1」しないと
 領域外を参照して処理を行ってしまう。

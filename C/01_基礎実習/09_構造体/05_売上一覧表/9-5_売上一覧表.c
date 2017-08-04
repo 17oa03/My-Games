@@ -8,11 +8,9 @@
 /*【プログラム】*/
 #include <stdio.h>
 
-/* 商品の数 */
-#define ITEM 5
+#define ITEM 5 /* 商品の数 */
 
-/* 構造体の宣言 */
-struct product {
+struct product { /* 構造体の宣言 */
 	int  code;       /* 商品コード */
 	char name[11];   /* 商品名 */
 	int  unit_price; /* 単価 */
@@ -22,8 +20,7 @@ struct product {
 
 int main(void)
 {
-	/* 構造体配列の定義と初期化 */
-	struct product data[] = {
+	struct product data[] = { /* 構造体配列の定義と初期化 */
 		{ 21, "鉛筆",      30 },
 		{ 68, "ノート",   100 },
 		{ 37, "定規",     150 },
@@ -31,49 +28,35 @@ int main(void)
 		{ 85, "コンパス", 230 },
 	};
 
-	/* 構造体のポインタ変数の宣言 */
-	struct product *p_data;
+	struct product *p_data; /* 構造体のポインタ変数の宣言 */
 
-	/* 商品コード(リダイレクション入力) */
-	int code;
+	int code; /* 商品コード(リダイレクション入力) */
 
-	/* 数量(リダイレクション入力) */
-	int	quantity;
+	int	quantity; /* 数量(リダイレクション入力) */
 
-	/* 総合計 */
-	int total_price = 0;
+	int total_price = 0; /* 総合計 */
 
-	/* 終了フラグ */
-	int end_flag = 0;
+	int end_flag = 0; /* 終了フラグ */
 
-	/* 表題 */
 	printf("       *** 売上一覧表 ***\n");
 	printf("コード 商  品  名 単価 数量  金額\n");
 	printf("------ ---------- ---- ---- -----\n");
+	
+	while ((end_flag = scanf("%d %d", &code, &quantity)) != EOF) { /* ファイル終端までループ */
 
-	/* リダイレクション入力でEOFまで処理を繰り返す */
-	while ((end_flag =
-			scanf("%d %d", &code, &quantity)) != EOF) {
+		for (p_data = data;	/* 商品コードが一致するまで繰り返す */
+			 p_data < data + ITEM && code != p_data->code;
+			 p_data++);
 
-		/* 商品コードが一致するまで繰り返す */
-		for (p_data = data;
-			p_data < data + ITEM && code != p_data->code;
-			p_data++);
+		if (p_data < data + ITEM) { /* 商品コードが一致した際の処理と出力 */
 
-		/* 商品コードが一致した際の処理と出力 */
-		if (p_data < data + ITEM) {
+			p_data->quantity = quantity; /* 数量の代入 */
 
-			/* 数量の代入 */
-			p_data->quantity = quantity;
+			p_data->price = p_data->unit_price * p_data->quantity; /* 金額(単価 × 数量)の代入 */
 
-			/* 金額(単価 × 数量)の代入 */
-			p_data->price = p_data->unit_price * p_data->quantity;
+			total_price += p_data->price; /* 総合計の代入 */
 
-			/* 総合計の代入 */
-			total_price += p_data->price;
-
-			/* 出力 */
-			printf("%6d %-10s %4d %4d %5d\n",
+			printf("%6d %-10s %4d %4d %5d\n", /* 出力 */
 				p_data->code, 
 				p_data->name,
 				p_data->unit_price, 
@@ -82,9 +65,8 @@ int main(void)
 		}
 	}
 
-	/* 合計金額の出力 */
 	printf("---------------------------------\n");
-	printf("                  合計金額 %6d\n", total_price);
+	printf("                  合計金額 %6d\n", total_price); /* 合計金額の出力 */
 
 	return 0;
 }
@@ -101,12 +83,4 @@ int main(void)
     37 定規        150   18  2700
 ---------------------------------
                   合計金額  12930
-*/
-
-/*
-【考察】
-while文の条件文に
-リダイレクションの記述ができる、
-後は「9-4_商品検索(test)」と
-同じような処理になる。
 */

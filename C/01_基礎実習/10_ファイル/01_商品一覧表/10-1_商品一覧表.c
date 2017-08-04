@@ -6,58 +6,48 @@
 
 /*【プログラム】*/
 #include <stdio.h>
-#include <stdlib.h> /* exit関数, EXIT_FAILURE, EXIT_SUCCESS */
+#include <stdlib.h> /* データ変換処理関数 */
 
-/* 構造体の宣言 */
-typedef struct prodact {
-	int  no;
-	char name[11];
-	int  unit_price;
+typedef struct prodact { /* 構造体の宣言 */
+	int  no;         /* 商品コード */
+	char name[11];   /* 商品名 */
+	int  unit_price; /* 単価 */
 }Prodact; /* 構造体の定義 */
 
 int main(void)
 {
-	/* Prodact型変数の定義 */
-	Prodact data;
+	Prodact data; /* Prodact型変数の定義 */
 
-	/* ストリームポインタ宣言 */
-	FILE *fp_i;
+	FILE *fp_i; /* ストリームポインタ宣言 */
 
-	/* ファイル名 */
-	char *fname = "syohin.mst";
+	char *fname = "syohin.mst"; /* ファイル名 */
 
-	/* 読込みモードでファイルオープン */
-	if ((fp_i = fopen("syohin.mst", "r")) == NULL){
+	if ((fp_i = fopen("syohin.mst", "r")) == NULL){ /* ファイルオープン(r)とエラー処理 */
 
 		printf("商品マスタ(%s)が、みつかりません。\n", fname);
 
-		/* プログラム異常終了(EXIT_FAILURE = 1) */
-		exit(EXIT_FAILURE);
+		exit(EXIT_FAILURE); /* プログラム異常終了(EXIT_FAILURE = 1) */
 	}
 
 	printf("\n  *** 商品一覧表 ***\n");
 	printf("コード 商  品  名 単価\n");
 	printf("------ ---------- ----\n");
 
-	/* ファイル読込み */
-	while ((fscanf(fp_i, "%d %s %d",
+	while ((fscanf(fp_i, "%d %s %d", /* ファイル読込み */
 			&data.no,
-			data.name,
+			 data.name,
 			&data.unit_price))
 			!= EOF){
 
-		/* 出力 */
 		printf("%6d %-10s %4d\n",
 			data.no,
 			data.name,
 			data.unit_price);
 	}
 
-	/* 入力ファイルをクローズ */
-	fclose(fp_i);
+	fclose(fp_i); /* ファイルクローズ */
 
-	/* プログラム正常終了(EXIT_SUCCESS = 0) */
-	return EXIT_SUCCESS;
+	return EXIT_SUCCESS; /* プログラム正常終了(EXIT_SUCCESS = 0) */
 }
 
 /*
@@ -75,24 +65,22 @@ int main(void)
 
 /*
 【考察】
-ファイルのオープン、
-読み込み、クローズと、
-ファイルが存在しない場合の
-エラー処理が出来るかの確認になる。
+ファイルのオープン、読み込み、クローズと、
+エラー処理が出来るかといった内容になる。。
 
 関数名や命令文が複雑になってきたが、
 略語がどのように略されているのか把握すると、
 理解がしやすい。
 
-r        = Read(読み込む)
-w        = Write(書き込む)
-a        = Add(追加)
-f(scanf) = File(ファイル)
+r        = read(読み込む)
+w        = write(書き込む)
+a        = append(付加する)
+f(scanf) = file(ファイル)
 (print)f = format(書式)
-p        = Pointer(ポインタ)
-(fp_)i   = Input(入力) 
-(fp_)o   = Output(出力)
+p        = pointer(ポインタ)
+(fp_)i   = input(入力) 
+(fp_)o   = output(出力)
 s        = string (文字列)
-c        = Character(文字)
+c        = character(文字)
 
 */

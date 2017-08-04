@@ -6,11 +6,9 @@
 
 /*【プログラム】*/
 #include <stdio.h>
-#include <stdlib.h>  /* exit関数, EXIT_FAILURE, EXIT_SUCCESS */
-#include <windows.h> /* Sleep関数 */
+#include <stdlib.h> /* データ変換処理関数 */
 
-/* 売上データの件数 */
-#define ITEMS 12
+#define ITEMS 12 /* 売上データの件数 */
 
 #ifndef TRUE   /* TRUE が定義されていなかったら */
 #define TRUE 1 /* TRUE を 1 と定義する */
@@ -20,8 +18,7 @@
 #define FALSE 0 /* FALSE を 0 と定義する */
 #endif          /* 疑似命令の終了 */
 
-/* 構造体の宣言 */
-typedef struct prodact {
+typedef struct prodact { /* 構造体の宣言 */
 	int  check;       /* 伝票 */
 	int  code;        /* 商品コード */
 	char name[11];    /* 商品名 */
@@ -32,40 +29,28 @@ typedef struct prodact {
 
 int main(void)
 {
-	/* Prodact型配列の定義 */
-	Prodact data[ITEMS];
+	Prodact data[ITEMS]; /* Prodact型配列の定義 */
 
-	/* ストリームポインタ宣言 */
-	FILE *fp;
+	FILE *fp; /* ストリームポインタ宣言 */
 
-	/* ファイル名 */
-	char *fname = "uriage.dat";
+	char *fname = "uriage.dat"; /* ファイル名 */
 
-	/* 商品計と総合計 */
-	int sub_price = 0;
-	int total_price = 0;
+	int sub_price = 0;   /* 商品計 */
+	int total_price = 0; /* 総合計 */
 
-	/* 商品計フラグ */
-	int sub_price_flag = FALSE; /* FALSE = OFF, TRUE = ON */
+	int sub_price_flag = FALSE; /* 商品計フラグ(FALSE = OFF, TRUE = ON) */
 
-	/* カウンタ変数 */
-	int i, j;
+	int i, j; /* カウンタ変数 */
 
-	/* 読込みモードでファイルオープン */
-	if ((fp = fopen("uriage.dat", "r")) == NULL) {
+	if ((fp = fopen("uriage.dat", "r")) == NULL) { /* 読込みモードでファイルオープン */
 
 		printf("商品マスタ(%s)が、みつかりません。\n", fname);
 
-		/* 5000ms(5秒)待機 */
-		Sleep(5000);
-
-		/* プログラム異常終了(EXIT_FAILURE = 1) */
-		exit(EXIT_FAILURE);
+		exit(EXIT_FAILURE); /* プログラム異常終了(EXIT_FAILURE = 1) */
 	}
 
-	/* ファイル読込み */
 	for (i = 0;
-		(fscanf(fp, "%d %d %s %d %d",
+		(fscanf(fp, "%d %d %s %d %d", /* ファイル読込み */
 			&data[i].check,
 			&data[i].code,
 			data[i].name,
@@ -74,26 +59,21 @@ int main(void)
 		!= EOF;
 		i++) {
 
-		/* 金額の計算 */
-		data[i].price = data[i].unit_price * data[i].quantity;
+		data[i].price = data[i].unit_price * data[i].quantity; /* 金額の計算 */
 	}
 
 	printf("          *** 売上一覧表 ***\n");
 	printf("伝票 コード 商  品  名 単価 数量   金額\n");
 	printf("---- ------ ---------- ---- ---- ------\n");
 
-	/* 出力ループ */
-	for (j = 0; j < i; j++) {
+	for (j = 0; j < i; j++) { /* 出力ループ */
 
-		/* 次レコードが同じ商品コードか判定 */
-		if (data[j].code != data[j + 1].code) {
+		if (data[j].code != data[j + 1].code) { /* 次レコードが現在の商品コードと一致しない場合 */
 
-			/* 商品計フラグ ON */
-			sub_price_flag = TRUE;
+			sub_price_flag = TRUE; /* 商品計フラグON */
 		}
 
-		/* 出力 */
-		printf("%4d %6d %-10s %4d %4d %6d\n",
+		printf("%4d %6d %-10s %4d %4d %6d\n", /* 出力 */
 			data[j].check,
 			data[j].code,
 			data[j].name,
@@ -101,35 +81,25 @@ int main(void)
 			data[j].quantity,
 			data[j].price);
 
-		/* 商品計の計算 */
-		sub_price += data[j].price;
+		sub_price += data[j].price; /* 商品計の計算 */
 
-		/* 総合計の計算 */
-		total_price += data[j].price;
+		total_price += data[j].price; /* 総合計の計算 */
 
-		/* 商品計の出力判定 */
-		if (sub_price_flag == TRUE) {
+		if (sub_price_flag == TRUE) { /* 商品計の出力判定 */
 
 			printf("                  *** 商品計 *** %6d\n", sub_price);
 
-			/* 商品計のリセット */
-			sub_price = 0;
+			sub_price = 0; /* 商品計のリセット */
 
-			/* 商品計フラグ OFF */
-			sub_price_flag = FALSE;
+			sub_price_flag = FALSE; /* 商品計フラグOFF */
 		}
 	}
 
 	printf("                  *** 総合計 *** %6d\n", total_price);
 
-	/* 入力ファイルをクローズ */
-	fclose(fp);
+	fclose(fp); /* ファイルクローズ */
 
-	/* 10000ms(10秒)待機 */
-	Sleep(10000);
-
-	/* プログラム正常終了(EXIT_SUCCESS = 0) */
-	return EXIT_SUCCESS;
+	return EXIT_SUCCESS; /* プログラム正常終了(EXIT_SUCCESS = 0) */
 }
 
 /*
@@ -158,9 +128,6 @@ int main(void)
 
 /*
 【考察】
-「9-5_売上一覧表」の応用、
-判定とフラグの使い方が重要になる。
-
 fscanf関数で構造体配列にファイルを読込む際に、
 アドレス演算子と、
 カウンタ変数を使った添字の指定を

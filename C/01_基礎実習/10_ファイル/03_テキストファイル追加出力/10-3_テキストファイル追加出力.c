@@ -7,67 +7,51 @@
 
 /*【プログラム】*/
 #include <stdio.h>
-#include <stdlib.h> /* exit関数, EXIT_FAILURE, EXIT_SUCCESS */
-#include <windows.h> /* Sleep関数 */
+#include <stdlib.h> /* データ変換処理関数 */
 
 /* 構造体の宣言 */
 typedef struct prodact {
-	int  no;
-	char name[11];
-	int  unit_price;
+	int  no;         /* 商品コード */
+	char name[11];   /* 商品名 */
+	int  unit_price; /* 単価 */
 }Prodact; /* 構造体の定義 */
 
 int main(void)
 {
-	/* Prodact型変数の定義 */
-	Prodact data;
+	Prodact data; /* Prodact型変数の定義 */
 
-	/* ストリームポインタ宣言 */
-	FILE *fp_in;
+	FILE *fp_in; /* ストリームポインタ宣言 */
 
-	/* ファイル名 */
-	char *fname = "syohin.mst";
+	char *fname = "syohin.mst"; /* ファイル名 */
 	
 	printf("商品マスタに1レコード追加します。\n");
 
-	/* 入力 */
 	printf("商品コード ==> ");
-	scanf("%d", &data.no);
+	scanf("%d", &data.no); /* 入力 */
 
 	printf("    商品名 ==> ");
-	scanf("%s", data.name);
+	scanf("%s", data.name); /* 入力 */
 
 	printf("      単価 ==> ");
-	scanf("%d", &data.unit_price);
+	scanf("%d", &data.unit_price); /* 入力 */
 
-	/* 読込みモードでファイルオープン */
-	if ((fp_in = fopen("syohin.mst", "a")) == NULL) {
+	if ((fp_in = fopen("syohin.mst", "a")) == NULL) { /* ファイルオープン(a)とエラー処理 */
 
 		printf("入力ファイル(%s)が、存在しません。\n", fname);
 
-		/* 5000ms(5秒)待機 */
-		Sleep(5000);
-
-		/* プログラム異常終了(EXIT_FAILURE = 1) */
-		exit(EXIT_FAILURE);
+		exit(EXIT_FAILURE); /* プログラム異常終了(EXIT_FAILURE = 1) */
 	}
 
-	/* ファイル書込み */
-	fprintf(fp_in, "%d %-10s %4d\n",
+	fprintf(fp_in, "%d %-10s %4d\n", /* ファイル追加書込み */
 		data.no,
 		data.name,
 		data.unit_price);
 
 	printf("商品マスタに1レコード追加しました。\n");
 
-	/* 入力ファイルをクローズ */
-	fclose(fp_in);
+	fclose(fp_in); /* ファイルクローズ */
 
-	/* 5000ms(5秒)待機 */
-	Sleep(5000);
-
-	/* プログラム正常終了(EXIT_SUCCESS = 0) */
-	return EXIT_SUCCESS;
+	return EXIT_SUCCESS; /* プログラム正常終了(EXIT_SUCCESS = 0) */
 }
 
 /*
@@ -92,6 +76,5 @@ fprintf関数で入力されたデータを
 「syohin.mst」にファイル書込みしている。
 
 「syohin.mst」が存在しない場合、
-カレントディレクトリに
 「syohin.mst」が新規作成される。
 */

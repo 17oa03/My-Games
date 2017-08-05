@@ -38,7 +38,7 @@ int main(void)
 /*
 【考察】
 getchar関数は、
-標準入力よりデータをunsigned char型として取り込み、
-int型に変換(ASCIIコード)して戻り値になり、
+標準入力から1文字分文字をunsigned char型として読み取り、
+int型に変換(ASCIIコード)して戻り値になる、
 読み取り失敗時はEOFを返す。
 */

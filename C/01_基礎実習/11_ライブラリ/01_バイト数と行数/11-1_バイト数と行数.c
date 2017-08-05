@@ -40,5 +40,5 @@ int main(void)
 getchar関数は、
 標準入力から1文字分文字をunsigned char型として読み取り、
 int型に変換(ASCIIコード)して戻り値になる、
-読み取り失敗時はEOFを返す。
+読み取り失敗時は「EOF」を返す。
 */

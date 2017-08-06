@@ -95,7 +95,7 @@ int main(void)
 	{
 		if (data_1[i].code < data_2[j].code) { /* 商品コードの大小比較 */
 
-			fprintf(fp3, "%d %s %d\n", /* 商品マスタ1のデータを追加書込み */
+			fprintf(fp3, "%2d %-10s %3d\n", /* 商品マスタ1のデータを追加書込み */
 				data_1[i].code,
 				data_1[i].name,
 				data_1[i].unit_price);
@@ -105,7 +105,7 @@ int main(void)
 		else
 		{
 
-			fprintf(fp3, "%d %s %d\n", /* 商品マスタ2のデータを追加書込み */
+			fprintf(fp3, "%2d %-10s %3d\n", /* 商品マスタ2のデータを追加書込み */
 				data_2[j].code,
 				data_2[j].name,
 				data_2[j].unit_price);
@@ -118,7 +118,7 @@ int main(void)
 
 		while (i < ITEMS_1) { /* 追加書込みループ */
 
-			fprintf(fp3, "%d %s %d\n", /* 商品マスタ1のデータを追加書込み */
+			fprintf(fp3, "%2d %-10s %3d\n", /* 商品マスタ1のデータを追加書込み */
 				data_1[i].code,
 				data_1[i].name,
 				data_1[i].unit_price);
@@ -131,7 +131,7 @@ int main(void)
 
 		while (j < ITEMS_2) { /* 追加書込みループ */
 
-			fprintf(fp3, "%d %s %d\n", /* 商品マスタ2のデータを追加書込み */
+			fprintf(fp3, "%2d %-10s %3d\n", /* 商品マスタ2のデータを追加書込み */
 				data_2[j].code,
 				data_2[j].name,
 				data_2[j].unit_price);
@@ -168,13 +168,13 @@ int main(void)
 
 /*
 【実行結果(syohin3.mst)】
-16 鉛筆 30
-21 ノート 100
-37 定規 150
-40 消しゴム 50
+16 鉛筆       30
+21 ノート    100
+37 定規      150
+40 消しゴム   50
 63 ボールペン 80
-74 分度器 370
-85 コンパス 230
+74 分度器    370
+85 コンパス  230
 */
 
 /*

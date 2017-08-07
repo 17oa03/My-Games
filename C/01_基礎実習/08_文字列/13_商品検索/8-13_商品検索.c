@@ -12,10 +12,12 @@
 
 #define ITEMS 5 /* 商品の数 */
 
+void Search(int, int *, int *, int *, int); /* 商品探索関数 */
+
 int main(void)
 {
 	int code[ITEMS] = { 21, 68, 37, 40, 85 }; /* 商品コード配列 */
-	
+
 	char *name[ITEMS] = { /* 商品名配列 */
 		"鉛筆",
 		"ノート",
@@ -28,7 +30,14 @@ int main(void)
 
 	int input = 0; /* 商品コードの入力値 */
 
-	int i, j; /* カウンタ変数 */
+	Search(input, code, name, price, ITEMS); /* 商品探索処理 */
+
+	return 0;
+}
+
+void Search(int input, int *p_code, int *p_name, int *price, int n)
+{
+	int i; /* カウンタ変数 */
 
 	while (input != 99) { /* 終了コードが入力されるまで処理を繰り返す */
 
@@ -37,12 +46,12 @@ int main(void)
 
 		if (input != 99) { /* 入力値が終了コードでない場合 */
 
-			for (i = 0; i < ITEMS && input != code[i]; i++); /* 商品コード探索 */
+			for (i = 0; i < n && input != *(p_code + i); i++); /* 商品コード探索 */
 
 			if (i < ITEMS) { /* 該当する商品がある場合 */
 
-				printf("商品名  :  %s\n", name[i]);  /* 商品名の出力 */
-				printf("単  価  :  %d\n", price[i]); /* 単価の出力 */
+				printf("商品名  :  %s\n", *(p_name + i)); /* 商品名の出力 */
+				printf("単  価  :  %d\n", *(price + i));  /* 単価の出力 */
 			}
 			else /* それ以外の場合 */
 			{
@@ -52,8 +61,9 @@ int main(void)
 		}
 	}
 
-	return 0;
+	return; /* 戻り値は「なし」 */
 }
+
 
 /*
 【実行結果1】

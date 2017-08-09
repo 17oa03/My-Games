@@ -1,4 +1,4 @@
-// 【プログラム】
+﻿// 【プログラム】
 package com.github.java.test;
 
 public class Suugaku {
@@ -26,6 +26,7 @@ public class Suugaku {
 }
 
 /*
+【実行結果】
 円周率 = 3.141592653589793
 2.0平方根 = 1.4142135623730951
 10 と 20 の大きい方 = 20

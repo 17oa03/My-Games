@@ -1,4 +1,4 @@
-// 【プログラム】
+﻿// 【プログラム】
 package com.github.java.test;
 
 import java.util.Scanner; // import構文( import パッケージ名.クラス名; )
@@ -10,7 +10,7 @@ public class Menseki {
 		int yoko; // 横の長さ
 		int menseki; // 面積
 
-		Scanner scanner = new Scanner(System.in); // 「Scanner」クラスのインスタンスを「Scanner」変数に代入
+		Scanner scanner = new Scanner(System.in); // 「Scanner」クラスのインスタンスを「scanner」変数に代入
 
 		System.out.println("縦の長さ ==> ");
 		tate = scanner.nextInt(); // 標準入力

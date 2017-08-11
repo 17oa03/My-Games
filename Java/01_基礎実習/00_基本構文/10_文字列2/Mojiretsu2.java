@@ -4,32 +4,31 @@ package com.github.java.test;
 public class Mojiretsu2 {
 	public static void main(String[] args) {
 
-		String str1 = "Java";
-		String str2 = str1;
+		String str1 = "Java"; // String クラス型変数 str1 の定義
+		String str2 = str1;  // 代入
 
-		if (str1 == str2) // if文の条件式を評価した結果、true に置き換わるので、「A」を表示する
-			System.out.println("A");
-		else
-			System.out.println("B");
+		if (str1 == str2) // 等値判定の結果、true の場合
+			System.out.println("A"); // 出力
+		else // それ以外の場合
+			System.out.println("B"); // 出力
 
-		if (str1.equals(str2)) // equals メソッドは true を返し、「C」を表示する
-			System.out.println("C");
-		else
-			System.out.println("D");
+		if (str1.equals(str2)) // equals メソッドがインスタンスを等価判定し、true を返した場合
+			System.out.println("C"); // 出力
+		else // それ以外の場合
+			System.out.println("D"); // 出力
 
-		String str3 = new String(str1); // String クラスのインスタンスを「str3」変数に代入
+		String str3 = new String(str1); // String クラスのインスタンスを変数 str3 に代入
 
-		if (str1 == str3) // str3 クラス型変数のオブジェクト内には実際の値が格納されているメモリのアドレスを保持しているから false に置き換わり、「F」を表示する
-			System.out.println("E");
-		else
-			System.out.println("F");
+		if (str1 == str3) // true の場合(変数 str3 にはアドレスが格納されているので等値判定より false に置き換わる)
+			System.out.println("E"); // 出力
+		else // それ以外の場合
+			System.out.println("F"); // 出力
 
-		if (str1.equals(str3)) // equals メソッドがオブジェクトの参照値を比較して true を返し、「G」を表示する
-			System.out.println("G");
-		else
-			System.out.println("H");
+		if (str1.equals(str3)) // equals メソッドがインスタンスを等価判定し、true を返した場合
+			System.out.println("G"); // 出力
+		else // それ以外の場合
+			System.out.println("H"); // 出力
 	}
-
 }
 
 /*
@@ -39,3 +38,11 @@ C
 F
 G
 */
+
+/*
+【考察】
+if (a == b)は「等値判定」、
+指し示す先が完全に同一の場合である(同じアドレスを指している)こと。
+
+if(a.equals(b))は「等価判定」、
+指し示す先が同じ内容である(同じアドレスを指していなくてもよい)こと。

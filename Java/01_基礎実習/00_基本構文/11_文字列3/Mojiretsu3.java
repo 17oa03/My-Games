@@ -6,37 +6,36 @@ import java.util.Scanner; // import構文( import パッケージ名.クラス�
 public class Mojiretsu3 {
 	public static void main(String[] args) {
 
-		Scanner scanner = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in); // Scanner クラスのインスタンスを変数 scanner に代入
 
-		String str1 = "abc";
-		String str2;
+		String str1 = "abc"; // String クラス型変数 str1 の定義
+		String str2; // String クラス型変数 str2 の宣言
 
 		System.out.print("文字列 ==> ");
 		str2 = scanner.nextLine(); // 標準入力
 
-		if (str1 == str2) // str2 は参照型なので false に置き換わり、「B」を表示する
-			System.out.println("A");
-		else
-			System.out.println("B");
+		if (str1 == str2) // 等値判定の結果、true の場合(変数 str2 にはアドレスが格納されているので等値判定より false に置き換わる)
+			System.out.println("A"); // 出力
+		else // それ以外の場合
+			System.out.println("B"); // 出力
 
-		if (str1.equals(str2)) // str2 は参照値で比較しているので true に置き換わり、「C」を表示する
-			System.out.println("C");
-		else
-			System.out.println("D");
+		if (str1.equals(str2)) // equals メソッドがインスタンスを等価判定し、true を返した場合
+			System.out.println("C"); // 出力
+		else // それ以外の場合
+			System.out.println("D"); // 出力
 
-		String str3 = "xyz";
-		String str4 = "xyz";
+		String str3 = "xyz"; // String クラス型変数 str3 の定義
+		String str4 = "xyz"; // String クラス型変数 str4 の定義
 
-		if (str3 == str4) // str3, str4 に代入されたオブジェクトは同じ参照値を持つので true に置き換わり、「E」を表示する
-			System.out.println("E");
-		else
-			System.out.println("F");
+		if (str3 == str4) // 等値判定の結果、true の場合
+			System.out.println("E"); // 出力
+		else // それ以外の場合
+			System.out.println("F"); // 出力
 
-		if (str3.equals(str4))  // str3, str4 は同じ文字リテラルなので true に置き換わり、「G」を表示する
-			System.out.println("G");
-		else
-			System.out.println("H");
-
+		if (str3.equals(str4)) // equals メソッドがインスタンスを等価判定し、true を返した場合
+			System.out.println("G"); // 出力
+		else // それ以外の場合
+			System.out.println("H"); // 出力
 	}
 }
 

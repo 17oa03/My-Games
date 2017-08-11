@@ -5,9 +5,8 @@ public class CommandLine3 {
 	public static void main(String[] args) {
 
 		for (int i = 0; i < args.length; i++) { // args.length はコマンドライン引数の数になる
-			System.out.println(args[i]); // String 型配列の出力
+			System.out.println(args[i]); // 配列 args の出力
 		}
-
 	}
 }
 

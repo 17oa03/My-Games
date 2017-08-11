@@ -6,8 +6,7 @@ public class CommandLine1 {
 
 		int count = args.length; // args.length はコマンドライン引数の数になる
 		System.out.println("コマンドライン引数の数は "
-								  + count + " 個です。");
-
+								  + count + " 個です。"); // 出力
 	}
 }
 

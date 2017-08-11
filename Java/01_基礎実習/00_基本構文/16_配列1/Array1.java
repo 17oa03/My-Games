@@ -5,32 +5,31 @@ public class Array1 {
 	public static void main(String[] args) {
 
 		int i; // カウンタ変数
-		int[] seisu1; // 未使用
-		int[] seisu2 = new int[3]; // 配列 2、全て 0 が格納される
-		int[] seisu3 = new int[] { 10, 20, 30, 40 }; // 配列 3
-		int[] seisu4 = { 50, 60, 70, 80, 90 }; // 配列 4
+		int[] seisu1; // int 型配列 seisu1 の宣言(未使用)
+		int[] seisu2 = new int[3]; // int 型配列 seisu2 の宣言(全て 0 が格納される)
+		int[] seisu3 = new int[] { 10, 20, 30, 40 }; // int 型配列 seisu3 の宣言
+		int[] seisu4 = { 50, 60, 70, 80, 90 }; // int 型配列 seisu4 の宣言
 
-		System.out.println("配列 2 の要素数 = " + seisu2.length); // length メソッドが配列の要素数を取得
-		System.out.println("配列 3 の要素数 = " + seisu3.length);
-		System.out.println("配列 4 の要素数 = " + seisu4.length);
+		System.out.println("配列 2 の要素数 = " + seisu2.length); // length メソッドが配列 seisu2 の要素数を取得
+		System.out.println("配列 3 の要素数 = " + seisu3.length); // length メソッドが配列 seisu3 の要素数を取得
+		System.out.println("配列 4 の要素数 = " + seisu4.length); // length メソッドが配列 seisu4 の要素数を取得
 
-		System.out.print("配列 2 = ");
-		for (i = 0; i < 3; i++)
-			System.out.print(seisu2[i] + " ");
-		System.out.println();
+		System.out.print("配列 2 = "); // 出力
+		for (i = 0; i < 3; i++) // 出力ループ
+			System.out.print(seisu2[i] + " "); // 出力
+		System.out.println(); // 改行
 
-		System.out.print("配列 3 = ");
-		for (int j = 0; j < seisu3.length; j++) // length メソッドが配列の要素数を取得
-			System.out.print(seisu3[j] + " ");
-		System.out.println();
+		System.out.print("配列 3 = "); // 出力
+		for (int j = 0; j < seisu3.length; j++) // 出力ループ
+			System.out.print(seisu3[j] + " "); // 出力
+		System.out.println(); // 改行
 
-		System.out.print("配列 4 = ");
-		for (int s : seisu4) { // 拡張for文(for-each文)、for (データ型 変数名: コレクション) { 処理 }
-			System.out.print(s + " ");
+		System.out.print("配列 4 = "); // 出力
+		for (int s : seisu4) { // 拡張for文(for-each文)、for (データ型 変数名 : コレクション(ArrayList)) { 処理 }
+			System.out.print(s + " "); // 出力
 		}
-		System.out.println();
+		System.out.println(); // 改行
 	}
-
 }
 
 /*

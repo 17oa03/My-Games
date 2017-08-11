@@ -4,17 +4,16 @@ package com.github.java.test;
 public class Array5 {
 	public static void main(String[] args) {
 
-		int[] seisu = { 50, 60, 70, 80, 90 };
+		int[] seisu = { 50, 60, 70, 80, 90 }; // int 型配列 seisu の定義
 
-		System.out.print("配列 = ");
-		for (int s : seisu) { // seisu 配列の要素に含まれる値を 1 つずつ取り出し変数 s に代入
+		System.out.print("配列 = "); // 出力
+		for (int s : seisu) { // 配列 seisu の要素に含まれる値を 1 つずつ取り出し変数 s に代入
 			System.out.print(s + " "); // 出力
 		}
 		System.out.println(); // 改行
 
-		System.out.println("seisu 配列の添字 5 を出力する実験");
-		System.out.println(seisu[5]); // 配列のインデックスとして存在しない要素を指定して出力
-
+		System.out.println("seisu 配列の添字 5 を出力する実験"); // 出力
+		System.out.println(seisu[5]); // 配列 seisu のインデックスとして存在しない要素を指定して出力
 	}
 }
 

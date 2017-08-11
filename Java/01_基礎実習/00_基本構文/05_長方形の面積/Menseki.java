@@ -10,7 +10,7 @@ public class Menseki {
 		int yoko; // 横の長さ
 		int menseki; // 面積
 
-		Scanner scanner = new Scanner(System.in); // 「Scanner」クラスのインスタンスを「scanner」変数に代入
+		Scanner scanner = new Scanner(System.in); // Scanner クラスのインスタンスを変数 scanner に代入
 
 		System.out.println("縦の長さ ==> ");
 		tate = scanner.nextInt(); // 標準入力
@@ -20,7 +20,6 @@ public class Menseki {
 		menseki = tate * yoko; // 面積の計算
 
 		System.out.println("面積は " + menseki + "です。"); // 面積の出力
-
 	}
 }
 

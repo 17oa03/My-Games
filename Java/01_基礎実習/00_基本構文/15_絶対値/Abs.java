@@ -3,7 +3,7 @@ package com.github.java.test;
 
 import java.util.Scanner; // import構文( import パッケージ名.クラス名; )
 
-public class Ads {
+public class Abs {
 	public static void main(String[] args) { // main メソッドの定義
 
 		int in; // int 型変数 in の宣言

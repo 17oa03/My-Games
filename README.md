@@ -1,9 +1,8 @@
 - - -
-### 動作確認環境
-プログラムの動作確認は以下の環境で行いました。
-
-- ###### OS : windows 10 (64ビット)
-- ###### 開発環境 : Visual Studio 2017 Community
+### 開発環境
+1. ###### Visual Studio 2017 Community
+1. ###### Eclipse Java EE IDE for Web Developers.(Version: Oxygen Release (4.7.0))
+2. ###### IDLE
 - - -
 ### 免責事項
 

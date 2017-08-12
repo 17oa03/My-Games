@@ -17,14 +17,14 @@ screen = pygame.display.set_mode(SCREEN_SIZE)
 pygame.display.set_caption("Drawing shapes")
 FPSCLOCK = pygame.time.Clock()
 
-def main():
+def main(): # メイン関数
 
-    while True:
-         
-        for event in pygame.event.get():
-            if event.type == QUIT:
-                pygame.quit()
-                sys.exit()
+    while True: # 無限ループ
+        
+        for event in pygame.event.get(): # イベントキューからイベントを取得
+            if event.type == QUIT: # 終了イベントの判定
+                pygame.quit() # PyGameの初期化を解除
+                sys.exit() # プログラム終了
 
         # White surface
         screen.fill((255, 255, 255))
@@ -41,8 +41,8 @@ def main():
         rect1 = Rect((30, 160), (100, 50))
         pygame.draw.rect(screen, (255, 255, 0), rect1)
     
-        pygame.display.update()
-        FPSCLOCK.tick(3)
+        pygame.display.update() # 描画内容を画面に反映
+        FPSCLOCK.tick(3) # 1 秒間に 3 回ループする
 
 if __name__ == '__main__':
     main()

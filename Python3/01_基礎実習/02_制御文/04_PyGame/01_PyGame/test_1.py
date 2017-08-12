@@ -14,8 +14,9 @@ pygame.init() # PyGameの初期化
 SURFACE = pygame.display.set_mode((400, 300))
 pygame.display.set_caption("Hello, Window!")
 
-def main():
-    while True:
+def main(): # メイン関数
+    
+    while True: # 無限ループ
         SURFACE.fill((255, 255, 255)) # ウィンドウの色変更
 
         for event in pygame.event.get(): # イベントキューからイベントを取得

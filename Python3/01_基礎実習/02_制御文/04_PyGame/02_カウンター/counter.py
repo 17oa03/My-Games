@@ -16,7 +16,7 @@ FPSCLOCK = pygame.time.Clock()
 
 def main():
     sysfont = pygame.font.SysFont(None, 36)
-    counter = 0 # カウンタ変数
+    counter = 0 # カウンタ
 
     while True:
         
@@ -25,12 +25,9 @@ def main():
                 pygame.quit()
                 sys.exit()
 
-        counter += 1 # カウンタ変数をインクリメント
+        counter += 1 # カウンタをインクリメント
         SURFACE.fill((0, 0, 0))
-        
-        count_image = sysfont.render
-        ("count is {}".format(counter), True, (225, 225, 225))
-        
+        count_image = sysfont.render("count is {}".format(counter), True, (225, 225, 225))
         SURFACE.blit(count_image, (50, 50))
         pygame.display.update()
         FPSCLOCK.tick(10) # 1秒間に10フレーム描画

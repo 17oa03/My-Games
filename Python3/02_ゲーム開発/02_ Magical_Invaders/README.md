@@ -1,6 +1,6 @@
 ### ゲーム画面
 
-![game_screen.jpg](https://github.com/17oa03/works/blob/master/Python3/02_%E3%82%B2%E3%83%BC%E3%83%A0%E9%96%8B%E7%99%BA/02_Magical_Invaders/game_screen.jpg)
+![game_screen.jpg](https://github.com/17oa03/works/blob/master/Python3/02_%E3%82%B2%E3%83%BC%E3%83%A0%E9%96%8B%E7%99%BA/02_%20Magical_Invaders/game_screen.jpg)
 
 - - - -
 ### ゲーム説明

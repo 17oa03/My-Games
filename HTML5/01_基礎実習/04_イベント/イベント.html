@@ -2,10 +2,22 @@
 <html lang="ja"> <!-- 全要素をhtml要素で囲む、さらに日本語(ja)の指定 -->
     <head> <!-- head(ヘッド)要素、ページのタイトル名、外部ファイル(CSS, Javascript)の関連付けを記述 -->
         <meta charset="utf-8"> <!-- 使用する文字コード規格(UTF-8)を指定 -->
-        <titel>DOM</titel> <!-- ブラウザのタブ、タイトルバーに表示 -->
+        <titel>イベント</titel> <!-- ブラウザのタブ、タイトルバーに表示 -->
+        <script> // script要素
+            function calc() { // BMIを計算する関数
+                var w = document.getElementById("weigth").value; // 体重の入力値を変数に格納
+                var h = document.getElementById("heigth").value; // 身長の入力値を変数に格納
+                var bmi = w / (h * h); // BMIの計算
+                document.getElementById("result").textContent = "あなたのBMIは" + bmi + "です。";
+            }
+        </script>
     </head> <!-- head(ヘッド)要素の終わり -->
     <body> <!-- body(ボディ)要素、Webページに表示させたい文書、画像を記述 -->
-        <h1 id="title">DOM(Document Object Model)</h1> <!-- HTMLとJavascriptの橋渡しとなるのがDOM -->
+        <h1>BMIの計算</h1>
+        体重(kg) : <input id="weigth"/><br/> <!-- 体重の入力 -->
+        身長(m) : <input id="heigth"/><br/> <!-- 身長の入力 -->
+        計算 : <button onclick="calc()">計算</button> <!-- onclick属性で指定された関数calc(イベントハンドラー)が実行される。 -->
+        <p id="result"></p>
     </body> <!-- body(ボディ)要素の終わり -->
 </html> <!-- html要素の終わり -->
 

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html> <!-- 「このHTML文書はHTML5を意識して作成」という意味 -->
+<html lang="ja"> <!-- 全要素をhtml要素で囲む、さらに日本語(ja)の指定 -->
+    <head> <!-- head(ヘッド)要素、ページのタイトル名、外部ファイル(CSS, Javascript)の関連付けを記述 -->
+        <meta charset="utf-8"> <!-- 使用する文字コード規格(UTF-8)を指定 -->
+        <style> /* style要素 */
+           * { /* 全称セレクタ */
+               font-size: 12px; /* 文書全体のフォントサイズを12ピクセルにする */
+           }
+            h1 { /* タイプセレクタ */
+                font-size: 22px; /* h1要素のフォントサイズを22ピクセルにする */
+            }
+           #test1 { /* IDセレクタ */
+               color: green; /* IDがtest1の要素を緑色にする */
+           }
+            .test2 { /* IDセレクタ */
+                color: purple; /* IDがtest2の要素を紫色にする */
+            }
+            .test3 { /* IDセレクタ */
+                color: red; /* IDがtest3の要素を赤色にする */
+            }
+        </style> <!-- style要素の終わり -->
+    </head> <!-- head(ヘッド)要素の終わり -->
+    <body> <!-- body(ボディ)要素、Webページに表示させたい文書、画像を記述 -->
+        <h1> ヘッディング </h1>
+        <p id="test1"> パラグラフ1 </p>
+        <ul>
+            <li class="test2">テスト1</li> <!-- class属性の指定 -->
+            <li class="test3">テスト2</li> <!-- class属性の指定 -->
+            <li class="test2">テスト3</li> <!-- class属性の指定 -->
+            <li class="test3">テスト4</li> <!-- class属性の指定 -->
+        </ul>
+        <p> パラグラフ2 </p>
+    </body> <!-- body(ボディ)要素の終わり -->
+</html> <!-- html要素の終わり -->

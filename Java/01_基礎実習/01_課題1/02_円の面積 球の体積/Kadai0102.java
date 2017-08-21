@@ -1,4 +1,4 @@
-package com.github.jkadai01;
+﻿package com.github.jkadai01;
 
 import java.util.Scanner;
 

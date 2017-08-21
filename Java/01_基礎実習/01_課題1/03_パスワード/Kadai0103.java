@@ -1,4 +1,13 @@
-﻿package com.github.jkadai01;
+/*
+【概要】
+標準入力よりパスワード(文字列)を入力し、
+初期化したパスワード(文字列)と比較し、
+一致した場合は"パスワード一致"、
+一致しない場合は"パスワード不一致"と標準入力に出力する。
+ */
+
+// 【プログラム】
+package com.github.jkadai01;
 
 import java.util.Scanner;
 

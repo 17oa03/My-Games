@@ -1,3 +1,10 @@
+/*
+【概要】
+標準入力より整数を入力し、
+標準入力に入力した整数の平方根を出力する。
+ */
+
+// 【プログラム】
 package com.github.jkadai01;
 
 import java.util.Scanner;

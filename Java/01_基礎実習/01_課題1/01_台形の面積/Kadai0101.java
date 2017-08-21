@@ -1,4 +1,11 @@
-﻿package com.github.jkadai01;
+/*
+【概要】
+標準入力より台形の上底と下底と高さを入力し、
+標準入力に台形の面積を出力する。
+ */
+
+// 【プログラム】
+package com.github.jkadai01;
 
 import java.util.Scanner;
 

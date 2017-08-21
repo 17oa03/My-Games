@@ -1,4 +1,11 @@
-﻿package com.github.jkadai01;
+/*
+【概要】
+標準入力より半径を入力し、
+標準入力に円の面積と球の体積を小数点以下3桁まで出力する。
+ */
+
+// 【プログラム】
+package com.github.jkadai01;
 
 import java.util.Scanner;
 

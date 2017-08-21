@@ -1,3 +1,10 @@
+/*
+【概要】
+整数の乱数を発生させて、
+その値により"大吉", "中吉", "小吉"を標準出力に出力する。
+ */
+
+// 【プログラム】
 package com.github.jkadai01;
 
 import java.util.Random;

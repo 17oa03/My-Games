@@ -1,4 +1,4 @@
-package com.github.jkadai01;
+﻿package com.github.jkadai01;
 
 import java.util.Scanner;
 
@@ -6,6 +6,7 @@ public class Kadai0103 {
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
+
 		System.out.print("パスワードを入力して下さい ==> ");
 
 		if ("Tokyo".equals(scanner.nextLine())) // 入力値を等価判定

@@ -1,4 +1,4 @@
-package com.github.jkadai01;
+﻿package com.github.jkadai01;
 
 import java.util.Scanner;
 
@@ -6,6 +6,7 @@ public class Kadai0101 {
 	public static void main (String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
+
 		System.out.print("上底 ==> ");
 		int upperBase = scanner.nextInt(); // 上底の入力
 		System.out.print("下底 ==> ");

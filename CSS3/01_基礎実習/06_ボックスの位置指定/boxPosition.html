@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html> <!-- 「このHTML文書はHTML5を意識して作成」という意味 -->
+<html lang="ja"> <!-- 全要素をhtml要素で囲む、さらに日本語(ja)の指定 -->
+    <head> <!-- head(ヘッド)要素、ページのタイトル名、外部ファイル(CSS, Javascript)の関連付けを記述 -->
+        <meta charset="utf-8"> <!-- 使用する文字コード規格(UTF-8)を指定 -->
+        <style>
+            div {
+                position: absolute; /* top, leftを使用する際に必要 */
+            }
+            #panel { /* パネル */
+                left: 100px;
+                top: 50px;
+                width: 300px;
+                height: 100px;
+                background-color: lightgreen;
+            }
+            .button { /* ボタン */
+                width: 50px;
+                height: 25px;
+                color: white;
+                background-color: lightpink;
+                border: 5px solid blue;
+                text-align: center;
+                font-size: 24px;
+            }
+            .yes { /* YES ボタン */
+                top: 20px; left: 70px;
+            }
+            .no { /* NO ボタン */
+                top: 20px; left: 200px;
+            }
+        </style>
+    </head> <!-- head(ヘッド)要素の終わり -->
+    <body> <!-- body(ボディ)要素、Webページに表示させたい文書、画像を記述 -->
+        <div id = "panel">
+            <div class = "button yes">YES</div>
+            <div class = "button no">NO</div>
+        </div>
+    </body> <!-- body(ボディ)要素の終わり -->
+</html> <!-- html要素の終わり -->

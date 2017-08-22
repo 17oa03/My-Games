@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html> <!-- 「このHTML文書はHTML5を意識して作成」という意味 -->
+<html lang="ja"> <!-- 全要素をhtml要素で囲む、さらに日本語(ja)の指定 -->
+    <head> <!-- head(ヘッド)要素、ページのタイトル名、外部ファイル(CSS, Javascript)の関連付けを記述 -->
+        <meta charset="utf-8"> <!-- 使用する文字コード規格(UTF-8)を指定 -->
+        <script> // script要素は、JavaScriptを実行する為に必要
+            var a = [1, 5, 3, 6, 8, 2]; // 配列の宣言と初期値の設定
+            var b = a[0]; // b に a[0] の 1 が代入される
+            var c = a[1]; // c に a[1] の 5 が代入される
+            var d = a[2]; // d に a[2] の 3 が代入される
+            document.write(b + "<br>" + c + "<br>" + d + "<br>"); // b, c, d の出力
+
+            var str1 = ["SPAM", "EGG", "BACON"]; // 配列の宣言と初期値の設定
+            var str2 = str1[1]; // str2 に str1[1] の "EGG" が代入される
+            var str3 = str1[2]; // str3 に str1[2] の "BACON" が代入される
+            document.write(str2 + "<br>" + str3 + "<br>"); // str2, str3 の出力
+        </script> <!-- script要素の終わり -->
+    </head> <!-- head(ヘッド)要素の終わり -->
+    <body> <!-- body(ボディ)要素、Webページに表示させたい文書、画像を記述 -->
+    </body> <!-- body(ボディ)要素の終わり -->
+</html> <!-- html要素の終わり -->

@@ -36,15 +36,15 @@ public class Kadai0201 {
 
 		int[] intAry = new int[5]; // 配列の宣言
 
-		for (int i = 0; i < intAry.length; i++) {
+		for (int i = 0; i < intAry.length; i++) { // 入力ループ
 			System.out.print("整数 ==> ");
-			intAry[i] = scanner.nextInt();
+			intAry[i] = scanner.nextInt(); // 入力
 		}
 
 		System.out.println("---逆順出力---");
 
-		for (int i = intAry.length - 1; i >= 0; i-- )
-			System.out.printf("%9d\n", intAry[i]);
+		for (int i = intAry.length - 1; i >= 0; i-- ) // 出力ループ
+			System.out.printf("%9d\n", intAry[i]); // 出力
 		*/
 	}
 }

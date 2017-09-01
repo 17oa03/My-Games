@@ -5,7 +5,7 @@
  */
 
 // 【プログラム】
-package jkadai02;
+package com.github.jkadai02;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,10 +15,12 @@ import java.util.Scanner;
 public class Kadai0201 {
 	public static void main(String[] args) {
 
+		final int LOOP = 5; // 入力回数
+
 		Scanner scanner = new Scanner(System.in);
 		List<Integer> intAry = new ArrayList<>(); // コレクションの宣言
 
-		for (int i = 0; i < 5; i++) { // 入力ループ
+		for (int i = 0; i < LOOP; i++) { // 入力ループ
 			System.out.print("整数 ==> ");
 			intAry.add(scanner.nextInt()); // 入力
 		}

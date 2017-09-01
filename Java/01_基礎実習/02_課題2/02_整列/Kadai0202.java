@@ -5,7 +5,7 @@
 */
 
 // 【プログラム】
-package jkadai02;
+package com.github.jkadai02;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -15,29 +15,29 @@ import java.util.List;
 public class Kadai0202 {
 	public static void main(String[] args) {
 
-		List<Double> doubleAry = Arrays.asList(581.1, 834.0, 253.4, 924.9, 301.7); // 固定リストの初期化
+		List<Double> doubleAry = Arrays.asList(581.1, 834.0, 253.4, 924.9, 301.7); // リストの初期化
 
 		System.out.println("*** ソート前 ***");
-		for (double i : doubleAry)
+		for (double i : doubleAry) // 出力ループ
 			System.out.printf("  %.1f", i); // 出力
 		System.out.println(); // 改行
 
 		Collections.sort(doubleAry, Comparator.reverseOrder()); // 降順ソート処理
 
 		System.out.println("*** ソート後 ***");
-		for (double i : doubleAry)
+		for (double i : doubleAry) // 出力ループ
 			System.out.printf("  %.1f", i); // 出力
 		System.out.println(); // 改行
 
 		/* C like ver
-		double[] doubleAry = {581.1, 834.0, 253.4, 924.9, 301.7};
+		double[] doubleAry = {581.1, 834.0, 253.4, 924.9, 301.7}; // 配列の初期化
 
 		System.out.println("*** ソート前 ***");
 		for (int i = 0; i < doubleAry.length; i++) // 出力ループ
 			System.out.printf("  %.1f", doubleAry[i]); // 出力
 		System.out.println(); // 改行
 
-		for (int i = 0; i < doubleAry.length - 1; i++) { // 降順ソート処理ループ
+		for (int i = 0; i < doubleAry.length - 1; i++) { // 降順ソート処理
 			for (int j = i + 1; j < doubleAry.length; j++) {
 				if (doubleAry[i] < doubleAry[j]) {
 					double work = doubleAry[i]; // データ交換

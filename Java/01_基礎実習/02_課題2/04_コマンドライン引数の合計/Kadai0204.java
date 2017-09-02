@@ -1,3 +1,10 @@
+/*
+【概要】
+コマンドライン引数より 0 個以上の整数を入力し、
+合計を計算し標準入力に出力する。
+*/
+
+// 【プログラム】
 package com.github.jkadai02;
 
 public class Kadai0204 {
@@ -5,8 +12,8 @@ public class Kadai0204 {
 
 		int total = 0;
 
-		for (String s : args)
-			total += Integer.parseInt(s); // 合計計算
+		for (String s : args) // 演算ループ
+			total += Integer.parseInt(s); // 合計の計算
 		System.out.println("合計 = " + total); // 出力
 	}
 }

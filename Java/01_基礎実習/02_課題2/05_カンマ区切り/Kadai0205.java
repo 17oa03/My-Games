@@ -15,12 +15,11 @@ public class Kadai0205 { // クラスの宣言
 	public static void main(String[] args) { // main メソッドの宣言
 
 		Scanner scanner = new Scanner(System.in); // インスタンスを生成し、代入
-		String br = System.getProperty("line.separator"); // プラットフォームに適した改行コードを取得
 
 		System.out.print("文字列 ==> ");
 		String[] strAry = (scanner.nextLine()).split(","); // 入力値をカンマ区切りの文字列に分割して配列に代入
 
-		System.out.println(br + "---カンマ区切り出力---");
+		System.out.println("\n---カンマ区切り出力---");
 		for (String s : strAry) // 出力ループ
 			System.out.println(s); // 出力
 	}

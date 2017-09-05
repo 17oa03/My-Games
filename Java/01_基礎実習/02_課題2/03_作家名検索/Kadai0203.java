@@ -5,40 +5,16 @@
 */
 
 // 【プログラム】
-package com.github.jkadai02;
+package com.github.jkadai02; // package 文
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.Scanner; // import 文
 
-public class Kadai0203 {
-	public static void main(String[] args) {
+public class Kadai0203 { // クラスの宣言
+	public static void main(String[] args) { // main メソッドの宣言
 
-		Scanner scanner = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in); // インスタンスを生成し、代入
 
-		Map<String, String> map = new HashMap<String, String>() { // マップの初期化
-			{
-				put("坊っちゃん", "夏目漱石");
-				put("武蔵野", "国木田独歩");
-				put("たけくらべ", "樋口一葉");
-				put("一握の砂", "石川啄木");
-				put("舞姫", "森鴎外");
-				put("羅生門", "芥川龍之介");
-			}
-		};
-
-		System.out.print("作品名入力 ==> ");
-		String input = scanner.nextLine(); // 入力
-
-		if (map.containsKey(input)) // 特定のキーが格納されているかを判定
-			System.out.println(map.get(input)); // 出力
-		else // キーが見つからなかった場合
-			System.out.println("見つかりません。"); // 出力
-
-		/* C like ver
-		Scanner scanner = new Scanner(System.in);
-
-		String[] novel = {
+		String[] novel = { // String 配列の初期化
 				"坊っちゃん",
 				"武蔵野",
 				"たけくらべ",
@@ -47,7 +23,7 @@ public class Kadai0203 {
 				"羅生門",
 		};
 
-		String[] novelist = {
+		String[] novelist = { // String 配列の初期化
 				"夏目漱石",
 				"国木田独歩",
 				"樋口一葉",
@@ -56,11 +32,11 @@ public class Kadai0203 {
 				"芥川龍之介",
 		};
 
-		System.out.print("作品名入力 ==> ");
-		String input = scanner.nextLine(); // 入力
-
 		int i; // カウンタ変数
-		boolean hitFlag = false; // 一致フラグ
+		boolean hitFlag = false; // 一致フラグ OFF
+
+		System.out.print("作品名入力 ==> ");
+		String input = scanner.nextLine(); // キーボードから 1 行の入力を受け付ける
 
 		for (i = 0; i < novel.length && hitFlag != true; i++) { // 検索ループ
 			if (novel[i].equals(input)) // 一致判定
@@ -71,9 +47,7 @@ public class Kadai0203 {
 			System.out.println(novelist[i - 1]); // 出力
 		else // 一致していない場合
 			System.out.println("見つかりません。"); // 出力
-		*/
 	}
-
 }
 
 /*

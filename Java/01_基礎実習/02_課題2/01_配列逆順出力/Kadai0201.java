@@ -5,9 +5,9 @@
  */
 
 // 【プログラム】
-package com.github.jkadai02;
+package com.github.jkadai02; // package 文で Kadai0201 クラスをパッケージに所属させている。
 
-import java.util.Scanner; // import文によって、FQCN(完全限定クラス名)を毎回指定する必要が無くなります。
+import java.util.Scanner; // import 文によって、FQCN(完全限定クラス名)を毎回指定する必要が無くなります。
 
 public class Kadai0201 { // クラスの宣言
 	public static void main(String[] args) { // main メソッドの宣言

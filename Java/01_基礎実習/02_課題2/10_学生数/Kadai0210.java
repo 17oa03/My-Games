@@ -5,32 +5,30 @@
 */
 
 // 【プログラム】
-package com.github.jkadai02;
+package com.github.jkadai02; // package 文
 
-import java.util.Scanner;
+import java.util.Scanner; // import 文
 
-public class Kadai0210 {
-	public static void main(String[] args) {
+public class Kadai0210 { // クラスの宣言
+	public static void main(String[] args) { // main メソッドの宣言
 
-		int[][] student = new int[3][];
-		StringBuilder sb = new StringBuilder(); // メモリ領域(バッファ)の確保
+		int[][] student = new int[3][]; // int 型配列の宣言
 
 		input(student); // 入力
-		output(student, sb); // 出力
+		output(student); // 出力
 	}
 
-	public static void input(int[][] student) {
+	public static void input(int[][] student) { // 入力メソッド
 
-		Scanner scanner = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in); // インスタンスを生成し、代入
 
 		for (int i = 0; i < student.length; i++) { // クラス数の入力ループ
-
 			System.out.printf("%d 年生のクラス数 ==> ", i + 1);
 			student[i] = new int[scanner.nextInt()]; // クラス数の入力
 
-			if (student[i].length > 9 || student[i].length < 0) { // 最大、最小クラス数の判定
+			if (student[i].length > 9 || student[i].length < 1) { // 最大、最小クラス数の判定
 				System.out.println("各学年のクラス数は最低 1 クラスから最高 9 クラスです。");
-				System.exit(1); // プログラム異常終了
+				System.exit(1); // JVM の異常終了
 			}
 
 			for (int j = 0; j < student[i].length; j++) { // 人数の入力ループ
@@ -38,51 +36,44 @@ public class Kadai0210 {
 				student[i][j] = scanner.nextInt(); // 人数の入力
 			}
 		}
-
-		return;
 	}
 
-	public static void output(int[][] student, StringBuilder sb) {
+	public static void output(int[][] student) { // 出力メソッド
 
 		int classMax = 0; // 最大クラス数
 
-		for (int i = 0; i < student.length; i++) // 最大クラス数の判定ループ
+		for (int i = 0; i < student.length; i++) // 最大クラス数の検索ループ
 			classMax = Math.max(classMax, student[i].length); // 最大値の比較
 		int[] total = new int[classMax]; // 学年合計人数
 
-		sb.append("\n*** クラス人数一覧表 ***\n   ");
-		for (int i = 0; i < classMax; i++) // クラス人数追加ループ
-			sb.append(String.format("%2d組", i + 1)); // クラス人数の追加
+		System.out.printf("\n*** クラス人数一覧表 ***\n   ");
+		for (int i = 0; i < classMax; i++) // クラス人数の出力ループ
+			System.out.printf("%2d組", i + 1); // クラス人数の出力
 
-		for (int i = 0; i < student.length; i++) { // 合計ループ
-			for (int j = 0; j < student[i].length; j++) {
+		for (int i = 0; i < student.length; i++) { // 学年合計人数の計算ループ
+			for (int j = 0; j < student[i].length; j++)
 				total[i] += student[i][j]; // 学年合計人数の計算
-			}
 		}
-		sb.append(" 合計\n"); // 合計の追加
+		System.out.println(" 合計");
 
-		for (int i = 0; i < student.length; i++) { // 追加ループ
-			sb.append(String.format("%d年", i + 1)); // 学年の追加
+		for (int i = 0; i < student.length; i++) { // 学年の出力ループ
+			System.out.printf("%d年", i + 1); // 学年の出力
 
-			for (int j = 0; j < student[i].length; j++) // クラス人数の追加ループ
-				sb.append(String.format("%4d", student[i][j])); // クラス人数の追加
-			for (int j = 0; j < classMax - student[i].length; j++) // 空白追加ループ
-				sb.append("    "); // 空白の追加
-			sb.append(String.format("%5d\n", total[i])); // 合計の追加
+			for (int j = 0; j < student[i].length; j++) // クラス人数の出力ループ
+				System.out.printf("%4d", student[i][j]); // クラス人数の追加
+			for (int j = 0; j < classMax - student[i].length; j++) // 空白の出力ループ
+				System.out.print("    "); // 空白の出力
+			System.out.printf("%5d\n", total[i]); // 合計の出力
 		}
 
 		int totalAll = 0; // 総合計人数
 		for (int i : total) // 総合計人数の計算ループ
 			totalAll += i; // 総合計人数の計算
 
-		sb.append("    "); // 空白の追加
-		for (int i = 0; i < classMax - 1; i++) // 空白追加ループ
-			sb.append("    "); // 空白の追加
-		sb.append(String.format("総計%4d", totalAll)); // 総合計人数の追加
-
-		System.out.println(sb.toString()); // 標準出力
-
-		return;
+		System.out.print("    "); // 空白の出力
+		for (int i = 0; i < classMax - 1; i++) // 空白の出力ループ
+			System.out.print("    "); // 空白の出力
+		System.out.printf("総計%4d", totalAll); // 総合計人数の出力
 	}
 }
 

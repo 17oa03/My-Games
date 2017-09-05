@@ -5,40 +5,37 @@
 */
 
 // 【プログラム】
-package com.github.jkadai02;
+package com.github.jkadai02; // package 文
 
-import java.util.Scanner;
+import java.util.Scanner; // import 文
 
-public class Kadai0209 {
-	public static void main(String[] args) {
+public class Kadai0209 { // クラスの宣言
+	public static void main(String[] args) { // main メソッドの宣言
 
 		final int LOOP = 5; // 入力回数
-		double total = 0; // 合計
-		double[] doubleAry = new double[LOOP];
+		double total = 0; // 入力値と偏差の合計
+		double[] doubleAry = new double[LOOP]; // 入力回数分の要素を持つ配列の宣言
 
-		Scanner scanner = new Scanner(System.in);
-		StringBuilder sb = new StringBuilder(); // メモリ領域(バッファ)の確保
+		Scanner scanner = new Scanner(System.in); // インスタンスを生成し、代入
 
 		for (int i = 0; i < LOOP; i++) { // 入力ループ
 			System.out.print("整数 ==> ");
 			doubleAry[i] = scanner.nextInt(); // 入力
-			total += doubleAry[i]; // 合計の計算
+			total += doubleAry[i]; // 入力値の合計を計算
 		}
 
-		sb.append(String.format("合計 = %.0f\n", total)); // 合計の追加
-		sb.append(String.format("平均 = %.2f\n", total / LOOP)); // 平均の追加
+		System.out.printf("合計 = %.0f\n", total); // 入力値の合計を出力
+		System.out.printf("平均 = %.2f\n", total / LOOP); // 平均の出力
 
 		for (int i = 0; i < LOOP; i++) // 偏差ループ
 			doubleAry[i] = Math.pow((doubleAry[i] - (total / LOOP)), 2); // 偏差の計算
 
-		total = 0; // 合計
-		for (int i = 0; i < LOOP; i++) // 合計ループ
-			total += doubleAry[i]; // 合計の計算
+		total = 0; // 偏差の合計をする為に 0 を代入
+		for (int i = 0; i < LOOP; i++) // 偏差の合計ループ
+			total += doubleAry[i]; // 偏差の合計を計算
 
-		sb.append(String.format("分散 = %.2f\n", total / LOOP)); // 分散の追加
-		sb.append(String.format("標準偏差 = %.2f\n", Math.sqrt(total / LOOP))); // 標準偏差の追加
-
-		System.out.println(sb.toString()); // 標準出力
+		System.out.printf("分散 = %.2f\n", total / LOOP); // 分散の出力
+		System.out.printf("標準偏差 = %.2f\n", Math.sqrt(total / LOOP)); // 標準偏差の出力
 	}
 }
 

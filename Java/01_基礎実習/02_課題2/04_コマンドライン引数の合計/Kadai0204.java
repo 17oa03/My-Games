@@ -5,15 +5,15 @@
 */
 
 // 【プログラム】
-package com.github.jkadai02;
+package com.github.jkadai02; // package 文
 
-public class Kadai0204 {
-	public static void main(String[] args) {
+public class Kadai0204 { // クラスの宣言
+	public static void main(String[] args) { // main メソッドの宣言
 
-		int total = 0;
+		int total = 0; // 合計
 
-		for (String s : args) // 演算ループ
-			total += Integer.parseInt(s); // 合計の計算
+		for (String s : args) // 合計ループ
+			total += Integer.parseInt(s); //  // 文字列を整数に変換して合計に加算
 		System.out.println("合計 = " + total); // 出力
 	}
 }

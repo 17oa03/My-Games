@@ -1,42 +1,21 @@
 /*
 【概要】
-標準入力より整数を5個入力し、
+標準入力より整数を 5 個入力し、
 入力順とは逆に標準出力に出力する。
  */
 
 // 【プログラム】
 package com.github.jkadai02;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.Scanner;
+import java.util.Scanner; // import文によって、FQCN(完全限定クラス名)を毎回指定する必要が無くなります。
 
-public class Kadai0201 {
-	public static void main(String[] args) {
+public class Kadai0201 { // クラスの宣言
+	public static void main(String[] args) { // main メソッドの宣言
 
-		final int LOOP = 5; // 入力回数
+		final int LOOP = 5; // 入力回数の定数
+		int[] intAry = new int[LOOP]; // 配列の宣言
 
-		Scanner scanner = new Scanner(System.in);
-		List<Integer> intAry = new ArrayList<>(); // コレクションの宣言
-
-		for (int i = 0; i < LOOP; i++) { // 入力ループ
-			System.out.print("整数 ==> ");
-			intAry.add(scanner.nextInt()); // 入力
-		}
-
-		System.out.println("---逆順出力---");
-
-		for (ListIterator<Integer> it = intAry.listIterator(intAry.size()); // イテレータの取得
-			it.hasPrevious();) { // イテレータを前に戻せるならループ
-			Integer p = it.previous(); // イテレータを前に戻す
-			System.out.printf("%9d\n", p); // 出力
-		}
-
-		/* C like ver
-		Scanner scanner = new Scanner(System.in);
-
-		int[] intAry = new int[5]; // 配列の宣言
+		Scanner scanner = new Scanner(System.in); // インスタンスを生成し、参照型変数にインスタンスの参照値を代入
 
 		for (int i = 0; i < intAry.length; i++) { // 入力ループ
 			System.out.print("整数 ==> ");
@@ -44,10 +23,8 @@ public class Kadai0201 {
 		}
 
 		System.out.println("---逆順出力---");
-
-		for (int i = intAry.length - 1; i >= 0; i-- ) // 出力ループ
+		for (int i = intAry.length - 1; i >= 0; i-- ) // 逆順出力ループ(最後の要素から順に出力する)
 			System.out.printf("%9d\n", intAry[i]); // 出力
-		*/
 	}
 }
 

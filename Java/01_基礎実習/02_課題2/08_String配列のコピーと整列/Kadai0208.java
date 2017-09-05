@@ -5,31 +5,27 @@
 */
 
 // 【プログラム】
-package com.github.jkadai02;
+package com.github.jkadai02; // package 文
 
-public class Kadai0208 {
-	public static void main(String[] args) {
+public class Kadai0208 { // クラスの宣言
+	public static void main(String[] args) { // main メソッドの宣言
 
-		String[] str1 = { "C", "Java", "DataBase", "HTML", "JSP", "Servlet" };
-		String[] str2 = new String[str1.length]; // str1と同じ領域を確保
-		StringBuilder sb = new StringBuilder(); // メモリ領域(バッファ)の確保
+		String[] str1 = { "C", "Java", "DataBase", "HTML", "JSP", "Servlet" }; // String 配列の初期化
+		String[] str2 = new String[str1.length]; // str1 と同じ領域を確保
 
-		sb.append("*** コピー元 ***\nstr1 ="); // 追加
-		for (String i : str1) { // 比較ループ
+		System.out.printf("*** コピー元 ***\nstr1 =");
+		for (String i : str1) { // 出力ループ
 			int k = 0; // 比較カウンタ
-
-			sb.append(String.format(" %s", i)); // str1を追加
+			System.out.printf(" %s", i); // str1 の出力
 
 			for (String j : str1) // 比較ループ
-				if (i.compareToIgnoreCase(j) > 0) { k++; } // 比較判定
-			str2[k] = i; // 文字配列の代入
+				if (i.compareToIgnoreCase(j) > 0) { k++; } // compareToIgnoreCase メソッドは大文字・小文字を区別しないで辞書順に比較する
+			str2[k] = i; // 比較カウンタの値で添字を指定して代入
 		}
 
-		sb.append("\n*** コピー先 ***\nstr2 ="); // 追加
+		System.out.printf("\n*** コピー先 ***\nstr2 =");
 		for (String i : str2) // 出力ループ
-			sb.append(String.format(" %s", i)); // str2を追加
-
-		System.out.println(sb.toString()); // 標準出力
+			System.out.printf(" %s", i); // str2 を出力
 	}
 }
 

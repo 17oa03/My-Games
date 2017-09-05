@@ -6,95 +6,86 @@
 */
 
 // 【プログラム】
-package com.github.jkadai02;
+package com.github.jkadai02; // package 文
 
-public class Kadai0206 {
-	public static void main(String[] args) {
+public class Kadai0206 { // クラスの宣言
+	public static void main(String[] args) { // main メソッドの宣言
 
-		int[][] data1 = {
+		int[][] data1 = { // int 型配列の初期化
 				{ 25, 50, 73, 80 },
 				{ 42, 62, 95, 70 },
 				{ 52, 39, 42, 52 },
 		};
 
-		String[] subject1 = { "英語", "数学", "国語", "理科" };
-		String[] name1 = { "阿部", "菊池", "瀬戸" };
+		String[] subject1 = { "英語", "数学", "国語", "理科" }; // String 型配列の初期化
+		String[] name1 = { "阿部", "菊池", "瀬戸" }; // String 型配列の初期化
 
-		int[][] data2 = {
+		int[][] data2 = { // int 型配列の初期化
 				{ 25, 50, 73, 80, 52 },
 				{ 42, 62, 95, 70, 43 },
 				{ 52, 39, 42, 52, 63 },
 				{ 77, 58, 73, 82, 80 },
 		};
 
-		String[] subject2 = { "英語", "数学", "国語", "理科", "社会" };
-		String[] name2 = { "阿部", "菊池", "瀬戸", "戸川" };
+		String[] subject2 = { "英語", "数学", "国語", "理科", "社会" }; // String 型配列の初期化
+		String[] name2 = { "阿部", "菊池", "瀬戸", "戸川" }; // String 型配列の初期化
 
 		output(data1, subject1, name1); // 成績データ1の出力
 		output(data2, subject2, name2); // 成績データ2の出力
 	}
 
-	public static void output(int[][] data, String[] subject, String[] name) {
+	public static void output(int[][] data, String[] subject, String[] name) { // 出力メソッド
 
 		int i = 0; // 人数
 		int j = 0; // 科目数
 
-		StringBuilder sb = new StringBuilder(); // メモリ領域(バッファ)の確保
+		System.out.println("           *** 成  績  一  覧  表 ***");
 
-		sb.append(String.format("%33s\n", "*** 成  績  一  覧  表 ***")).append("名前 | ");
+		System.out.print("名前 | ");
+		for(String s : subject) // 科目名出力ループ
+			System.out.printf("%s  | ", s); // 科目名の出力
+		System.out.println("合計 |  平均");
 
-		for(String s : subject) // 科目名追加ループ
-			sb.append(s).append("  | "); // 科目名の追加
-		sb.append("合計 |  平均\n");
+		lule(subject); // 罫線の出力
 
-		lule(subject, sb); // 罫線の追加
-
-		for (i = 0; i < name.length; i++) { // 名前追加ループ
-
+		for (i = 0; i < name.length; i++) { // 出力ループ
 			int nameTotal = 0; // 個人の合計点
+			System.out.printf("%s | ", name[i]); // 名前の出力
 
-			sb.append(name[i]).append(" | "); // 名前の追加
-
-			for (j = 0; j < subject.length; j++) { // 点数追加ループ
-
-				sb.append(String.format("%4d", data[i][j])).append("  | "); // 点数の追加
-
-				nameTotal += data[i][j]; // 合計点の計算
+			for (j = 0; j < subject.length; j++) { // 点数出力ループ
+				System.out.printf("%4d  | ", data[i][j]); // 点数の出力
+				nameTotal += data[i][j]; // 個人の合計点の計算
 			}
 
-			sb.append(" ").append(nameTotal).append(" |  ") // 合計点の追加
-				.append(String.format("%.1f", (double)nameTotal / j)).append("\n"); // 平均の追加
+			System.out.printf(" %d |  %.1f\n", nameTotal, (double)nameTotal / j); // 合計と平均の出力
 		}
 
-		lule(subject, sb); // 罫線の追加
+		lule(subject); // 罫線の出力
 
 		int[] subjectTotal = new int[j]; // 各科目の合計と平均
 
-		for (i = 0; i < name.length; i++) { // 各科目の合計計算ループ
-			for (j = 0; j < subject.length; j++) {
-				subjectTotal[j] += data[i][j]; // 各科目の合計の計算
-			}
+		for (i = 0; i < name.length; i++) { // 各科目の合計ループ
+			for (j = 0; j < subject.length; j++)
+				subjectTotal[j] += data[i][j]; // 各科目の合計を計算
 		}
 
-		sb.append("合計 |");
-		for (int k : subjectTotal) // 各科目の合計追加ループ
-			sb.append(String.format("%5d", k)).append("  |"); // 各科目の合計の追加
-		sb.append("\n"); // 改行
+		System.out.print("合計 |");
+		for (int k : subjectTotal) // 各科目の合計ループ
+			System.out.printf("%5d  |", k); // 各科目の合計を出力
+		System.out.println(); // 改行
 
-		sb.append("平均 |");
-		for (int k : subjectTotal) // 各科目の平均追加ループ
-			sb.append(String.format("%7.1f", (double)k / i)).append("|"); // 各科目の平均の追加
-		sb.append("\n"); // 改行
-
-		System.out.println(sb.toString()); // バッファを標準出力
+		System.out.print("平均 |");
+		for (int k : subjectTotal) // 各科目の平均出力ループ
+			System.out.printf("%7.1f|", (double)k / i); // 各科目の平均を出力
+		System.out.printf("\n\n"); // 改行
 	}
 
-	public static void lule(String[] subject, StringBuilder sb) { // 罫線を追加するメソッド
+	public static void lule(String[] subject) { // 罫線出力メソッド
 
-		sb.append("-----");
-		for (int i = 0; i < subject.length; i++)
-			sb.append("+-------"); // 科目数に合わせて罫線を追加
-		sb.append("+------+------\n");
+		System.out.print("-----");
+		for (int i = 0; i < subject.length; i++) // 罫線出力ループ
+			System.out.print("+-------"); // 科目数に合わせて罫線を出力
+		System.out.println("+------+------");
 	}
 }
 

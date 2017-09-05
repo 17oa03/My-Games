@@ -4,40 +4,35 @@
 */
 
 // 【プログラム】
-package com.github.jkadai02;
+package com.github.jkadai02; // package 文
 
-import java.util.Arrays;
+import java.util.Arrays; // Arrays クラスは、配列のソートや検索に便利な様々なメソッドがある。
 
-public class Kadai0207 {
-	public static void main(String[] args) {
+public class Kadai0207 { // クラスの宣言
+	public static void main(String[] args) { // main メソッドの宣言
 
-		int[][] data = {
+		int[][] data = { // int 型配列の初期化
 			{ 40, 10, 30, 20, 50 },
 			{  2,  7,  6,  5,  3,  1,  4 },
 			{ 300, 100, 200 },
 		};
 
-		StringBuilder sb = new StringBuilder(); // メモリ領域(バッファ)の確保
-
-		sb.append("*** ソート前 ***\n");
-		for (int[] i : data) { // 行ループ
-			for (int j : i) { // 列ループ
-				sb.append(String.format("%4d", j)); // バッファに追加
-			}
-			sb.append("\n"); // 改行
+		System.out.println("*** ソート前 ***");
+		for (int[] i : data) { // 配列の行ループ、for-each 文で二次元配列を操作
+			for (int j : i) // 配列の列ループ
+				System.out.printf("%4d", j); // 配列の列にあるデータを出力
+			System.out.println(); // 改行
 		}
-		sb.append("\n"); // 改行
+		System.out.println(); // 改行
 
-		sb.append("*** ソート後 ***\n");
-		for (int[] i : data) { // 行ループ
-			Arrays.sort(i); // 昇順ソート処理
-			for (int j : i) { // 列ループ
-				sb.append(String.format("%4d", j)); // バッファに追加
+		System.out.println("*** ソート後 ***");
+		for (int[] i : data) { // 配列の行ループ
+			Arrays.sort(i); // 行毎に昇順ソート処理
+			for (int j : i) { // 配列の列ループ
+				System.out.printf("%4d", j); // 配列の列にあるデータを出力
 			}
-			sb.append("\n"); // 改行
+			System.out.println(); // 改行
 		}
-
-		System.out.println(sb.toString()); // 標準出力
 	}
 }
 

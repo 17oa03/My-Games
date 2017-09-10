@@ -1,4 +1,4 @@
-﻿/*
+/*
 【概要】
 標準入力より半径を入力し、
 標準出力に円の面積と円周を小数点以下3桁まで出力する。
@@ -19,12 +19,12 @@ public class Kadai0304 {
 		int radius = scanner.nextInt(); // 半径の入力
 
 		System.out.printf("半径 %d の円の面積は %.3f です。\n",
-							radius, // 半径
-							Circle.area(radius)); // クラスメソッドの呼び出し
+							radius,
+							Circle.area(radius)); // 円の面積計算クラスメソッドの呼び出し
 
 		System.out.printf("半径 %d の円の面積は %.3f です。\n",
-							radius, // 半径
-							Circle.circumference(radius)); // クラスメソッドの呼び出し
+							radius,
+							Circle.circumference(radius)); // 円の円周計算クラスメソッドの呼び出し
 	}
 }
 

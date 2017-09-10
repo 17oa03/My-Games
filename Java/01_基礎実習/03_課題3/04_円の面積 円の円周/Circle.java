@@ -3,12 +3,12 @@ package jkadai03;
 public class Circle {
 
 	// static 付けることで、インスタンスを生成せずにクラスから呼び出せる「クラスメソッド」になる
-	public static double area(int radius) { // 面積計算メソッド
-		return radius * radius * Math.PI; // 面積の計算結果を返す
+	public static double area(int radius) { // ②(引数 : 半径(int 型))
+		return radius * radius * Math.PI; // ①(半径を元に円の面積を計算),②(戻り値 : 円の面積(double 型))
 	}
 
-	public static double circumference(int radius) { // 円周計算メソッド
-		return (radius + radius) * Math.PI; // 円周の計算結果を返す
+	public static double circumference(int radius) { // ②(引数 : 半径(int 型))
+		return (radius + radius) * Math.PI; // ①(半径を元に円の円周を計算),②(戻り値 : 円の円周(double 型))
 	}
 
 }

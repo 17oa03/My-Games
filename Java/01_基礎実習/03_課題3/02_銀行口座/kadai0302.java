@@ -11,17 +11,17 @@ package jkadai03;
 
 public class kadai0302 {
 	public static void main(String[] args) {
-		BankAccount ba1 = new BankAccount(10001, "東京太郎", 30000); // ①
+		BankAccount ba1 = new BankAccount(10001, "東京太郎", 30000); // ①(1人目のインスタンス生成)
 
-		BankAccount ba2 = new BankAccount(10002, "東京次郎", 50000); // ②
+		BankAccount ba2 = new BankAccount(10002, "東京次郎", 50000); // ②(2人目のインスタンス生成)
 
-		ba1.deposit(40000); // ③
+		ba1.deposit(40000); // ③(1人目が40000円預け入れる)
 
-		ba2.drawer(30000); // ④
+		ba2.drawer(30000); // ④(2人目が30000円引き出す)
 
-		BankAccount ba3 = new BankAccount(10003, "東京三郎", 10000); // ⑤
+		BankAccount ba3 = new BankAccount(10003, "東京三郎", 10000); // ⑤(3人目のインスタンス生成)
 
-		ba1.drawer(80000); // ⑥
+		ba1.drawer(80000); // ⑥(1人目が80000円引き出そうとするが残高不足になる)
 	}
 }
 

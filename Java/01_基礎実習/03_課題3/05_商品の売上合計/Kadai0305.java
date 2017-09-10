@@ -13,30 +13,30 @@ import java.util.Scanner;
 
 public class Kadai0305 {
 	public static void main(String[] args) {
-		final int LOOP = 3; // ループ回数
+		final int LOOP = 3;
 
 		Scanner scanner = new Scanner(System.in);
-		Earnings[] earnings = new Earnings[LOOP]; // インスタンス配列の宣言
+		Earnings[] earnings = new Earnings[LOOP];
 
-		for (int i = 0; i < earnings.length; i++) { // 入力ループ
+		for (int i = 0; i < earnings.length; i++) { // ③(①と②を3回繰り返す)
 			System.out.print("商品名 ==> ");
-			String name = scanner.nextLine(); // 商品名の入力
+			String name = scanner.nextLine(); // ①(商品名の入力)
 
 			System.out.print("単価 ==> ");
 			// scanner.nextInt()だと次の入力で改行を読込んでしまうので、対策として文字列を数値に変換してから代入している
-			int unitPrice = Integer.parseInt(scanner.nextLine()); // 単価の入力
+			int unitPrice = Integer.parseInt(scanner.nextLine()); // ①(単価の入力)
 
 			System.out.print("数量 ==> ");
-			int quantity = Integer.parseInt(scanner.nextLine()); // 数量の入力
+			int quantity = Integer.parseInt(scanner.nextLine()); // ①(数量の入力)
 
-			earnings[i] = new Earnings(name, unitPrice, quantity); // インスタンス配列に生成したインスタンスを代入
+			earnings[i] = new Earnings(name, unitPrice, quantity); // ②(入力値より売上管理クラスのインスタンスを生成)
 		}
 
-		for (int i = 0; i < earnings.length; i++) { // 出力ループ
-			earnings[i].dispDetails(); // 明細行の出力
+		for (int i = 0; i < earnings.length; i++) { // ④(明細出力メソッドを3回呼び出す)
+			earnings[i].dispDetails();
 		}
 
-		Earnings.dispTotal(); // 売上合計の出力
+		Earnings.dispTotal(); // ⑤(売上合計クラスメソッドの呼び出し)
 	}
 }
 

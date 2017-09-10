@@ -1,34 +1,34 @@
 package jkadai03;
 
 public class Earnings {
-	private String name; // 商品名
-	private int unitPrice; // 単価
-	private int quantity; // 数量
-	private int price; // 金額
+	private String name; // ①(商品名のフィールド)
+	private int unitPrice; // ①(単価のフィールド)
+	private int quantity; // ①(数量のフィールド)
+	private int price; // ①(金額のフィールド)
 
 	// 静的フィールドの定義、インスタンスを生成せずにアクセスできるフィールド
-	static int totalPrice = 0; // 合計金額
+	static int totalPrice = 0; // ①(合計金額のフィールド)
 
-	public Earnings(String name, int unitPrice, int quantity) { // コンストラクタ
-		this.name = name; // 商品名の代入
-		this.unitPrice = unitPrice; // 単価の代入
-		this.quantity = quantity; // 数量の代入
+	public Earnings(String name, int unitPrice, int quantity) { // ②(コンストラクタの定義)
+		this.name = name;
+		this.unitPrice = unitPrice;
+		this.quantity = quantity;
 
-		price = unitPrice * quantity; // 金額の計算
+		price = unitPrice * quantity;
 
-		totalPrice += price; // 合計金額に加算
+		totalPrice += price; // ②(金額を合計金額に加算する)
 	}
 
-	public void dispDetails() { // 明細出力メソッド
+	public void dispDetails() { // ③(明細行の出力メソッドの定義)
 		System.out.printf("商品名:%s,単価:%d 円,数量:%d,金額:%d 円\n",
-							name, // 商品名の出力
-							unitPrice, // 単価の出力
-							quantity, // 数量の出力
-							price); // 金額の出力
+							name,
+							unitPrice,
+							quantity,
+							price);
 	}
 
-	public static void dispTotal() { // 売上合計出力メソッド
-		System.out.printf("売上合計:%d 円\n", totalPrice); // 出力
+	public static void dispTotal() { // ④(合計金額出力クラスメソッドの定義)
+		System.out.printf("売上合計:%d 円\n", totalPrice);
 	}
 
 }

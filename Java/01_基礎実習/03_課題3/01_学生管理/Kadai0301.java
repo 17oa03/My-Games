@@ -11,26 +11,26 @@ package jkadai03;
 
 public class Kadai0301 {
 	public static void main(String[] args) {
-		Student s1 = new Student(); // ①
+		Student s1 = new Student(); // ①(引数なしで1人目のインスタンスを生成)
 
-		s1.setData(10, "東京太郎", 80); // ②
+		s1.setData(10, "東京太郎", 80); // ②(1人目のインスタンスにデータを一括設定)
 
-		Student s2 = new Student(20, "東京次郎", 70); // ③
+		Student s2 = new Student(20, "東京次郎", 70); // ③(引数ありで2人目のインスタンスを生成)
 
-		Student s3 = new Student(); // ④
+		Student s3 = new Student(); // ④(引数なしで3人目のインスタンスを生成)
 
-		s3.setNo(30); // ⑤
-		s3.setName("東京三郎"); // ⑤
-		s3.setScore(90); // ⑤
+		s3.setNo(30); // ⑤(3人目のインスタンスにセッターでデータを設定)
+		s3.setName("東京三郎"); // ⑤(3人目のインスタンスにセッターでデータを設定)
+		s3.setScore(90); // ⑤(3人目のインスタンスにセッターでデータを設定)
 
-		s1.dispData(); // ⑥
+		s1.dispData(); // ⑥(1人目のインスタンスのフィールドを出力)
 
-		System.out.printf("番号:%d, 氏名:%s, 点数:%d\n", // ⑦
+		System.out.printf("番号:%d, 氏名:%s, 点数:%d\n", // ⑦(2人目のインスタンスのフィールドをゲッターから出力)
 							s2.getNo(),
 							s2.getName(),
 							s2.getScore());
 
-		System.out.println(s3); // ⑧
+		System.out.println(s3); // ⑧(3人目のインスタンスのフィールドをtoString()から出力)
 	}
 }
 

@@ -10,7 +10,7 @@ package jkadai03;
 
 public class Kadai0303 {
 	public static void main(String[] args) {
-		String[] data = { // String 配列の定義
+		String[] data = { // ①(String 配列の定義)
 				"10,東京太郎,80",
 				"20,東京次郎,50",
 				"30,東京三郎,90",
@@ -18,20 +18,20 @@ public class Kadai0303 {
 				"50,東京五郎,70",
 		};
 
-		Student[] studentAry = new Student[data.length]; // インスタンス配列の宣言
-		String[] strAry = new String[3]; // カンマで区切った文字列を一時的に保存する配列
+		Student[] studentAry = new Student[data.length]; // ②(インスタンス配列の宣言)
+		String[] strAry = new String[3];
 
-		for (int i = 0; i < data.length; i++) { // インスタンス生成ループ
-			strAry = data[i].split(","); // カンマ区切りしてString 配列に代入
+		for (int i = 0; i < data.length; i++) {
+			strAry = data[i].split(","); // ②(String 配列をカンマ区切り)
 
-			studentAry[i] = new Student( // インスタンスの生成
-					Integer.parseInt(strAry[0]), // 引数の番号を文字列から数値に変換
-					strAry[1], // 氏名
-					Integer.parseInt(strAry[2])); // 引数の点数を文字列から数値に変換
+			studentAry[i] = new Student( // ②(インスタンス配列に代入して管理
+					Integer.parseInt(strAry[0]),
+					strAry[1],
+					Integer.parseInt(strAry[2]));
 		}
 
-		for (Student i : studentAry) { // 出力ループ
-			i.dispData(); // 出力
+		for (Student i : studentAry) { // ③(②で定義した配列から一覧表を出力)
+			i.dispData();
 		}
 	}
 }

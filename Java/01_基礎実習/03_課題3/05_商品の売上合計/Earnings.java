@@ -7,7 +7,7 @@ public class Earnings {
 	private int price; // ①(金額のフィールド)
 
 	// 静的フィールドの定義、インスタンスを生成せずにアクセスできるフィールド
-	static int totalPrice = 0; // ①(合計金額のフィールド)
+	private static int totalPrice = 0; // ①(合計金額のフィールド)
 
 	public Earnings(String name, int unitPrice, int quantity) { // ②(コンストラクタの定義)
 		this.name = name;

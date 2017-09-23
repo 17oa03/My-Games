@@ -1,7 +1,6 @@
-package jtest01;
+﻿package jtest01;
 
 public class Program5 {
-
 	public static void main(String[] args) {
 
 		Staff taro = new Staff(10, "東京太郎", 30);

@@ -1,6 +1,4 @@
-package jtest01;
-
-public class Staff {
+﻿public class Staff {
 	private int no; // 番号
 	private String name; // 名前
 	private int age; // 年齢

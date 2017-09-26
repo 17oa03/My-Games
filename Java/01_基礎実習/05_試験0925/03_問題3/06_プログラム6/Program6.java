@@ -1,4 +1,6 @@
-﻿public class Program6 {
+package jtest01;
+
+public class Program6 {
 	public static void main(String[] args) {
 
 		Seisu[] inst = new Seisu[3];
@@ -22,7 +24,7 @@
 /*
 【実行結果】
 値 1 = 11
-値 2 = -19
+値 2 = -1
 値 3 = 8
 値 4 = 0
 */

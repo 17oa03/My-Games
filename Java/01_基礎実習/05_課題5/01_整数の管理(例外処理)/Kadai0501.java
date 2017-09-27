@@ -1,6 +1,6 @@
 package jkadai05;
 
-public class Kadai05 {
+public class Kadai0501 {
 	public static void main(String[] args) { // (3)
 		int seisu1;
 		int seisu2;

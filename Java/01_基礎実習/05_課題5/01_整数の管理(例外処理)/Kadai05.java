@@ -1,7 +1,7 @@
 package jkadai05;
 
 public class Kadai05 {
-	public static void main(String[] args) {
+	public static void main(String[] args) { // (3)
 		int seisu1;
 		int seisu2;
 
@@ -10,14 +10,14 @@ public class Kadai05 {
 				seisu1 = Integer.parseInt(args[0]);
 				seisu2 = Integer.parseInt(args[1]);
 				System.out.println(
-						seisu1 + " * " + seisu2 + " = " + (seisu1 * seisu2));
+						seisu1 + " * " + seisu2 + " = " + (seisu1 * seisu2)); // (1)①
 			} catch (NumberFormatException e) {
 				System.out.println(
-						"コマンドライン引数は、整数を入力してください。");
+						"コマンドライン引数は、整数を入力してください。"); // (2)
 			}
 		} else
 			System.out.println(
-					"コマンドライン引数は、2個入力してください。");
+					"コマンドライン引数は、2個入力してください。"); // (1)②
 	}
 }
 

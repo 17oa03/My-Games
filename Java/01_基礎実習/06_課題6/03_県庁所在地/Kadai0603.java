@@ -7,7 +7,7 @@ public class Kadai0603 {
 	public static void main(String[] args) {
 		HashMap<String, String> hashMap = new HashMap<>();
 
-		hashMap.put("茨城", "水戸市");
+		hashMap.put("茨城", "水戸市"); // (1),(2)
 		hashMap.put("栃木", "宇都宮市");
 		hashMap.put("群馬", "前橋市");
 		hashMap.put("埼玉", "さいたま市");
@@ -25,7 +25,7 @@ public class Kadai0603 {
 				System.out.println(hashMap.get(prefecture));
 				break;
 			} else if (count == hashMap.size()) {
-				System.out.println("関東の県名ではありません。");
+				System.out.println("関東の県名ではありません。"); // (3)
 			}
 		}
 	}

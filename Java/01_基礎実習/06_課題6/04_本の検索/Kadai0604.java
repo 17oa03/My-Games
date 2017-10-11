@@ -24,20 +24,15 @@ public class Kadai0604 {
 
 			System.out.println("*** 検索結果 ***");
 
-			int count = 0;
-			for (String str : hashMap.keySet()) {
-				count++;
-
-				if (str.equals(bookName)) {
-					hashMap.get(str).printData();
-					break;
-				} else if (count == hashMap.size()) {
-					System.out.println("該当する本はありません。\n"); // (4)
-				}
-			}
+			Book book = hashMap.get(bookName);
+			if (book == null)
+				System.out.println("該当する本はありません。\n"); // (4)
+			else
+				book.printData();
 		}
 	}
 }
+
  /*
 【実行結果1】
 書名 ==> 雪国

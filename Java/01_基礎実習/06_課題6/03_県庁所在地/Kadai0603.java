@@ -16,12 +16,12 @@ public class Kadai0603 {
 
 		Scanner sc = new Scanner(System.in);
 		System.out.print("関東の県名 ==> ");
-		String str = hashMap.get(sc.nextLine());
+		String city = hashMap.get(sc.nextLine());
 
-		if (str == null)
+		if (city == null)
 			System.out.println("関東の県名ではありません。"); // (3)
 		else
-			System.out.println(str);
+			System.out.println(city);
 	}
 }
 

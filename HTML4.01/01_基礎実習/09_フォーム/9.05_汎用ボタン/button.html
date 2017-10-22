@@ -1,0 +1,22 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>9.5_汎用ボタン</title>
+    </head>
+    <body>
+        <h1>9.5_汎用ボタン</h1>
+        <form action="./button.html" method="post">
+            <p>ユーザー名：<input type="text" name="user">
+            </p>
+            <p>パスワード：<input type="password" name="pass" size="8" maxlength="8">
+            </p>
+            <!-- type 属性に指定した値によって役割の変わるボタンを作成する。タグ内に入れたテキストや画像をボタンの上に表示できる。フォーム以外でも利用可能。 -->
+            <!-- name 属性は、汎用ボタンの名前を指定する。フォームのデータが送信される際には、この名前とデータの内容がセットになって送信される。 -->
+            <!-- value 属性は、name 属性の値とともにサーバーへ送信される値を指定する。 -->
+            <p><button type="submit" name="login" value="GPB">汎用ボタン</button>
+            </p>
+        </form>
+    </body>
+</html>

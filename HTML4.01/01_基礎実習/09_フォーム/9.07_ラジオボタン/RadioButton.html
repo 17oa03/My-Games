@@ -1,0 +1,30 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>9.7_ラジオボタン</title>
+    </head>
+    <body>
+        <h1>9.7_ラジオボタン</h1>
+        <form action="./RadioButton.html" method="post">
+            <p>選択肢<br>
+                <!-- ラジオボタンを作成し、選択肢から一つを選択できるようになる。 -->
+                <input type="radio" name="q1" value="はい"> はい
+                <input type="radio" name="q1" value="いいえ"> いいえ
+            </p>
+            <p>選択肢(「いいえ」を選択済)<br>
+                <!-- checked 属性は、そのボタンを予め選択された状態で表示する。 -->
+                <input type="radio" name="q2" value="はい"> はい
+                <input type="radio" name="q2" value="いいえ" checked> いいえ
+            </p>
+            <p>選択肢(「いいえ」を無効化)<br>
+                <!-- disabled 属性は、指定した要素を無効化する。 -->
+                <input type="radio" name="q3" value="はい"> はい
+                <input type="radio" name="q3" value="いいえ" disabled> いいえ
+            </p>
+            <p><input type="submit" value="送信">
+            </p>
+        </form>
+    </body>
+</html>

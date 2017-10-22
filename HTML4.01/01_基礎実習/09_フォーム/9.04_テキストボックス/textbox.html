@@ -1,0 +1,25 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>9.4_テキストボックス</title>
+    </head>
+    <body>
+        <h1>9.4_テキストボックス</h1>
+        <form action="./textbox.html" method="post">
+            <p>ユーザー名：<input type="text" name="user">
+            </p>
+            <!-- 1行のテキスト入力フィールド(テキストボックス)を作成する。 -->
+            <!-- type 属性に password を指定すると、入力した文字が直接には表示されなくなる。 -->
+            <!-- size 属性は、入力フィールドの幅(文字数)を指定できる。 -->
+            <!-- maxlength 属性は、入力可能な最大文字数を指定できる。 -->
+            <p>パスワード：<input type="password" name="pass" size="8" maxlength="8">
+            </p>
+            <p><input type="submit" value="ログイン">
+            </p>
+            <p><input type="reset" value="リセット">
+            </p>
+        </form>
+    </body>
+</html>

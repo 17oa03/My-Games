@@ -1,0 +1,26 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>9.9_プルダウンメニュー</title>
+    </head>
+    <body>
+        <h1>9.9_プルダウンメニュー</h1>
+        <form action="./select&option.html" method="post">
+            <p>ご使用のOSをお選びください。
+            </p>
+            <p>
+                <!-- select タグでプルダウン形式のメニューを作成できる。選択肢は option タグを使って指定し、タグで挟まれたテキストがそれぞれメニューに表示される項目になる。 -->
+                <select name="OS">
+                    <option value="win">Windows</option>
+                    <option value="mac">MacOS</option>
+                    <option value="linux">Linux</option>
+                    <option value="other">その他</option>
+                </select>
+            <p>
+                <input type="submit" value="送信">
+            </p>
+        </form>
+    </body>
+</html>

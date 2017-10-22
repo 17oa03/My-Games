@@ -1,0 +1,28 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>9.10_リストボックス</title>
+    </head>
+    <body>
+        <h1>9.10_リストボックス</h1>
+        <form action="./select&size.html" method="post">
+            <p>ご使用のOSをお選びください。
+            </p>
+            <p>
+                <!-- size 属性を select タグに設定、リストボックス形式のメニューが作成できる。 -->
+                <!-- select タグに multiple 属性を指定すると、複数の項目を選択できるようになる。-->
+                <!-- select タグに selected 属性を指定すると、その項目が予め選択された状態で表示される。-->
+                <select size="4" name="OS">
+                    <option value="win">Windows</option>
+                    <option value="mac">MacOS</option>
+                    <option value="linux">Linux</option>
+                    <option value="other">その他</option>
+                </select>
+            <p>
+                <input type="submit" value="送信">
+            </p>
+        </form>
+    </body>
+</html>

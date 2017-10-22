@@ -3,12 +3,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>8.3_キャプション</title>
+        <title>8.7_列のグループ化</title>
     </head>
     <body>
-        <h1>8.3_キャプション</h1>
-        <table border="1">
+        <h1>8.7_列のグループ化</h1>
+        <table border="1" cellspacing="10" cellpadding="10">
             <caption>実店舗のご案内</caption>
+            <colgroup span="1" style="background-color:#ccccff;"></colgroup> <!-- 表の列をグループ化し、意味的な纏まりを作成する。列に対して CSS を適用できる。 -->
+            <colgroup span="1" style="background-color:#ccffcc;"></colgroup>
+            <colgroup span="1" style="background-color:#ffcccc;"></colgroup>
             <tr>
                 <th>店舗</th>
                 <th>住所</th>
@@ -17,17 +20,15 @@
             <tr>
                 <td>有楽町店</td>
                 <td>千代田区有楽町1-1-1</td>
-                <td>11:00-21:00</td>
+                <td rowspan="2">11:00-21:00</td>
             </tr>
             <tr>
                 <td>新宿店</td>
                 <td>新宿区西新宿2-2-2</td>
-                <td>11:00-21:00</td>
             </tr>
             <tr>
                 <td>池袋店</td>
-                <td>豊島区東池袋3-3-3</td>
-                <td>10:00-20:00</td>
+                <td colspan="2">豊島区東池袋3-3-3</td>
             </tr>
         </table>
     </body>

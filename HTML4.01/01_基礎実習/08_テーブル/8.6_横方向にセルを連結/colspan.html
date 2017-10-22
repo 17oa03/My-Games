@@ -1,0 +1,32 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>8.6_横方向にセルに連結</title>
+    </head>
+    <body>
+        <h1>8.6_横方向にセルに連結</h1>
+        <table border="1" cellspacing="10" cellpadding="10">
+            <caption>実店舗のご案内</caption>
+            <tr>
+                <th>店舗</th>
+                <th>住所</th>
+                <th>営業時間</th>
+            </tr>
+            <tr>
+                <td>有楽町店</td>
+                <td>千代田区有楽町1-1-1</td>
+                <td rowspan="2">11:00-21:00</td>
+            </tr>
+            <tr>
+                <td>新宿店</td>
+                <td>新宿区西新宿2-2-2</td>
+            </tr>
+            <tr>
+                <td>池袋店</td>
+                <td colspan="2">豊島区東池袋3-3-3</td> <!-- colspan属性を指定すると、そのセルから指定された数だけ横方向のセルを連結して1つのセルにする。 -->
+            </tr>
+        </table>
+    </body>
+</html>

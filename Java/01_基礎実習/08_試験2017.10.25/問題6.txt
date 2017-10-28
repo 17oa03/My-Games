@@ -1,8 +1,0 @@
-■問題5
-
-▼①ArrayIndexOutOfBoundsException
-コマンドライン引数の数が合わない例外はコレ！
-
-▼②NumberFormatException
-parseInt() メソッドに整数以外が渡され、
-変換に失敗した場合の例外はコレ！

@@ -22,8 +22,8 @@ public class Kadai0701 {
 		try (BufferedReader br = new BufferedReader(
 				new FileReader(fileInName));
 			 PrintWriter pw = new PrintWriter(
-					 new BufferedWriter(
-							 new FileWriter(fileOutName)))) {
+				new BufferedWriter(
+					 new FileWriter(fileOutName)))) {
 			String str;
 			while ((str = br.readLine()) != null) {
 				pw.println(str);
@@ -32,7 +32,7 @@ public class Kadai0701 {
 			System.out.println(count + "行コピーしました。");
 		} catch (FileNotFoundException e) {
 			System.out.println(
-					"入力ファイル(" + fileInName + ")が、みつかりません。");
+				"入力ファイル(" + fileInName + ")が、みつかりません。");
 		} catch (IOException e) {
 			System.out.println("ファイル入出力エラー");
 		}

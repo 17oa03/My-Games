@@ -1,8 +1,0 @@
-▼目標
-JSPから別のJSPへの画面転送と、データベースのテーブル(meibo)へデータの追加をする。
-
-▼送信元
-memberinsert.jsp
-
-▼送信先
-member4.jsp

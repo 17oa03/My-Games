@@ -1,4 +1,4 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ page import="java.sql.*" %>
 
@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>JSP課題6</title>
+		<title>JSP課題7</title>
 	</head>
 	<body>
 		<%
@@ -26,8 +26,6 @@
 			String sid = "xe";
 			// 番号
 			int id = 0;
-			/* 名前 */
-			String name = "";
 
 			try {
 				// JBBCドライバクラスのダウンロード
@@ -38,11 +36,9 @@
 				st = conn.createStatement();
 				// 番号の取得と整数変換
 				id = Integer.parseInt(request.getParameter("bango"));
-				// 名前の取得
-				name = request.getParameter("namae");
 				// executeUpdate の戻り値は、insert文、update文、delete文の実行時の更新行数を返し、これら以外のSQL文の実行時は「0」を返す
 				int ret = 0;
-				if ((ret = st.executeUpdate("update meibo set name='" + name + "' where id=" + id)) > 0) {
+				if ((ret = st.executeUpdate("delete from meibo where id=" + id)) > 0) {
 					// ResultSet でDBMSの検索結果を受け取る
 					ResultSet rs = st.executeQuery("select * from meibo order by id");
 					// テーブルのデータを出力
@@ -60,7 +56,7 @@
 				out.println("エラー : " + e);
 			}
 		%>
-		<form action="memberupdate.jsp">
+		<form action="memberdelete.jsp">
 			<p>
 				<button type="submit">戻る</button>
 			</p>

@@ -5,10 +5,10 @@
 - - -
 ### 画面遷移
 
-▼送信元
+▼送信元  
 memberupdate.jsp
 
-▼送信先
+▼送信先  
 member5.jsp
 
 - - -

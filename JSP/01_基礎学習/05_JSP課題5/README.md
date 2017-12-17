@@ -14,6 +14,7 @@ member4.jsp
 - - -
 
 ### 備忘録
+▼「Statement」クラスの使用に関して、SQLインジェクションを体験する為に、わざと「PreparedStatement」クラスを使用していない。
 
 ▼「Eclipse」の「DBViewer」よりデータベースを登録する際に、
 「データベース定義」にて「JDBCドライバー」に「ojdbc6.jar」を追加する必要がある。

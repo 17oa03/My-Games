@@ -4,12 +4,12 @@
 - - -
 ### 画面遷移
 
-▼インクルード(包含)する側
-java.jsp
+▼インクルード(包含)する側  
+java.jsp  
 servlet.jsp
 
-▼インクルード(包含)される側
-include_1.jsp
+▼インクルード(包含)される側  
+include_1.jsp  
 include_2.jsp
 
 - - -

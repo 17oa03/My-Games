@@ -1,0 +1,1 @@
+public class MinusException extends Exception {}

@@ -6,8 +6,7 @@
   <title>hello</title>
 </head>
 <body>
-<?php
-    print "hello php!\n";
-?>
+  <!-- 短縮構文 -->
+  <p>1に2を加算すると、<?=1+2?>になります。</p>
 </body>
 </html>

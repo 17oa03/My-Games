@@ -9,7 +9,7 @@
 <!-- 定数の定義 -->
   <?php
     // 定義1
-    define("GOOD_LUCK"," (・∀・)b ");
+    define("GOOD_LUCK"," (・∀・)" . "b ");
     echo GOOD_LUCK;
     // 定義2(定数名の大文字、小文字の区別をしない)
     define("SMILE"," (・∀・)ﾆﾔﾆﾔ ", true);
